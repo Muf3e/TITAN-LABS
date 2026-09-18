@@ -1,0 +1,593 @@
+<title>Blind Score Trial</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F3F5F7; --surface:#FFFFFF; --surface-2:#E9ECEF; --border:#D6DBE1;
+    --ink:#171B21; --ink-dim:#5B6470;
+    --accent:#B9651E; --accent-ink:#FFFFFF;
+    --online-mark:#2C6E8E; --titan-mark:#B9651E;
+    --good:#2F7D4F; --bad:#B0413C; --pending:#8A6D1F;
+    --focus:#2C6E8E;
+    --shadow: 0 1px 2px rgba(23,27,33,0.06), 0 8px 24px rgba(23,27,33,0.05);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181D; --surface:#1B2026; --surface-2:#232A32; --border:#343C46;
+      --ink:#EDEFF2; --ink-dim:#9AA4B0;
+      --accent:#D98A3D; --accent-ink:#191305;
+      --online-mark:#6FB4D6; --titan-mark:#D98A3D;
+      --good:#57B47C; --bad:#E07570; --pending:#D9AE4E;
+      --focus:#6FB4D6;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181D; --surface:#1B2026; --surface-2:#232A32; --border:#343C46;
+    --ink:#EDEFF2; --ink-dim:#9AA4B0;
+    --accent:#D98A3D; --accent-ink:#191305;
+    --online-mark:#6FB4D6; --titan-mark:#D98A3D;
+    --good:#57B47C; --bad:#E07570; --pending:#D9AE4E;
+    --focus:#6FB4D6;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:"IBM Plex Sans", system-ui, sans-serif;
+    line-height:1.5;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:40px 20px 80px;}
+
+  .eyebrow{
+    font-family:"IBM Plex Mono", monospace; font-size:12px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--ink-dim); display:flex; gap:10px; align-items:center;
+  }
+  .eyebrow .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);}
+
+  h1{
+    font-family:"Zilla Slab", Georgia, serif; font-weight:700;
+    font-size:clamp(28px,5vw,38px); line-height:1.15; margin:10px 0 14px; text-wrap:balance;
+  }
+  h2{
+    font-family:"Zilla Slab", Georgia, serif; font-weight:600; font-size:22px; margin:0 0 4px;
+  }
+  p.lede{color:var(--ink-dim); font-size:16px; max-width:60ch; margin:0 0 20px;}
+
+  .card{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px;
+    padding:24px; box-shadow:var(--shadow);
+  }
+  .stack{display:flex; flex-direction:column; gap:16px;}
+
+  button{
+    font-family:"IBM Plex Sans", sans-serif; font-weight:600; font-size:15px;
+    cursor:pointer; border-radius:9px; border:1px solid transparent; padding:12px 20px;
+  }
+  button:focus-visible{outline:2px solid var(--focus); outline-offset:2px;}
+  .btn-primary{background:var(--accent); color:var(--accent-ink); border-color:var(--accent);}
+  .btn-primary:disabled{opacity:.45; cursor:not-allowed;}
+  .btn-ghost{background:transparent; color:var(--ink); border-color:var(--border);}
+  .btn-ghost:hover{background:var(--surface-2);}
+
+  /* --- intro --- */
+  #screen-intro ol{margin:0 0 20px; padding-left:20px; color:var(--ink-dim); font-size:15px;}
+  #screen-intro li{margin-bottom:8px;}
+  .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:6px;}
+
+  /* --- specimen --- */
+  .progress-row{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:14px;}
+  .progress-track{height:4px; background:var(--surface-2); border-radius:2px; overflow:hidden; margin-bottom:26px;}
+  .progress-fill{height:100%; background:var(--accent); transition:width .3s ease;}
+
+  .product-head{margin-bottom:18px;}
+  .product-name{font-family:"Zilla Slab", serif; font-weight:600; font-size:21px;}
+  .product-meta{
+    font-family:"IBM Plex Mono", monospace; font-size:13px; color:var(--ink-dim);
+    display:flex; flex-wrap:wrap; gap:6px 14px; margin-top:6px;
+  }
+
+  .exhibits{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media (max-width:560px){ .exhibits{grid-template-columns:1fr;} }
+
+  .exhibit{
+    border:1px solid var(--border); border-radius:12px; padding:18px; background:var(--surface-2);
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .exhibit.chosen{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent) inset;}
+  .exhibit-label{
+    font-family:"IBM Plex Mono", monospace; font-size:12px; letter-spacing:.08em;
+    color:var(--ink-dim); text-transform:uppercase;
+  }
+  .exhibit-readout{font-family:"Zilla Slab", serif; font-weight:700; font-size:28px; font-variant-numeric:tabular-nums;}
+  .exhibit-sub{font-size:13px; color:var(--ink-dim);}
+  .exhibit-blurb{font-size:14px; color:var(--ink);}
+  .exhibit-blurb b{font-weight:600;}
+
+  .dims{display:flex; flex-direction:column; gap:5px; margin-top:2px;}
+  .dim-row{display:grid; grid-template-columns:88px 1fr 28px; align-items:center; gap:8px; font-size:12px;}
+  .dim-label{color:var(--ink-dim); font-family:"IBM Plex Mono", monospace;}
+  .dim-track{height:6px; background:var(--border); border-radius:3px; overflow:hidden;}
+  .dim-fill{height:100%; background:var(--ink-dim); border-radius:3px;}
+  .dim-val{font-family:"IBM Plex Mono", monospace; text-align:right; font-variant-numeric:tabular-nums;}
+
+  details summary{cursor:pointer; font-size:13px; color:var(--online-mark); font-weight:500;}
+  :root[data-theme="dark"] details summary, @media (prefers-color-scheme:dark){details summary{color:var(--online-mark);}}
+
+  .reason-box{display:none; flex-direction:column; gap:10px; margin-top:18px;}
+  .reason-box.show{display:flex;}
+  textarea{
+    font-family:"IBM Plex Sans", sans-serif; font-size:14px; padding:12px; border-radius:9px;
+    border:1px solid var(--border); background:var(--surface); color:var(--ink); resize:vertical; min-height:64px;
+  }
+  textarea:focus-visible{outline:2px solid var(--focus); outline-offset:1px;}
+
+  /* --- summary --- */
+  .recap-table{width:100%; border-collapse:collapse; font-size:13px; margin:14px 0 22px;}
+  .recap-table th, .recap-table td{text-align:left; padding:8px 6px; border-bottom:1px solid var(--border);}
+  .recap-table th{color:var(--ink-dim); font-weight:500; font-family:"IBM Plex Mono", monospace; font-size:11px; text-transform:uppercase; letter-spacing:.05em;}
+  .pill{font-family:"IBM Plex Mono", monospace; font-size:11px; padding:2px 8px; border-radius:99px; display:inline-block;}
+  .pill.titan{background:color-mix(in srgb, var(--titan-mark) 18%, transparent); color:var(--titan-mark);}
+  .pill.online{background:color-mix(in srgb, var(--online-mark) 18%, transparent); color:var(--online-mark);}
+
+  .verdict-banner{
+    border-radius:12px; padding:18px 20px; margin:18px 0; display:flex; flex-direction:column; gap:4px;
+    border:1px solid var(--border);
+  }
+  .verdict-banner.pass{border-color:var(--good); background:color-mix(in srgb, var(--good) 12%, var(--surface));}
+  .verdict-banner.fail{border-color:var(--bad); background:color-mix(in srgb, var(--bad) 12%, var(--surface));}
+  .verdict-banner.pending{border-color:var(--pending); background:color-mix(in srgb, var(--pending) 12%, var(--surface));}
+  .verdict-title{font-family:"Zilla Slab", serif; font-weight:700; font-size:18px;}
+  .verdict-sub{font-size:13px; color:var(--ink-dim);}
+
+  .stat-row{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:18px;}
+  .stat{border:1px solid var(--border); border-radius:10px; padding:14px; background:var(--surface-2);}
+  .stat-num{font-family:"IBM Plex Mono", monospace; font-size:22px; font-weight:500; font-variant-numeric:tabular-nums;}
+  .stat-label{font-size:11px; color:var(--ink-dim); text-transform:uppercase; letter-spacing:.05em; margin-top:2px;}
+
+  .reasons-list{display:flex; flex-direction:column; gap:10px; margin-top:8px; max-height:260px; overflow-y:auto; padding-right:4px;}
+  .reason-item{border-left:2px solid var(--border); padding:2px 0 2px 12px; font-size:13px; color:var(--ink-dim);}
+  .reason-item b{color:var(--ink); font-weight:500;}
+
+  .footnote{font-size:12px; color:var(--ink-dim); margin-top:26px; line-height:1.6;}
+  .link-row{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:16px;}
+  code.url{font-family:"IBM Plex Mono", monospace; font-size:12px; background:var(--surface-2); padding:6px 10px; border-radius:6px; word-break:break-all;}
+  [hidden]{display:none!important;}
+</style>
+
+<div class="wrap">
+  <div class="eyebrow"><span class="dot"></span> TITAN LABS &middot; VALIDATION SPIKE</div>
+
+  <!-- ================= INTRO ================= -->
+  <section id="screen-intro">
+    <h1>Which rating would you actually trust?</h1>
+    <p class="lede">TITAN Labs is testing one narrow question before building anything else: is an evidence-weighted product score more useful than a plain star rating? You'll see 10 real laptops and phones. For each, two rating systems are shown, labeled blindly as A and B.</p>
+    <div class="card">
+      <ol>
+        <li>For each product, read both rating systems &mdash; you won't be told which is which until the end.</li>
+        <li>Pick the one you'd trust more if you were actually about to buy the product.</li>
+        <li>Say briefly why, in your own words.</li>
+        <li>After all 10, you'll see which system was which, plus the live results across everyone who's taken the test.</li>
+      </ol>
+      <div class="actions">
+        <button class="btn-primary" id="btn-start">Begin the trial</button>
+      </div>
+    </div>
+    <p class="footnote" id="resume-note" hidden></p>
+  </section>
+
+  <!-- ================= SPECIMEN ================= -->
+  <section id="screen-specimen" hidden>
+    <div class="progress-row">
+      <span class="eyebrow">SPECIMEN <span id="spec-index">1</span> / 10</span>
+      <span class="eyebrow" id="spec-category"></span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+
+    <div class="card">
+      <div class="product-head">
+        <div class="product-name" id="p-name"></div>
+        <div class="product-meta">
+          <span id="p-price"></span><span id="p-specs"></span>
+        </div>
+      </div>
+
+      <div class="exhibits">
+        <div class="exhibit" id="exhibit-a" data-slot="A"></div>
+        <div class="exhibit" id="exhibit-b" data-slot="B"></div>
+      </div>
+
+      <div class="reason-box" id="reason-box">
+        <label for="reason-input" style="font-size:13px; color:var(--ink-dim);">Why that one? (a sentence is plenty)</label>
+        <textarea id="reason-input" placeholder="e.g. the breakdown told me something the star rating couldn't&hellip;"></textarea>
+        <div class="actions">
+          <button class="btn-primary" id="btn-next">Next specimen &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SUMMARY ================= -->
+  <section id="screen-summary" hidden>
+    <h1>Trial complete.</h1>
+    <p class="lede">Here's what was actually behind A and B for each product you saw, plus how you compare to everyone else who has taken this trial.</p>
+
+    <div class="card" style="margin-bottom:20px;">
+      <h2>Your result</h2>
+      <div class="stat-row">
+        <div class="stat"><div class="stat-num" id="you-titan-count">&mdash;</div><div class="stat-label">of 10 preferred TITAN</div></div>
+        <div class="stat"><div class="stat-num" id="you-verdict">&mdash;</div><div class="stat-label">your overall lean</div></div>
+        <div class="stat"><div class="stat-num" id="save-state">&mdash;</div><div class="stat-label">saved to live panel</div></div>
+      </div>
+      <table class="recap-table">
+        <thead><tr><th>Product</th><th>You picked</th><th>That was</th><th>Your reason</th></tr></thead>
+        <tbody id="recap-body"></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Live panel result</h2>
+      <p class="lede" style="margin-bottom:14px;">Pre-committed bar (fixed before this trial ran, see <code>00_VALIDATION_CRITERIA.md</code>): pass at &ge;7 of 10 panelists overall-preferring TITAN.</p>
+      <div class="verdict-banner pending" id="verdict-banner">
+        <div class="verdict-title" id="verdict-title">Waiting for panel data&hellip;</div>
+        <div class="verdict-sub" id="verdict-sub"></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><div class="stat-num" id="panel-n">0</div><div class="stat-label">panelists completed</div></div>
+        <div class="stat"><div class="stat-num" id="panel-titan-pct">&mdash;</div><div class="stat-label">overall preferred TITAN</div></div>
+        <div class="stat"><div class="stat-num" id="panel-needed">10</div><div class="stat-label">target panel size</div></div>
+      </div>
+      <h2 style="font-size:15px; margin-top:8px;">Reasons given so far</h2>
+      <div class="reasons-list" id="reasons-list"><p class="lede">No reasons recorded yet.</p></div>
+    </div>
+
+    <div class="link-row">
+      <span style="font-size:13px; color:var(--ink-dim);">Share this exact link with the rest of your panel:</span>
+      <button class="btn-ghost" id="btn-copy">Copy link</button>
+    </div>
+    <p class="footnote" id="db-note"></p>
+  </section>
+</div>
+
+<script>
+(function(){
+  const DIM_LABELS = {
+    performance:"Performance", ux_display:"Display", battery:"Battery",
+    build_thermals:"Build", features:"Features", camera_or_creator:"Camera",
+    software_support:"Software", value:"Value"
+  };
+  const DIM_WEIGHTS = {performance:20, ux_display:15, battery:15, build_thermals:15, features:10, camera_or_creator:10, software_support:5, value:10};
+
+  const PRODUCTS = [
+    {id:"apple-macbook-air-13-m3-2024", cat:"laptop", name:"Apple MacBook Air 13-inch", price:1099,
+     specs:"M3 8-core CPU/10-core GPU · 16GB RAM · 256GB SSD · 13.6″ 60Hz IPS",
+     rating:4.7, ratingCount:1192,
+     praise:"Fast, fanless performance for everyday productivity with no thermal throttling noticed in normal use",
+     complaint:"Base 8GB RAM / 256GB storage configuration feels tight for heavier multitasking or media work",
+     titan:63.5, band:"Fair", confidence:88,
+     explanation:"Strongest on performance (85) and build thermals (82); weakest on creator capability (40) and value (39).",
+     dims:{performance:85.1, ux_display:50.0, battery:57.6, build_thermals:82.0, features:72, camera_or_creator:40.0, software_support:60.0, value:38.7}},
+
+    {id:"dell-xps-13-9340", cat:"laptop", name:"Dell XPS 13 (9340)", price:999,
+     specs:"Core Ultra 7 155H · 16GB RAM · 512GB SSD · 13.4″ 120Hz FHD+",
+     rating:4.5, ratingCount:63,
+     praise:"Sleek, ultra-lightweight, minimalist aluminum/carbon-fiber design",
+     complaint:"Very limited port selection (only two USB-C/Thunderbolt ports, no USB-A) often requires a hub",
+     titan:68.1, band:"Fair", confidence:88,
+     explanation:"Strongest on performance (85) and build thermals (82); weakest on creator capability (55) and value (46).",
+     dims:{performance:84.9, ux_display:70.0, battery:60.0, build_thermals:82.0, features:63, camera_or_creator:55.0, software_support:60.0, value:45.6}},
+
+    {id:"asus-rog-zephyrus-g14-2024-ga403", cat:"laptop", name:"ASUS ROG Zephyrus G14 (2024)", price:2199.99,
+     specs:"Ryzen 9 8945HS · RTX 4070 · 32GB RAM · 1TB SSD · 14″ 120Hz OLED",
+     rating:4.5, ratingCount:1003,
+     praise:"OLED display quality (color, contrast, 120Hz) called a standout feature",
+     complaint:"Runs very hot under sustained gaming load (reports of 85–94°C and audible fan noise)",
+     titan:72.0, band:"Good", confidence:88,
+     explanation:"Strongest on display (100) and creator capability (100) — real owner reports of 85–94°C under sustained load cost it on build/thermals (64); weakest on value (23) at this price.",
+     dims:{performance:83.8, ux_display:100, battery:66, build_thermals:64.0, features:54, camera_or_creator:100, software_support:60.0, value:23.4}},
+
+    {id:"lenovo-thinkpad-x1-carbon-gen-12", cat:"laptop", name:"Lenovo ThinkPad X1 Carbon Gen 12", price:1759.99,
+     specs:"Core Ultra 7 155U vPro · 32GB RAM · 512GB SSD · 14″ WUXGA touch",
+     rating:4.6, ratingCount:2619,
+     praise:"Widely praised keyboard and input devices, called “second to none” among business ultraportables",
+     complaint:"RAM is soldered and not user-upgradeable",
+     titan:57.5, band:"Weak", confidence:88,
+     explanation:"Strongest on build thermals (82) and performance (72); weakest on creator capability (45) and value (22).",
+     dims:{performance:71.5, ux_display:55.0, battery:50.0, build_thermals:82.0, features:54, camera_or_creator:45.0, software_support:60.0, value:22.3}},
+
+    {id:"hp-pavilion-15-eg3010nr", cat:"laptop", name:"HP Pavilion 15", price:499,
+     specs:"Core i5-1335U · 8GB RAM · 512GB SSD · 15.6″ FHD touch",
+     rating:4.7, ratingCount:3,
+     praise:"Good value for everyday office/web/media tasks at a budget price point",
+     complaint:"Some buyers of Pavilion 15 variants report reliability/quality-control issues over time",
+     titan:56.3, band:"Weak", confidence:39,
+     explanation:"Confidence in this score is low (39/100) because its benchmark had to be estimated and only 3 reviews exist for this exact configuration — treat the number with real caution. What the evidence does show: best-in-set value (70), offset by real reliability complaints reported for this Pavilion line.",
+     dims:{performance:58.4, ux_display:55.0, battery:55.0, build_thermals:62.0, features:45, camera_or_creator:43.0, software_support:60.0, value:70.1}},
+
+    {id:"apple-iphone-15-pro", cat:"phone", name:"Apple iPhone 15 Pro", price:474,
+     specs:"A17 Pro · 8GB RAM · 128GB · 6.1″ 120Hz OLED",
+     rating:4.5, ratingCount:112,
+     praise:"48MP main camera and improved night mode/portrait quality widely called one of the best on any phone",
+     complaint:"Frequent reports of the phone running noticeably hot even during light, non-intensive use",
+     titan:74.3, band:"Good", confidence:88,
+     explanation:"Strongest on performance (96) and camera (90) by a wide margin — real owner reports of it running warm even during light, everyday use cost it on build/thermals (54); weakest on value (47) at this price.",
+     dims:{performance:95.6, ux_display:85.0, battery:63.3, build_thermals:54.0, features:81, camera_or_creator:90.0, software_support:60.0, value:46.9}},
+
+    {id:"samsung-galaxy-s24-ultra", cat:"phone", name:"Samsung Galaxy S24 Ultra", price:649.99,
+     specs:"Snapdragon 8 Gen 3 · 12GB RAM · 256GB · 6.8″ 120Hz AMOLED",
+     rating:4.8, ratingCount:1869,
+     praise:"Telephoto/zoom sharpness and consistency praised, especially the 5x shots and Ultra HDR photo capture",
+     complaint:"Galaxy AI functionality criticized as overhyped relative to marketing, with some features adding lag rather than real value",
+     titan:74.5, band:"Good", confidence:88,
+     explanation:"Strongest on display (100) and performance (94), backing up its zoom-camera reputation; weakest on software polish (45) and value (35) at this price.",
+     dims:{performance:93.8, ux_display:100, battery:68.3, build_thermals:54.0, features:81, camera_or_creator:85.0, software_support:45.0, value:35.2}},
+
+    {id:"google-pixel-8", cat:"phone", name:"Google Pixel 8", price:448.34,
+     specs:"Tensor G3 · 8GB RAM · 128GB · 6.2″ 120Hz OLED",
+     rating:4.6, ratingCount:1147,
+     praise:"Camera quality, especially low-light/Night Sight performance, frequently called among the best in class",
+     complaint:"Mixed battery-life reports; some users say it barely lasts a full day under heavier use",
+     titan:62.5, band:"Fair", confidence:88,
+     explanation:"Strongest on display (85) and features (81) for the size; weakest on the Tensor chip's raw performance (56) and battery under heavier use (51).",
+     dims:{performance:55.7, ux_display:85.0, battery:51.3, build_thermals:54.0, features:81, camera_or_creator:75.0, software_support:60.0, value:42.5}},
+
+    {id:"oneplus-12", cat:"phone", name:"OnePlus 12", price:649.99,
+     specs:"Snapdragon 8 Gen 3 · 12GB RAM · 256GB · 6.82″ 120Hz AMOLED",
+     rating:4.7, ratingCount:53,
+     praise:"Stills camera performance (Hasselblad tuning) called universally great, particularly in low light",
+     complaint:"Ultra-wide camera and daylight video quality seen as noticeably weaker than the main camera",
+     titan:76.9, band:"Good", confidence:88,
+     explanation:"Strongest on display (100) and features (81) — no single weak dimension, the most balanced phone in this set; the one catch is value (36) at this price versus flagship rivals.",
+     dims:{performance:79.4, ux_display:100, battery:78.3, build_thermals:72.0, features:81, camera_or_creator:80.0, software_support:75.0, value:35.8}},
+
+    {id:"xiaomi-redmi-note-13-pro-plus", cat:"phone", name:"Xiaomi Redmi Note 13 Pro+", price:302.58,
+     specs:"Dimensity 7200-Ultra · 8GB RAM · 256GB · 6.67″ 120Hz AMOLED",
+     rating:4.3, ratingCount:19713,
+     praise:"Design, build quality and 6.67-inch AMOLED display frequently called flagship-like for the price",
+     complaint:"Heavy bloatware out of the box, with many pre-installed third-party apps, games and ads users must manually remove",
+     titan:69.6, band:"Fair", confidence:73,
+     explanation:"By far the best value in this set (69), with a display and camera that punch above its price — weakest on the Dimensity chip's raw performance (41) and bloatware-driven software score (35). Confidence is 73/100 since its benchmark had to be estimated from a related chip.",
+     dims:{performance:41.0, ux_display:100, battery:78.3, build_thermals:72.0, features:72, camera_or_creator:80.0, software_support:35.0, value:69.4}},
+  ];
+
+  const PASS_TARGET = 10;
+  const PASS_THRESHOLD = 7;
+
+  // ---- persistence ----
+  function uuid(){
+    if (crypto.randomUUID) return crypto.randomUUID();
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c=>{
+      const r = Math.random()*16|0, v = c==='x'?r:(r&0x3|0x8); return v.toString(16);
+    });
+  }
+  const LS_KEY = 'titan_blind_trial_v1';
+  function loadState(){
+    try{
+      const raw = localStorage.getItem(LS_KEY);
+      if (raw) return JSON.parse(raw);
+    }catch(e){}
+    const seedMap = PRODUCTS.map(()=> Math.random() < 0.5); // true => A is TITAN
+    return {voterId: uuid(), index:0, picks:[], seedMap, completed:false};
+  }
+  function saveState(s){
+    try{ localStorage.setItem(LS_KEY, JSON.stringify(s)); }catch(e){}
+  }
+  let state = loadState();
+
+  // ---- db capability ----
+  let db = null, userNs = null;
+  (async function initDb(){
+    try{
+      if (window.claude && window.claude.use){
+        db = await window.claude.use('db');
+      }
+    }catch(e){ db = null; }
+    document.getElementById('db-note').textContent = db
+      ? 'Your responses are saved to the shared live panel for this artifact.'
+      : 'Live panel saving isn’t available in this view (sign-in to Claude required). Your own result below still stands — report it to whoever is running this trial.';
+    if (db) subscribeAggregate();
+  })();
+
+  // ---- screens ----
+  const screens = {
+    intro: document.getElementById('screen-intro'),
+    specimen: document.getElementById('screen-specimen'),
+    summary: document.getElementById('screen-summary'),
+  };
+  function show(name){
+    Object.values(screens).forEach(s=>s.hidden = true);
+    screens[name].hidden = false;
+  }
+
+  if (state.completed){
+    document.getElementById('resume-note').hidden = false;
+    document.getElementById('resume-note').textContent = 'You already completed this trial in this browser. Starting over will show your saved result.';
+  }
+
+  document.getElementById('btn-start').addEventListener('click', ()=>{
+    if (state.completed){ renderSummary(); show('summary'); return; }
+    renderSpecimen();
+    show('specimen');
+  });
+
+  // ---- specimen rendering ----
+  function dimBarsHtml(dims){
+    return Object.keys(DIM_LABELS).map(k=>{
+      const v = dims[k];
+      return `<div class="dim-row">
+        <span class="dim-label">${DIM_LABELS[k]}</span>
+        <span class="dim-track"><span class="dim-fill" style="width:${v}%"></span></span>
+        <span class="dim-val">${Math.round(v)}</span>
+      </div>`;
+    }).join('');
+  }
+
+  function exhibitHtml(system, product, slot){
+    if (system === 'titan'){
+      return `
+        <div class="exhibit-label">Rating System ${slot}</div>
+        <div class="exhibit-readout">${product.titan}<span style="font-size:15px;color:var(--ink-dim)">/100</span></div>
+        <div class="exhibit-sub">${product.band} &middot; Confidence ${product.confidence}/100</div>
+        <div class="exhibit-blurb">${product.explanation}</div>
+        <details><summary>Show dimension breakdown</summary><div class="dims" style="margin-top:8px;">${dimBarsHtml(product.dims)}</div></details>
+        <button class="btn-primary trust-btn" data-slot="${slot}">I'd trust this more</button>`;
+    }
+    return `
+      <div class="exhibit-label">Rating System ${slot}</div>
+      <div class="exhibit-readout">${product.rating}<span style="font-size:15px;color:var(--ink-dim)"> / 5</span></div>
+      <div class="exhibit-sub">${product.ratingCount.toLocaleString()} online reviews</div>
+      <div class="exhibit-blurb"><b>Reviewers say:</b> &ldquo;${product.praise}&rdquo;</div>
+      <div class="exhibit-blurb"><b>Common complaint:</b> &ldquo;${product.complaint}&rdquo;</div>
+      <button class="btn-primary trust-btn" data-slot="${slot}">I'd trust this more</button>`;
+  }
+
+  function renderSpecimen(){
+    const i = state.index;
+    const product = PRODUCTS[i];
+    const aIsTitan = state.seedMap[i];
+
+    document.getElementById('spec-index').textContent = i+1;
+    document.getElementById('spec-category').textContent = product.cat.toUpperCase();
+    document.getElementById('progress-fill').style.width = ((i)/PRODUCTS.length*100)+'%';
+
+    document.getElementById('p-name').textContent = product.name;
+    document.getElementById('p-price').textContent = '$' + product.price.toLocaleString(undefined,{maximumFractionDigits:0});
+    document.getElementById('p-specs').textContent = product.specs;
+
+    const exA = document.getElementById('exhibit-a');
+    const exB = document.getElementById('exhibit-b');
+    exA.className = 'exhibit'; exB.className = 'exhibit';
+    exA.innerHTML = exhibitHtml(aIsTitan ? 'titan':'online', product, 'A');
+    exB.innerHTML = exhibitHtml(aIsTitan ? 'online':'titan', product, 'B');
+
+    document.getElementById('reason-box').classList.remove('show');
+    document.getElementById('reason-input').value = '';
+
+    let chosenSlot = null;
+    [exA, exB].forEach(ex=>{
+      ex.querySelector('.trust-btn').addEventListener('click', ()=>{
+        chosenSlot = ex.dataset.slot;
+        exA.classList.toggle('chosen', chosenSlot==='A');
+        exB.classList.toggle('chosen', chosenSlot==='B');
+        document.getElementById('reason-box').classList.add('show');
+        document.getElementById('reason-input').focus();
+      });
+    });
+
+    document.getElementById('btn-next').onclick = ()=>{
+      if (!chosenSlot) return;
+      const chosenSystem = (chosenSlot === 'A') === aIsTitan ? 'titan' : 'online';
+      state.picks[i] = {
+        productId: product.id,
+        aIsTitan,
+        chosenSlot,
+        chosenSystem,
+        reason: document.getElementById('reason-input').value.trim(),
+      };
+      state.index = i+1;
+      saveState(state);
+      if (state.index >= PRODUCTS.length){
+        finish();
+      } else {
+        renderSpecimen();
+      }
+    };
+  }
+
+  async function finish(){
+    state.completed = true;
+    saveState(state);
+    const titanCount = state.picks.filter(p=>p.chosenSystem==='titan').length;
+    const overallPrefersTitan = titanCount >= 6; // majority of 10
+    if (db){
+      try{
+        await db.doc('responses/' + state.voterId).set({
+          voterId: state.voterId,
+          completedAt: new Date().toISOString(),
+          titanCount,
+          overallPrefersTitan,
+          picks: state.picks,
+        });
+      }catch(e){ /* fall through to local-only display */ }
+    }
+    renderSummary();
+    show('summary');
+  }
+
+  function renderSummary(){
+    const titanCount = state.picks.filter(p=>p.chosenSystem==='titan').length;
+    document.getElementById('you-titan-count').textContent = titanCount;
+    document.getElementById('you-verdict').textContent = titanCount >= 6 ? 'TITAN' : 'Online rating';
+    document.getElementById('save-state').textContent = db ? 'Yes' : 'No';
+
+    const body = document.getElementById('recap-body');
+    body.innerHTML = state.picks.map(p=>{
+      const product = PRODUCTS.find(x=>x.id===p.productId);
+      return `<tr>
+        <td>${product.name}</td>
+        <td><span class="pill ${p.chosenSystem}">${p.chosenSystem === 'titan' ? 'TITAN' : 'Online'}</span></td>
+        <td>Slot ${p.chosenSlot}</td>
+        <td>${p.reason ? p.reason : '<span style="color:var(--ink-dim)">(no reason given)</span>'}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  function renderAggregate(responses){
+    const n = responses.length;
+    const titanPreferring = responses.filter(r=>r.overallPrefersTitan).length;
+    document.getElementById('panel-n').textContent = n;
+    document.getElementById('panel-titan-pct').textContent = n ? Math.round(titanPreferring/n*100)+'%' : '—';
+    document.getElementById('panel-needed').textContent = PASS_TARGET;
+
+    const banner = document.getElementById('verdict-banner');
+    const title = document.getElementById('verdict-title');
+    const sub = document.getElementById('verdict-sub');
+    banner.className = 'verdict-banner';
+    if (n < PASS_TARGET){
+      banner.classList.add('pending');
+      title.textContent = `Pending — ${n} of ${PASS_TARGET} panelists so far`;
+      sub.textContent = `Currently ${titanPreferring} of ${n} lean TITAN. Needs ${PASS_TARGET} completed panelists to call PASS/FAIL.`;
+    } else if (titanPreferring >= PASS_THRESHOLD){
+      banner.classList.add('pass');
+      title.textContent = `PASS — ${titanPreferring} of ${n} preferred TITAN`;
+      sub.textContent = `Meets the pre-committed ≥${PASS_THRESHOLD}/10 bar. Methodology is validated — see 00_VALIDATION_CRITERIA.md for what happens next.`;
+    } else {
+      banner.classList.add('fail');
+      title.textContent = `FAIL — only ${titanPreferring} of ${n} preferred TITAN`;
+      sub.textContent = `Below the pre-committed ≥${PASS_THRESHOLD}/10 bar. The scoring formula needs revision before anything else is built.`;
+    }
+
+    const reasonsEl = document.getElementById('reasons-list');
+    const allReasons = [];
+    responses.forEach(r=> (r.picks||[]).forEach(p=>{
+      if (p.reason) allReasons.push({system:p.chosenSystem, reason:p.reason});
+    }));
+    reasonsEl.innerHTML = allReasons.length
+      ? allReasons.slice(0,60).map(r=>`<div class="reason-item"><b>${r.system==='titan'?'TITAN':'Online'}:</b> ${r.reason}</div>`).join('')
+      : '<p class="lede">No reasons recorded yet.</p>';
+  }
+
+  function subscribeAggregate(){
+    try{
+      db.collection('responses').onSnapshot(snap=>{
+        const responses = snap.docs.map(d=>d.data());
+        renderAggregate(responses);
+      }, err=>{ /* leave pending state as-is */ });
+    }catch(e){}
+  }
+
+  document.getElementById('btn-copy').addEventListener('click', async ()=>{
+    try{
+      await navigator.clipboard.writeText(location.href);
+      const b = document.getElementById('btn-copy');
+      const old = b.textContent; b.textContent = 'Copied';
+      setTimeout(()=>b.textContent = old, 1400);
+    }catch(e){}
+  });
+
+  if (state.completed){
+    // will render on Begin click per resume-note flow above
+  }
+})();
+</script>

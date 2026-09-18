@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.bhphotovideo.com)",
+      "WebFetch(domain:www.notebookcheck.net)",
+      "WebFetch(domain:www.storagereview.com)",
+      "WebFetch(domain:www.geekbench.com)",
+      "WebFetch(domain:www.kimovil.com)",
+      "WebFetch(domain:www.walmart.com)"
+    ]
+  }
+}

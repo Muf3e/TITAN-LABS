@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TITAN Product Intelligence</string>
+    <string name="app_logo_cd">TITAN Product Intelligence logo</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_saved">Saved</string>
+    <string name="nav_compare">Compare</string>
+    <string name="nav_more">More</string>
+    <string name="nav_account">Account</string>
+
+    <string name="home_search_hint">Search laptops or smartphones by name or model</string>
+    <string name="home_search_cd">Open search</string>
+    <string name="home_categories_title">Categories</string>
+    <string name="home_category_laptops">Laptops</string>
+    <string name="home_category_smartphones">Smartphones</string>
+    <string name="home_recent_title">Recent searches</string>
+    <string name="home_recent_clear_cd">Clear recent searches</string>
+    <string name="home_shortcuts_title">Shortcuts</string>
+    <string name="home_shortcut_saved">Saved products</string>
+    <string name="home_shortcut_alerts">Price alerts</string>
+    <string name="home_trending_title">Trending now</string>
+    <string name="home_trending_caption">Sample products with the most online review activity.</string>
+    <string name="home_best_value_title">Best value picks</string>
+    <string name="home_best_value_caption">Sample products with the strongest TITAN Score for their price.</string>
+    <string name="home_popular_comparisons_title">Popular comparisons</string>
+    <string name="home_popular_comparisons_caption">Sample product pairs shoppers often compare.</string>
+    <string name="home_popular_comparison_cta">Compare these</string>
+    <string name="home_popular_comparison_vs">%1$s vs %2$s</string>
+
+    <string name="search_hint">Search by name, model number or SKU</string>
+    <string name="search_filter_cd">Open filters</string>
+    <string name="search_results_count">%1$d sample results</string>
+    <string name="search_titan_score_label">TITAN Score</string>
+    <string name="search_online_rating_label">Online rating</string>
+    <string name="search_confidence_label">Evidence confidence</string>
+    <string name="search_freshness_label">Data freshness</string>
+    <string name="search_retailers_count">%1$d retailers</string>
+
+    <string name="product_image_placeholder_cd">%1$s, sample image not available</string>
+    <string name="product_image_caption">Sample image · %1$s</string>
+
+    <string name="compare_checkbox_label">Compare</string>
+    <string name="compare_checkbox_add_cd">Add %1$s to compare</string>
+    <string name="compare_checkbox_remove_cd">Remove %1$s from compare</string>
+    <string name="compare_checkbox_full_cd">Compare list is full. Remove an item to add %1$s.</string>
+    <string name="compare_max_reached">Compare list is full (max 4). Remove one to add another.</string>
+
+    <string name="product_detail_back_cd">Back</string>
+    <string name="product_detail_not_found_title">Product not found</string>
+    <string name="product_detail_not_found_body">This sample product is no longer available. Go back and search again.</string>
+    <string name="product_detail_titan_score_title">TITAN Score</string>
+    <string name="product_detail_titan_score_caption">TITAN\'s evidence-based evaluation of this product, out of 100.</string>
+    <string name="product_detail_online_rating_title">Online rating</string>
+    <string name="product_detail_online_rating_caption">Aggregated rating from online retailers and reviews — separate from the TITAN Score.</string>
+    <string name="product_detail_strengths_title">Strengths</string>
+    <string name="product_detail_weaknesses_title">Weaknesses</string>
+    <string name="product_detail_offers_title">Sample offers</string>
+    <string name="product_detail_offers_caption">Illustrative sample prices only — not live prices.</string>
+    <string name="product_detail_no_offers">No sample offers available.</string>
+    <string name="product_detail_offer_buy_now">Buy now (sample)</string>
+    <string name="product_detail_offer_buy_now_cd">Buy %1$s from %2$s (sample link)</string>
+    <string name="product_detail_specs_title">Essential specs</string>
+    <string name="product_detail_benchmarks_title">Benchmark summary</string>
+    <string name="product_detail_benchmarks_caption">Sample benchmark results, illustrative only.</string>
+    <string name="product_detail_benchmark_percentile">Better than %1$d%% of tested devices (sample)</string>
+    <string name="product_detail_benchmark_source">Source: %1$s · %2$s</string>
+    <string name="product_detail_review_themes_title">Review themes</string>
+    <string name="product_detail_review_themes_caption">Common themes from sample review data.</string>
+    <string name="product_detail_external_reviews_title">External reviews</string>
+    <string name="product_detail_external_reviews_caption">TITAN-authored summaries of third-party reviews (sample) — not quoted excerpts.</string>
+    <string name="product_detail_external_review_read_source">Read source (sample)</string>
+    <string name="product_detail_external_review_read_source_cd">Open %1$s in browser (sample link)</string>
+    <string name="product_detail_alternatives_title">Alternatives</string>
+    <string name="external_link_no_app">No app available to open this link.</string>
+
+    <string name="compare_empty_title">Nothing to compare yet</string>
+    <string name="compare_empty_body">Add two or more products from Search to see a side-by-side breakdown of TITAN Score, price, specifications and value.</string>
+    <string name="compare_empty_cta">Go to Search</string>
+    <string name="compare_title">Compare</string>
+    <string name="compare_count">%1$d of %2$d selected</string>
+    <string name="compare_clear_all">Clear all</string>
+    <string name="compare_remove_cd">Remove %1$s from compare</string>
+    <string name="compare_add_more">Add more from Search</string>
+    <string name="compare_field_price">Price</string>
+    <string name="compare_field_score">TITAN Score</string>
+    <string name="compare_field_confidence">Evidence confidence</string>
+    <string name="compare_field_rating">Online rating</string>
+    <string name="compare_field_availability">Availability</string>
+    <string name="compare_field_freshness">Data freshness</string>
+    <string name="compare_field_pro">Top strength</string>
+    <string name="compare_field_con">Top watch-out</string>
+
+    <string name="saved_empty_title">No saved products</string>
+    <string name="saved_empty_body">Save products while browsing to track price changes and revisit them later. Saved items and alerts sync only if you choose to sign in.</string>
+    <string name="saved_empty_cta">Browse Search</string>
+
+    <string name="more_section_account">Account</string>
+    <string name="more_account_signed_out">Not signed in</string>
+    <string name="more_account_body">Sign in to sync saved products, alerts and search history across devices. Browsing does not require an account.</string>
+    <string name="more_account_signin">Sign in (coming soon)</string>
+    <string name="more_section_preferences">Preferences</string>
+    <string name="more_pref_alerts">Price and match alerts</string>
+    <string name="more_pref_alerts_body">Local toggle only — alerts are not delivered yet.</string>
+    <string name="more_pref_location">Location</string>
+    <string name="more_pref_location_value">Not set — prices show without delivery estimates</string>
+    <string name="more_section_about">About</string>
+    <string name="more_about_version">Version 0.1.0 · Sprint 1 local shell</string>
+    <string name="more_about_data">This build uses local sample data only. No live product data is connected yet.</string>
+    <string name="more_shortcut_search">Browse Search</string>
+
+    <string name="state_loading">Loading</string>
+    <string name="state_error_title">Something went wrong</string>
+    <string name="state_error_retry">Retry</string>
+    <string name="state_empty_generic_title">Nothing here yet</string>
+
+    <string name="sample_data_badge">Sample data</string>
+</resources>

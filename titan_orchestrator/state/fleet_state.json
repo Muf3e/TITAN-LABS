@@ -1,0 +1,120 @@
+{
+  "titan_control_tower": {
+    "name": "titan_control_tower",
+    "display_title": "\ud83c\udff0 Control Tower & Alignment Manager",
+    "role": "Master Orchestrator & Project Director",
+    "prompt_file": "control-tower.agent.md",
+    "state": "IDLE",
+    "current_task": null,
+    "last_active": "2026-09-18T11:11:28.626108",
+    "prompt_version": 1,
+    "total_tasks_completed": 0,
+    "recent_logs": []
+  },
+  "titan_app_developer": {
+    "name": "titan_app_developer",
+    "display_title": "\ud83d\udcf1 Android App Developer",
+    "role": "Native Compose & Kotlin Architecture Engineer",
+    "prompt_file": "app-developer.agent.md",
+    "state": "IDLE",
+    "current_task": null,
+    "last_active": "2026-09-18T11:11:28.626108",
+    "prompt_version": 1,
+    "total_tasks_completed": 0,
+    "recent_logs": []
+  },
+  "titan_android_studio_bridge": {
+    "name": "titan_android_studio_bridge",
+    "display_title": "\ud83c\udf09 Android Studio Bridge",
+    "role": "ADB Bridge, Deployer & Runtime Controller",
+    "prompt_file": "android-studio-bridge.agent.md",
+    "state": "IDLE",
+    "current_task": null,
+    "last_active": "2026-09-18T11:11:28.626108",
+    "prompt_version": 1,
+    "total_tasks_completed": 4,
+    "recent_logs": [
+      "[EXECUTING] Checking emulator-5554 connection"
+    ]
+  },
+  "titan_web_developer": {
+    "name": "titan_web_developer",
+    "display_title": "\ud83c\udf10 Web Platform Developer",
+    "role": "React / Next.js / TypeScript Web Architect",
+    "prompt_file": "web-developer.agent.md",
+    "state": "IDLE",
+    "current_task": null,
+    "last_active": "2026-09-18T11:11:28.626108",
+    "prompt_version": 1,
+    "total_tasks_completed": 0,
+    "recent_logs": []
+  },
+  "titan_data_scraper": {
+    "name": "titan_data_scraper",
+    "display_title": "\ud83d\udd77\ufe0f Data Scraper & Harvester",
+    "role": "Hardware Spec & Price Tracking Ingestion Specialist",
+    "prompt_file": "data-scraper.agent.md",
+    "state": "IDLE",
+    "current_task": null,
+    "last_active": "2026-09-18T11:11:28.626108",
+    "prompt_version": 1,
+    "total_tasks_completed": 3,
+    "recent_logs": [
+      "[EXECUTING] Scraping Amazon, Flipkart, Croma & synthesizing benchmark scores"
+    ]
+  },
+  "titan_testing_agent": {
+    "name": "titan_testing_agent",
+    "display_title": "\ud83e\uddea Testing & QA Specialist",
+    "role": "Automated Unit, E2E & Accessibility Verifier",
+    "prompt_file": "testing-agent.agent.md",
+    "state": "IDLE",
+    "current_task": null,
+    "last_active": "2026-09-18T11:11:28.626108",
+    "prompt_version": 1,
+    "total_tasks_completed": 7,
+    "recent_logs": [
+      "[EXECUTING] Running gradlew testDebugUnitTest"
+    ]
+  },
+  "titan_architecture_evolution_agent": {
+    "name": "titan_architecture_evolution_agent",
+    "display_title": "\ud83c\udfd7\ufe0f Architecture Evolution Specialist",
+    "role": "Infrastructure Modernization & Technical Debt Guardian",
+    "prompt_file": "architecture-evolution-agent.agent.md",
+    "state": "IDLE",
+    "current_task": null,
+    "last_active": "2026-09-18T11:11:28.626108",
+    "prompt_version": 1,
+    "total_tasks_completed": 7,
+    "recent_logs": [
+      "[ANALYZING] Scanning Gradle build scripts & Kotlin architecture"
+    ]
+  },
+  "titan_evaluator_auditor_agent": {
+    "name": "titan_evaluator_auditor_agent",
+    "display_title": "\ud83e\uddd0 Evaluator & Compliance Auditor",
+    "role": "Specification Compliance & Scoring Engine Auditor",
+    "prompt_file": "evaluator-auditor-agent.agent.md",
+    "state": "IDLE",
+    "current_task": null,
+    "last_active": "2026-09-18T11:11:28.626108",
+    "prompt_version": 1,
+    "total_tasks_completed": 4,
+    "recent_logs": []
+  },
+  "titan_prompt_optimizer_agent": {
+    "name": "titan_prompt_optimizer_agent",
+    "display_title": "\u26a1 Prompt & Capability Optimizer",
+    "role": "Meta-Learning & Instruction Self-Improvement Engine",
+    "prompt_file": "prompt-optimizer-agent.agent.md",
+    "state": "IDLE",
+    "current_task": null,
+    "last_active": "2026-09-18T11:11:28.626108",
+    "prompt_version": 1,
+    "total_tasks_completed": 6,
+    "recent_logs": [
+      "[ANALYZING] Analyzing compiler warnings & runtime metrics"
+    ]
+  }
+}

@@ -1,0 +1,1074 @@
+{
+  "summary": "AI-simulated proxy panel (NOT a substitute for the real human panel) testing TITAN Score vs star rating preference across 10 real products",
+  "agentCount": 12,
+  "logs": [],
+  "result": {
+    "personas": [
+      {
+        "name": "The Signal-Chaser",
+        "archetype": "Spec-Sheet Enthusiast / Tech Innovator",
+        "description": "Follows leaked benchmarks, chipset roadmaps, and display/battery teardown data months before launch, and will pay a premium to own the newest silicon first. Trusts raw numbers (GeekBench scores, nit brightness, mAh, DxOMark) over marketing copy or brand story, and treats the purchase itself as a hobby, not just a need. Comfortable with early bugs or a shorter software-maturity curve in exchange for being first.",
+        "groundedIn": "Rogers' Diffusion of Innovation — the 'Innovators' adopter segment (venturesome, risk-tolerant, technically driven)"
+      },
+      {
+        "name": "The Opinion-Leader Adopter",
+        "archetype": "Early Adopter / Social Trendsetter",
+        "description": "Waits just long enough for the first wave of credible reviews, then buys so they can be the one in their friend group or office who already has it. Cares about being seen with the newest design and about being the trusted person others ask 'should I get this?' — status and social proof matter as much as the hardware itself. Reads a handful of respected reviewers rather than raw spec sheets, and their endorsement pulls slower-moving friends toward the same purchase.",
+        "groundedIn": "Rogers' Diffusion of Innovation — 'Early Adopters' (opinion leaders whose endorsement drives peer adoption)"
+      },
+      {
+        "name": "The Deliberate Upgrader",
+        "archetype": "Mainstream Pragmatist (Early Majority)",
+        "description": "Only replaces a phone or laptop when the old one is clearly falling behind, and shops by cross-checking several reviews, aggregate ratings, and a friend's experience before committing — never the first in line, never the last. Wants proven reliability and a 'safe, no-regret' choice more than novelty, and will pay a bit more for a model with a long track record over an untested new entrant. Balances trusting data (ratings, comparison charts) with trusting word of mouth from people who already own it.",
+        "groundedIn": "Rogers' Diffusion of Innovation — 'Early Majority' (deliberate adopters who want proven value and reasonable risk)"
+      },
+      {
+        "name": "The Value Maximizer",
+        "archetype": "Price/Deal-Driven Buyer",
+        "description": "Builds a spreadsheet-like mental model of price-per-spec, actively hunts sales, cashback, carrier promos, and open-box or refurbished listings, and is happy to buy a less prestigious brand (Motorola, Xiaomi, a prior-gen flagship) if the value math is better. Almost entirely numbers-driven — comparison sites, price-history trackers, benchmark-per-dollar — and brand story or design language matters far less than total cost. Will delay a purchase for weeks to catch a sale cycle.",
+        "groundedIn": "Consumer-electronics price-sensitivity segmentation (NPD/Circana purchase-driver studies) and Bain's 'functional' value tier (cost/time savings)"
+      },
+      {
+        "name": "The Ecosystem Loyalist",
+        "archetype": "Brand-Loyal Upgrader",
+        "description": "Has been in one ecosystem (Apple, Samsung) for years and upgrades on an almost automatic cycle — new phone every 2–3 years, laptop that 'just talks to' their other devices via AirDrop/Handoff or Galaxy/Windows continuity. Barely comparison-shops competitors because switching costs (apps, photos, accessories, muscle memory) feel high, and trusts the brand's reputation over any single spec. Price-sensitive only within their chosen ecosystem, not across it.",
+        "groundedIn": "Ecosystem lock-in / switching-cost research in tech retail, and VALS 'Achievers' (success-oriented, status- and brand-conscious)"
+      },
+      {
+        "name": "The 'Just Needs to Work' Buyer",
+        "archetype": "Non-Technical Pragmatist",
+        "description": "Doesn't know or care what a chipset is — they need something to call family, check email, and browse, and they buy when the current device breaks or a family member says it's time. Decisions are trust- and story-based: a relative's recommendation, an in-store associate's suggestion, or 'my last one from this brand lasted years' carries more weight than any spec comparison. Low technical literacy means simplicity, a known brand name, and someone else's reassurance matter more than performance headroom.",
+        "groundedIn": "Jobs-to-Be-Done framework (Christensen) — buyer 'hires' the device to accomplish a life task, not to own a spec sheet"
+      },
+      {
+        "name": "The Gift-Giver",
+        "archetype": "Proxy Purchaser (Gift Buyer)",
+        "description": "Isn't buying for themselves, so the calculus shifts from personal fit to safety and thoughtfulness — a well-known brand, strong reviews, and a fixed gift budget matter more than niche features they'll never use themselves. Often searches 'best gift phone/laptop under $X' lists or asks the recipient's family, and leans on gift guides and return policies to hedge against a wrong choice. Emotional payoff (the recipient's reaction) outweighs technical optimization.",
+        "groundedIn": "NRF holiday/gift-purchase research on gift-giver behavior, and Bain's Elements of Value 'emotional/social-impact' tiers"
+      },
+      {
+        "name": "The Budget Student",
+        "archetype": "First-Time Independent / Student Buyer",
+        "description": "Tight, often self-financed or installment-plan budget, but highly online — discovers must-have features (camera, battery life for all-day class/campus use) through TikTok and Instagram creators rather than traditional tech press. Trades in an old device or buys previous-gen models to stretch money further, and weighs social currency (a good camera for content, a laptop that looks good in class) alongside pure function. Trusts creator reviews and peer consensus over corporate marketing.",
+        "groundedIn": "Deloitte Gen Z/mobile-consumer research and NRF back-to-school shopping segmentation (budget-constrained, social-media-led discovery)"
+      },
+      {
+        "name": "The Procurement-Minded Professional",
+        "archetype": "Business/Enterprise Buyer",
+        "description": "Often not spending their own money — the purchase is expensed or IT-procured — so the decision weighs total cost of ownership, warranty/support SLAs, security compliance, and compatibility with existing company software/fleet over flashy specs or design. Acts across multiple 'buyer' roles at once: economic (approves budget), technical (checks it meets IT/security requirements), and user (needs it to actually be pleasant to use daily). Trusts vendor support contracts and enterprise review benchmarks over consumer marketing.",
+        "groundedIn": "Miller Heiman/Strategic Selling buyer-role framework (Economic Buyer, Technical Buyer, User Buyer)"
+      },
+      {
+        "name": "The Reluctant Replacer",
+        "archetype": "Late-Majority / Laggard Loyalist",
+        "description": "Keeps a device until it physically fails, the battery is unusable, or software support ends — never upgrades for a new feature alone, and is openly skeptical of hype cycles and 'new for the sake of new.' When forced to replace, sticks to the same brand and near-identical model to avoid relearning anything, and trusts a family member or trusted friend's direct experience far more than any ad, review site, or spec sheet. Highly risk- and change-averse, prioritizing familiarity above all else.",
+        "groundedIn": "Rogers' Diffusion of Innovation — 'Late Majority/Laggards' (skeptical, risk-averse, adopt only under necessity or peer pressure)"
+      }
+    ],
+    "sessions": [
+      {
+        "personaName": "The Signal-Chaser",
+        "archetype": "Spec-Sheet Enthusiast / Tech Innovator",
+        "picks": [
+          {
+            "productId": "apple-macbook-air-13-m3-2024",
+            "productName": "Apple MacBook Air 13-inch",
+            "chosenSystem": "titan",
+            "reason": "Give me the M3's actual numbers, not 'no thermal throttling noticed.' Performance 85 tells me what the 8-core CPU is doing, and value 39 nails exactly why 8GB/256GB base config is the real story here, not a vague complaint quote."
+          },
+          {
+            "productId": "dell-xps-13-9340",
+            "productName": "Dell XPS 13 (9340)",
+            "chosenSystem": "titan",
+            "reason": "63 reviews gushing about the chassis is just design-blog talk. I want to know what Meteor Lake actually delivers - performance 85 and battery 60 tell me more about the 155H than 'sleek and minimalist' ever will."
+          },
+          {
+            "productId": "asus-rog-zephyrus-g14-2024-ga403",
+            "productName": "ASUS ROG Zephyrus G14 (2024)",
+            "chosenSystem": "titan",
+            "reason": "I already know this has an RTX 4070 and OLED panel from the spec sheet - what I need is the thermal reality check. build/thermals 64 and value 23 quantify the '85-94C under load' story way better than a star-rated anecdote, and creator 100 confirms the OLED is genuinely top-tier, not just hype."
+          },
+          {
+            "productId": "lenovo-thinkpad-x1-carbon-gen-12",
+            "productName": "Lenovo ThinkPad X1 Carbon Gen 12",
+            "chosenSystem": "titan",
+            "reason": "Keyboard feel is not a spec I care about. Performance 72 for a Core Ultra 7 155U vPro and battery 50 are the numbers that actually tell me if this thing is worth $1,760 - and value 22 confirms my suspicion that business ultraportables overcharge for branding."
+          },
+          {
+            "productId": "hp-pavilion-15-eg3010nr",
+            "productName": "HP Pavilion 15",
+            "chosenSystem": "titan",
+            "reason": "4.7/5 from THREE reviews is statistical noise, not signal - I wouldn't trust that sample size for anything. At least the 56.3 score is honest that its own confidence is only 39, and it still hands me real dimension numbers (performance 58, value 70) instead of pretending three reviewers represent the market."
+          },
+          {
+            "productId": "apple-iphone-15-pro",
+            "productName": "Apple iPhone 15 Pro",
+            "chosenSystem": "titan",
+            "reason": "Performance 96 lines up with everything I've seen in A17 Pro Geekbench leaks, so this score checks out against real silicon data. And build/thermals 54 quantifies the 'runs hot even idle' complaint instead of leaving it as a forum anecdote."
+          },
+          {
+            "productId": "samsung-galaxy-s24-ultra",
+            "productName": "Samsung Galaxy S24 Ultra",
+            "chosenSystem": "titan",
+            "reason": "Performance 94 and display 100 track exactly with what I'd expect from Snapdragon 8 Gen 3 benchmarks and the AMOLED panel specs. Software support 45 is the useful number here - it quantifies the Galaxy AI bloat complaint instead of just calling it 'overhyped.'"
+          },
+          {
+            "productId": "google-pixel-8",
+            "productName": "Google Pixel 8",
+            "chosenSystem": "titan",
+            "reason": "Tensor G3 has never benchmarked well against Snapdragon or A17 Pro, and performance 56 reflects that reality - the star rating is basically a camera-software popularity contest that glosses over the chip being the weak link. This is the score that actually respects the silicon data."
+          },
+          {
+            "productId": "oneplus-12",
+            "productName": "OnePlus 12",
+            "chosenSystem": "titan",
+            "reason": "No single weak dimension on a Snapdragon 8 Gen 3 phone with 100W charging matches what I'd expect from the chipset roadmap - battery 78 and performance 79 are the kind of cross-checkable numbers I actually care about, not a 53-review camera anecdote."
+          },
+          {
+            "productId": "xiaomi-redmi-note-13-pro-plus",
+            "productName": "Xiaomi Redmi Note 13 Pro+",
+            "chosenSystem": "titan",
+            "reason": "Performance 41 is the number that matters to me as a chipset watcher - Dimensity 7200-Ultra is midrange silicon no matter how flagship the AMOLED looks, and this score doesn't let the pretty screen hide that. 19,713 reviews complaining about bloatware is a software gripe I can fix in ten minutes; it doesn't change what the chip can actually do."
+          }
+        ],
+        "titanCount": 10,
+        "overallPrefersTitan": true
+      },
+      {
+        "personaName": "The Opinion-Leader Adopter",
+        "archetype": "Early Adopter / Social Trendsetter",
+        "picks": [
+          {
+            "productId": "apple-macbook-air-13-m3-2024",
+            "productName": "Apple MacBook Air 13-inch",
+            "chosenSystem": "online",
+            "reason": "1,192 people saying it's fast and fanless with no throttling in real use is exactly the kind of consensus she quotes when someone asks 'is the MacBook Air worth it?' Docking it to a 'Fair' 63.5 over a camera/creator dimension nobody buying an Air even cares about just makes the scoring system look out of touch, not the laptop."
+          },
+          {
+            "productId": "dell-xps-13-9340",
+            "productName": "Dell XPS 13 (9340)",
+            "chosenSystem": "online",
+            "reason": "The 'sleek, ultra-lightweight, minimalist aluminum/carbon-fiber' line is the exact bragging-rights detail she repeats when friends ask about the new XPS - a 68.1 score can't tell anyone whether it looks like the newest thing on the block."
+          },
+          {
+            "productId": "asus-rog-zephyrus-g14-2024-ga403",
+            "productName": "ASUS ROG Zephyrus G14 (2024)",
+            "chosenSystem": "online",
+            "reason": "1,003 reviewers gushing over the OLED screen is the 'everyone's saying this thing is gorgeous' social proof she needs before recommending a $2,200 laptop, and the heat complaint is a specific, quotable heads-up she can pass along - way more useful than a score that buries the standout display under a confusing 100 vs 54 split."
+          },
+          {
+            "productId": "lenovo-thinkpad-x1-carbon-gen-12",
+            "productName": "Lenovo ThinkPad X1 Carbon Gen 12",
+            "chosenSystem": "online",
+            "reason": "2,619 owners agreeing the keyboard is 'second to none' is real, large-scale consensus from people who actually live on this thing - a flat 57.5 'Weak' score for a laptop road warriors and reviewers love would make her question the rubric, not the ThinkPad."
+          },
+          {
+            "productId": "hp-pavilion-15-eg3010nr",
+            "productName": "HP Pavilion 15",
+            "chosenSystem": "titan",
+            "reason": "3 reviews isn't a 'first wave of credible reviews,' it's basically nobody - she'd never stake her rep as the go-to person on a sample that thin. B at least admits its confidence is low (39) instead of pretending a 4.7 from three people means anything."
+          },
+          {
+            "productId": "apple-iphone-15-pro",
+            "productName": "Apple iPhone 15 Pro",
+            "chosenSystem": "online",
+            "reason": "112 reviewers calling the camera 'one of the best on any phone' is the exact sound bite she'll use to talk her group into upgrading - way more persuasive than a 'performance 96' figure buried in a dimension chart."
+          },
+          {
+            "productId": "samsung-galaxy-s24-ultra",
+            "productName": "Samsung Galaxy S24 Ultra",
+            "chosenSystem": "online",
+            "reason": "Almost 1,900 reviews backing the zoom camera plus a sharp, specific 'Galaxy AI is overhyped' complaint is the kind of insider nuance that makes her the trusted one in the group chat, not an abstract 74.5 score."
+          },
+          {
+            "productId": "google-pixel-8",
+            "productName": "Google Pixel 8",
+            "chosenSystem": "online",
+            "reason": "1,147 reviews converging on 'among the best in class' low-light camera is the social proof she needs to confidently co-sign the Pixel; a blunt 'performance 56' makes it sound mediocre in a way that doesn't match what actual owners are saying."
+          },
+          {
+            "productId": "oneplus-12",
+            "productName": "OnePlus 12",
+            "chosenSystem": "online",
+            "reason": "OnePlus is the phone you get to be a step ahead of the crowd, and 53 early reviews raving about the Hasselblad tuning is precisely the first-wave, credible-reviewer moment she waits for before jumping on something less mainstream."
+          },
+          {
+            "productId": "xiaomi-redmi-note-13-pro-plus",
+            "productName": "Xiaomi Redmi Note 13 Pro+",
+            "chosenSystem": "online",
+            "reason": "Almost 20,000 reviews calling it 'flagship-like' at a budget price is massive social proof - that's the exact line she'd use to convince a price-conscious friend it doesn't look cheap, way more persuasive than a 'Fair' 69.6 buried in dimension jargon."
+          }
+        ],
+        "titanCount": 1,
+        "overallPrefersTitan": false
+      },
+      {
+        "personaName": "The Deliberate Upgrader",
+        "archetype": "Mainstream Pragmatist (Early Majority)",
+        "picks": [
+          {
+            "productId": "apple-macbook-air-13-m3-2024",
+            "productName": "Apple MacBook Air 13-inch",
+            "chosenSystem": "online",
+            "reason": "1,192 reviews at 4.7 is a real track record that matches everything I've heard about MacBook Airs from people who own one. That 'Fair 63.5' score dinging it for value and camera/creator stuff doesn't match how anyone actually talks about this laptop - feels like it's penalizing it for things I don't even care about."
+          },
+          {
+            "productId": "dell-xps-13-9340",
+            "productName": "Dell XPS 13 (9340)",
+            "chosenSystem": "titan",
+            "reason": "63 reviews is way too thin for me to feel good about a 4.5 - that's barely a track record. The breakdown at least spells out the port trade-off I'd have read about anyway and backs it with a stated 88 confidence, so it feels like it's drawing on more than just those 63 people."
+          },
+          {
+            "productId": "asus-rog-zephyrus-g14-2024-ga403",
+            "productName": "ASUS ROG Zephyrus G14 (2024)",
+            "chosenSystem": "online",
+            "reason": "Over a thousand owners all saying the same thing - great OLED, runs hot under load - is exactly the kind of corroborated word of mouth I look for before buying a gaming laptop. The other score giving it a perfect 100 on 'camera or creator' for a gaming machine just looks off to me, like the scoring itself is glitchy."
+          },
+          {
+            "productId": "lenovo-thinkpad-x1-carbon-gen-12",
+            "productName": "Lenovo ThinkPad X1 Carbon Gen 12",
+            "chosenSystem": "online",
+            "reason": "2,619 reviews at 4.6 lines up with what every coworker with a ThinkPad tells me about the keyboard and build. A 'Weak 57.5' grade for a ThinkPad just doesn't square with its whole reputation, so I'd trust the crowd over that score."
+          },
+          {
+            "productId": "hp-pavilion-15-eg3010nr",
+            "productName": "HP Pavilion 15",
+            "chosenSystem": "titan",
+            "reason": "Three reviews isn't a track record, it's basically nothing - I wouldn't make a no-regret call off that. At least the other one is upfront that its confidence is low and still flags the same reliability worries I've heard about Pavilions before."
+          },
+          {
+            "productId": "apple-iphone-15-pro",
+            "productName": "Apple iPhone 15 Pro",
+            "chosenSystem": "titan",
+            "reason": "Only 112 reviews feels thin for a phone this mainstream. The breakdown actually matches what a friend with this phone told me - camera and performance are great, but it does run warm - so it feels like it's capturing the real trade-off rather than just averaging opinions."
+          },
+          {
+            "productId": "samsung-galaxy-s24-ultra",
+            "productName": "Samsung Galaxy S24 Ultra",
+            "chosenSystem": "online",
+            "reason": "1,869 people agreeing on the zoom camera, plus that specific 'Galaxy AI is overhyped' complaint, sounds like real current owner chatter I'd actually hear from a friend - more convincing than an abstract 74.5 'Good' number."
+          },
+          {
+            "productId": "google-pixel-8",
+            "productName": "Google Pixel 8",
+            "chosenSystem": "online",
+            "reason": "1,147 reviews backing up the exact camera-great/battery-meh trade-off I've heard about Pixels from people who own one - that's a solid, corroborated track record to buy on."
+          },
+          {
+            "productId": "oneplus-12",
+            "productName": "OnePlus 12",
+            "chosenSystem": "titan",
+            "reason": "Only 53 reviews for a brand I don't know as well as Samsung or Apple isn't enough people to feel safe - too small a crowd. The balanced dimension breakdown gives me more to actually evaluate before trusting it."
+          },
+          {
+            "productId": "xiaomi-redmi-note-13-pro-plus",
+            "productName": "Xiaomi Redmi Note 13 Pro+",
+            "chosenSystem": "online",
+            "reason": "19,713 reviews is about as proven as it gets - that many people agreeing the build feels flagship-like and calling out the same bloatware annoyance is exactly the kind of real, piled-up word of mouth I trust for a budget pick."
+          }
+        ],
+        "titanCount": 4,
+        "overallPrefersTitan": false
+      },
+      {
+        "personaName": "The Value Maximizer",
+        "archetype": "Price/Deal-Driven Buyer",
+        "picks": [
+          {
+            "productId": "apple-macbook-air-13-m3-2024",
+            "productName": "Apple MacBook Air 13-inch",
+            "chosenSystem": "titan",
+            "reason": "4.7/5 from 1,192 reviews just tells me people are happy, not whether $1,099 for an 8GB/256GB config is a smart buy. Exhibit B's value=39 next to performance=85 does the price-per-spec math for me and confirms this is overpriced for the tier."
+          },
+          {
+            "productId": "dell-xps-13-9340",
+            "productName": "Dell XPS 13 (9340)",
+            "chosenSystem": "titan",
+            "reason": "63 reviews is too thin a sample to trust a star average. Exhibit B's dimension table (value 46, features 63, battery 60) actually lets me weigh the $999 price against what you're really getting instead of just 'looks nice, few ports.'"
+          },
+          {
+            "productId": "asus-rog-zephyrus-g14-2024-ga403",
+            "productName": "ASUS ROG Zephyrus G14 (2024)",
+            "chosenSystem": "titan",
+            "reason": "Value=23 is the number that matters at $2,200 - it tells me flat out I'm paying a big premium for the OLED/GPU combo relative to what I get elsewhere. The 4.5-star review blob just repeats 'great screen, runs hot' without pricing it."
+          },
+          {
+            "productId": "lenovo-thinkpad-x1-carbon-gen-12",
+            "productName": "Lenovo ThinkPad X1 Carbon Gen 12",
+            "chosenSystem": "titan",
+            "reason": "$1,760 for a 512GB SSD and only middling performance (72) is exactly the kind of overpay a spec-for-spec buyer like me catches - value=22 spells it out. The 4.6-star keyboard praise doesn't change the price math."
+          },
+          {
+            "productId": "hp-pavilion-15-eg3010nr",
+            "productName": "HP Pavilion 15",
+            "chosenSystem": "titan",
+            "reason": "4.7/5 from THREE reviews is statistical noise, not a rating I'd ever act on. Exhibit B is honest about its own low confidence (39) but still gives me the number I actually want - value=70, best in the set - which lines up with what I'd expect from a $499 budget machine."
+          },
+          {
+            "productId": "apple-iphone-15-pro",
+            "productName": "Apple iPhone 15 Pro",
+            "chosenSystem": "titan",
+            "reason": "At $474 this thing is basically a clearance-priced flagship, so I need to know where the money's actually going. Value=47 alongside camera=90/performance=96 tells me the discount is real value on the parts that matter, not just marketing."
+          },
+          {
+            "productId": "samsung-galaxy-s24-ultra",
+            "productName": "Samsung Galaxy S24 Ultra",
+            "chosenSystem": "titan",
+            "reason": "$650 sounds like a steal for an Ultra, but value=35 is a red flag that stops me from assuming that automatically - it's weighing something (probably software/long-term cost) the 4.8-star Ultra-zoom fan reviews never mention."
+          },
+          {
+            "productId": "google-pixel-8",
+            "productName": "Google Pixel 8",
+            "chosenSystem": "titan",
+            "reason": "1,147 happy reviewers don't tell me if $448 beats the competition dollar-for-dollar. Value=43 with performance=56 flagged separately shows me the Tensor chip is the weak link dragging down the value math, which the star rating hides."
+          },
+          {
+            "productId": "oneplus-12",
+            "productName": "OnePlus 12",
+            "chosenSystem": "titan",
+            "reason": "This is the one where the 'best overall score in the set' claim is backed by full dimension data (88 confidence) rather than just 53 reviews. And value=36 despite the high overall score is the kind of gotcha I need before paying $650 - great phone, mediocre deal."
+          },
+          {
+            "productId": "xiaomi-redmi-note-13-pro-plus",
+            "productName": "Xiaomi Redmi Note 13 Pro+",
+            "chosenSystem": "titan",
+            "reason": "At $303 I already know it's cheap - what I need is whether performance=41 is dragging it down enough to matter, and value=69 confirms it's still the best $/spec in the set even with that weak chip. 19,713 stars just confirms it doesn't break, it doesn't do my price-performance math for me."
+          }
+        ],
+        "titanCount": 10,
+        "overallPrefersTitan": true
+      },
+      {
+        "personaName": "The Ecosystem Loyalist",
+        "archetype": "Brand-Loyal Upgrader",
+        "picks": [
+          {
+            "productId": "apple-macbook-air-13-m3-2024",
+            "productName": "Apple MacBook Air 13-inch",
+            "chosenSystem": "online",
+            "reason": "1,192 real reviewers giving it 4.7 stars is exactly the kind of crowd confirmation that keeps me buying MacBooks without shopping around. The other exhibit's 'Fair 63.5' with a camera/creator score on a laptop and a value ding feels like a generic template being forced onto an Apple product I already trust."
+          },
+          {
+            "productId": "dell-xps-13-9340",
+            "productName": "Dell XPS 13 (9340)",
+            "chosenSystem": "online",
+            "reason": "4.5 stars and the 'sleek aluminum/carbon-fiber' comment reads like the normal Best Buy consensus I'm used to checking. 63 reviews is still real buyers, not some jargon-y scorecard I don't know how to weigh."
+          },
+          {
+            "productId": "asus-rog-zephyrus-g14-2024-ga403",
+            "productName": "ASUS ROG Zephyrus G14 (2024)",
+            "chosenSystem": "online",
+            "reason": "1,003 reviewers at 4.5 stars is way more convincing than an invented number, and 'runs hot under gaming load' is just what gaming laptops do, so it doesn't scare me. I don't shop this on value anyway, so tanking it to a 23 in the other exhibit just makes that scoring system feel off."
+          },
+          {
+            "productId": "lenovo-thinkpad-x1-carbon-gen-12",
+            "productName": "Lenovo ThinkPad X1 Carbon Gen 12",
+            "chosenSystem": "online",
+            "reason": "2,619 reviews praising 'best keyboard among business ultraportables' matches the ThinkPad reputation I already know. Calling it a 'Weak 57.5' contradicts everything people say about these being bulletproof work laptops, so that scorecard just seems wrong."
+          },
+          {
+            "productId": "hp-pavilion-15-eg3010nr",
+            "productName": "HP Pavilion 15",
+            "chosenSystem": "titan",
+            "reason": "'4.7/5 from 3 reviews' is basically nobody — even without digging into methodology I can tell that number means nothing. At least the other one admits it has thin evidence instead of pretending 3 reviews is a real rating."
+          },
+          {
+            "productId": "apple-iphone-15-pro",
+            "productName": "Apple iPhone 15 Pro",
+            "chosenSystem": "online",
+            "reason": "112 people confirming the camera is 'one of the best on any phone' is exactly the validation I want before my next iPhone upgrade. The 'weak value' knock in the other exhibit doesn't land with me — I don't cross-shop iPhones on value, I just upgrade."
+          },
+          {
+            "productId": "samsung-galaxy-s24-ultra",
+            "productName": "Samsung Galaxy S24 Ultra",
+            "chosenSystem": "online",
+            "reason": "1,869 Galaxy owners raving about the zoom camera is the social proof that keeps me in the Samsung ecosystem. I can shrug off 'Galaxy AI is overhyped' easily since I buy these for the hardware, not the software gimmicks — a score that dings software polish doesn't change my mind."
+          },
+          {
+            "productId": "google-pixel-8",
+            "productName": "Google Pixel 8",
+            "chosenSystem": "online",
+            "reason": "1,147 reviews calling the camera 'among the best in class' feels like real-world consensus, which is what I actually trust. A '62.5 Fair' number doesn't tell me anything I can relate to."
+          },
+          {
+            "productId": "oneplus-12",
+            "productName": "OnePlus 12",
+            "chosenSystem": "online",
+            "reason": "Name-dropping Hasselblad tuning is the kind of brand-name cue I respond to, and 53 reviews is still a real sample, not a red flag. 'Most balanced phone in this set' is an abstract claim I have no way to verify."
+          },
+          {
+            "productId": "xiaomi-redmi-note-13-pro-plus",
+            "productName": "Xiaomi Redmi Note 13 Pro+",
+            "chosenSystem": "online",
+            "reason": "Almost 20,000 reviews is about as close to universal agreement as you get online, which counts for a lot with me. Bloatware is a known, expected Android annoyance I'd just delete, not a dealbreaker worth trusting a fancier-looking score over."
+          }
+        ],
+        "titanCount": 1,
+        "overallPrefersTitan": false
+      },
+      {
+        "personaName": "The 'Just Needs to Work' Buyer",
+        "archetype": "Non-Technical Pragmatist",
+        "picks": [
+          {
+            "productId": "apple-macbook-air-13-m3-2024",
+            "productName": "Apple MacBook Air 13-inch",
+            "chosenSystem": "online",
+            "reason": "4.7 stars from 1,192 regular buyers and a plain sentence about it being fast enough for everyday stuff - that's what I need to hear. The other one throws around 'creator capability' and 'thermals' scores, which just sounds like something my nephew would need to explain to me."
+          },
+          {
+            "productId": "dell-xps-13-9340",
+            "productName": "Dell XPS 13 (9340)",
+            "chosenSystem": "online",
+            "reason": "4.5 stars and 'sleek, lightweight' - I get that instantly. A chart with 'confidence 88' and eight different category numbers doesn't tell me if my mom would like using it."
+          },
+          {
+            "productId": "asus-rog-zephyrus-g14-2024-ga403",
+            "productName": "ASUS ROG Zephyrus G14 (2024)",
+            "chosenSystem": "online",
+            "reason": "Over a thousand people rating it 4.5 and saying the screen looks amazing is something I can picture. The 72-point score with 'creator capability 100' and 'value 23' just confuses me - I don't know what those categories even mean."
+          },
+          {
+            "productId": "lenovo-thinkpad-x1-carbon-gen-12",
+            "productName": "Lenovo ThinkPad X1 Carbon Gen 12",
+            "chosenSystem": "online",
+            "reason": "2,619 people giving it 4.6 stars and all agreeing the keyboard is great - that's basically a crowd of real owners vouching for it. Calling the same laptop 'Weak' at 57.5 based on some formula makes me trust it less, not more."
+          },
+          {
+            "productId": "hp-pavilion-15-eg3010nr",
+            "productName": "HP Pavilion 15",
+            "chosenSystem": "online",
+            "reason": "4.7 stars and 'good value for everyday use' is exactly the reassurance I want on a budget laptop - simple and to the point. I'm not going to sit there counting how many people left reviews."
+          },
+          {
+            "productId": "apple-iphone-15-pro",
+            "productName": "Apple iPhone 15 Pro",
+            "chosenSystem": "online",
+            "reason": "'One of the best cameras on any phone' in plain words is exactly the kind of thing my daughter would tell me before I buy. A 74.3 score broken into 'thermals 54' and 'value 47' isn't something I know how to use."
+          },
+          {
+            "productId": "samsung-galaxy-s24-ultra",
+            "productName": "Samsung Galaxy S24 Ultra",
+            "chosenSystem": "online",
+            "reason": "4.8 stars from almost 1,900 people is the strongest crowd agreement I've seen here - that tells me it's a safe pick. I don't need a grid of performance numbers to trust that many happy buyers."
+          },
+          {
+            "productId": "google-pixel-8",
+            "productName": "Google Pixel 8",
+            "chosenSystem": "online",
+            "reason": "Camera being called one of the best for low-light photos is something I actually care about for family pictures. The 'Fair 62.5' score with battery and performance broken out separately just feels like homework."
+          },
+          {
+            "productId": "oneplus-12",
+            "productName": "OnePlus 12",
+            "chosenSystem": "online",
+            "reason": "'Universally great camera' from real reviewers tells me more than a 76.9 number with a 'value 36' I can't make sense of. Simple words I understand beat a scorecard I don't."
+          },
+          {
+            "productId": "xiaomi-redmi-note-13-pro-plus",
+            "productName": "Xiaomi Redmi Note 13 Pro+",
+            "chosenSystem": "online",
+            "reason": "Almost 20,000 people gave this 4.3 stars - that's like a whole town telling me it's a solid phone for the price. A 69.6 'Fair' score with a 'software support 35' line just makes me second-guess something that clearly works for tons of people."
+          }
+        ],
+        "titanCount": 0,
+        "overallPrefersTitan": false
+      },
+      {
+        "personaName": "The Gift-Giver",
+        "archetype": "Proxy Purchaser (Gift Buyer)",
+        "picks": [
+          {
+            "productId": "apple-macbook-air-13-m3-2024",
+            "productName": "Apple MacBook Air 13-inch",
+            "chosenSystem": "online",
+            "reason": "1,192 real buyers weighing in feels like a safe bet for a gift, and the plain complaint about the 8GB/256GB config feeling tight is exactly what I'd want to know before wrapping this up for someone. It's Apple either way, so the crowd-sized star rating reassures me way more than a dimension chart with a 'value 39' I can't picture."
+          },
+          {
+            "productId": "dell-xps-13-9340",
+            "productName": "Dell XPS 13 (9340)",
+            "chosenSystem": "online",
+            "reason": "Only 63 reviews, but 4.5 stars plus the actual complaint about missing USB-A ports tells me something concrete - my giftee will notice if they need a dongle for everything. That's more useful to me than a 'value 46' score I can't translate into real life."
+          },
+          {
+            "productId": "asus-rog-zephyrus-g14-2024-ga403",
+            "productName": "ASUS ROG Zephyrus G14 (2024)",
+            "chosenSystem": "online",
+            "reason": "1,003 people loving the OLED screen is the kind of consensus that makes me feel safe gifting this, and the heat/fan-noise complaint is something I can actually picture and warn them about. The 72/100 breakdown just reads like spec-sheet noise I'd skim past."
+          },
+          {
+            "productId": "lenovo-thinkpad-x1-carbon-gen-12",
+            "productName": "Lenovo ThinkPad X1 Carbon Gen 12",
+            "chosenSystem": "online",
+            "reason": "2,619 reviews and a keyboard people rave about is the confidence I want before spending this much on someone's work laptop. 'RAM is soldered' is a caveat I understand instantly - way more useful than a 57.5 score built from dimensions I'd have to look up."
+          },
+          {
+            "productId": "hp-pavilion-15-eg3010nr",
+            "productName": "HP Pavilion 15",
+            "chosenSystem": "titan",
+            "reason": "This is a budget gift, so I want proof it actually holds up - and only 3 reviews behind that shiny 4.7 stars honestly makes me nervous, like nobody's really tested it. At least the other score is upfront that it's 'best value' while admitting it's not a slam dunk, which feels more honest for something this cheap."
+          },
+          {
+            "productId": "apple-iphone-15-pro",
+            "productName": "Apple iPhone 15 Pro",
+            "chosenSystem": "online",
+            "reason": "112 reviews calling the camera one of the best is exactly the bragging-rights reaction I want when they open the box, and 'runs hot even during light use' is a real thing they'd notice day one. It's Apple, so I don't need a performance score to sell me - I need to know if it'll disappoint them."
+          },
+          {
+            "productId": "samsung-galaxy-s24-ultra",
+            "productName": "Samsung Galaxy S24 Ultra",
+            "chosenSystem": "online",
+            "reason": "4.8 stars from almost 1,900 people is about as safe as gift-buying gets, and the note about Galaxy AI being 'overhyped' is a useful, human heads-up. A 74.5 breakdown with 'software support 45' buried in it doesn't move me next to that kind of crowd approval."
+          },
+          {
+            "productId": "google-pixel-8",
+            "productName": "Google Pixel 8",
+            "chosenSystem": "online",
+            "reason": "1,147 reviewers calling the camera among the best is the reassurance I need for a gift, and the mixed battery-life comments are a plain warning I can act on - maybe throw in a charger. I'd trust that over a 62.5 'Fair' score built from numbers I can't interpret."
+          },
+          {
+            "productId": "oneplus-12",
+            "productName": "OnePlus 12",
+            "chosenSystem": "titan",
+            "reason": "OnePlus isn't a name my giftee's family would instantly recognize, so what sells me here is the plain line that it's 'the most balanced phone in this set - no single weak dimension.' That blanket reassurance matters more for a gift than a 53-review star rating nitpicking the ultra-wide camera."
+          },
+          {
+            "productId": "xiaomi-redmi-note-13-pro-plus",
+            "productName": "Xiaomi Redmi Note 13 Pro+",
+            "chosenSystem": "online",
+            "reason": "19,713 reviews at 4.3 stars is about as bulletproof a consensus as I'll ever see, and 'flagship-like display for the price' is exactly what I'd tell them when they unwrap it. The bloatware complaint is a five-minute fix - cheap, crowd-approved, done."
+          }
+        ],
+        "titanCount": 2,
+        "overallPrefersTitan": false
+      },
+      {
+        "personaName": "The Budget Student",
+        "archetype": "First-Time Independent / Student Buyer",
+        "picks": [
+          {
+            "productId": "apple-macbook-air-13-m3-2024",
+            "productName": "Apple MacBook Air 13-inch",
+            "chosenSystem": "online",
+            "reason": "1,192 real reviews saying 'fast with no throttling' and warning the 8GB/256GB base config is tight for multitasking is exactly the kind of heads-up my friends and creators give before you drop $1,099 — way more useful than some 'ux display 50' number I don't know how to act on."
+          },
+          {
+            "productId": "dell-xps-13-9340",
+            "productName": "Dell XPS 13 (9340)",
+            "chosenSystem": "online",
+            "reason": "The complaint about only two USB-C ports and needing a hub is the actual thing that'll bite me carrying this between classes — that's real-talk from people who own it, not an abstract 'features 63' score."
+          },
+          {
+            "productId": "asus-rog-zephyrus-g14-2024-ga403",
+            "productName": "ASUS ROG Zephyrus G14 (2024)",
+            "chosenSystem": "online",
+            "reason": "1,003 people rating it 4.5 and specifically hyping the OLED screen (which matters for content/looking good on camera) plus a heat/fan-noise warning gives me the vibe check I'd actually trust — the 72/100 breakdown just feels like a spec sheet dressed up."
+          },
+          {
+            "productId": "lenovo-thinkpad-x1-carbon-gen-12",
+            "productName": "Lenovo ThinkPad X1 Carbon Gen 12",
+            "chosenSystem": "online",
+            "reason": "2,619 reviews and 4.6 stars is a massive consensus, and 'best keyboard, but RAM is soldered' tells me something concrete about long-term use — a 57.5 'Weak' score with no story behind it just reads like it's judging it against gaming laptops I don't care about."
+          },
+          {
+            "productId": "hp-pavilion-15-eg3010nr",
+            "productName": "HP Pavilion 15",
+            "chosenSystem": "titan",
+            "reason": "4.7/5 off only 3 reviews is a huge red flag, like an Amazon listing that's about to scam you — at least the 56.3 'Weak' score is upfront that the evidence is thin and calls out the reliability issue directly instead of hiding it behind a fake-looking perfect rating."
+          },
+          {
+            "productId": "apple-iphone-15-pro",
+            "productName": "Apple iPhone 15 Pro",
+            "chosenSystem": "online",
+            "reason": "This is literally the camera/overheating discourse I've already seen all over TikTok about the 15 Pro — hearing it confirmed by 112 actual owners feels way more trustworthy than a 'camera or creator 90' number that doesn't explain what's actually good about the photos."
+          },
+          {
+            "productId": "samsung-galaxy-s24-ultra",
+            "productName": "Samsung Galaxy S24 Ultra",
+            "chosenSystem": "online",
+            "reason": "1,869 reviews at 4.8 stars praising the zoom camera is exactly what I'd screenshot before buying for content, and the Galaxy AI complaint saves me from hyped marketing features — the 74.5 score just tells me 'software support 45' without saying why that matters to me."
+          },
+          {
+            "productId": "google-pixel-8",
+            "productName": "Google Pixel 8",
+            "chosenSystem": "online",
+            "reason": "1,147 reviews calling the Night Sight camera one of the best matches everything creators say about Pixels, and the battery complaint is a real all-day-on-campus concern — way more relevant than a 'battery 51' number I have no context for."
+          },
+          {
+            "productId": "oneplus-12",
+            "productName": "OnePlus 12",
+            "chosenSystem": "online",
+            "reason": "The Hasselfblad low-light camera praise is exactly what OnePlus fans post about, and the daylight/ultrawide weakness is a fair heads-up before I spend $650 on content quality — feels more honest than a 76.9 'most balanced' score that buries the camera info in a dimension list."
+          },
+          {
+            "productId": "xiaomi-redmi-note-13-pro-plus",
+            "productName": "Xiaomi Redmi Note 13 Pro+",
+            "chosenSystem": "online",
+            "reason": "19,713 reviews calling it 'flagship-like for the price' is the ultimate budget cosign — that many people can't be wrong, and the bloatware complaint is annoying but not a dealbreaker; the 69.6 score just feels like it's punishing my favorite budget phone for stuff I don't care about (raw benchmark performance)."
+          }
+        ],
+        "titanCount": 1,
+        "overallPrefersTitan": false
+      },
+      {
+        "personaName": "The Procurement-Minded Professional",
+        "archetype": "Business/Enterprise Buyer",
+        "picks": [
+          {
+            "productId": "apple-macbook-air-13-m3-2024",
+            "productName": "Apple MacBook Air 13-inch",
+            "chosenSystem": "titan",
+            "reason": "The dimension split (value 39 vs performance 85, build 82) tells me exactly why this is only a Fair buy — strong hardware but a poor price-to-config ratio at 8GB/256GB — which is what I need to justify or reject the spend to finance, not just an aggregate 4.7 stars."
+          },
+          {
+            "productId": "dell-xps-13-9340",
+            "productName": "Dell XPS 13 (9340)",
+            "chosenSystem": "titan",
+            "reason": "63 reviews is too thin a sample to bet a laptop refresh on. The confidence-scored breakdown (88/100, value 46, software support 60) gives me something defensible to bring to IT and finance instead of a handful of consumer posts."
+          },
+          {
+            "productId": "asus-rog-zephyrus-g14-2024-ga403",
+            "productName": "ASUS ROG Zephyrus G14 (2024)",
+            "chosenSystem": "online",
+            "reason": "1,003 reviewers reporting actual 85-94C temps and audible fan noise under sustained load is concrete thermal/reliability evidence I can hand to IT — more useful for judging sustained-workload durability than an opaque 'thermals: 64' number."
+          },
+          {
+            "productId": "lenovo-thinkpad-x1-carbon-gen-12",
+            "productName": "Lenovo ThinkPad X1 Carbon Gen 12",
+            "chosenSystem": "online",
+            "reason": "2,619 reviews on the flagship business ultraportable is real fleet-scale validation, and it surfaces what matters in both my user role (best-in-class keyboard for all-day typing) and my IT role (soldered RAM means locking the right config at order time, no upgrade later). A generic 'Weak 57.5' driven by display/value dimensions doesn't match what I know about this product line."
+          },
+          {
+            "productId": "hp-pavilion-15-eg3010nr",
+            "productName": "HP Pavilion 15",
+            "chosenSystem": "titan",
+            "reason": "A 4.7 stars off just 3 reviews isn't something I'd bring to a purchasing committee. I trust the weighted score more here precisely because it's honest about its own thin evidence (confidence 39) instead of dressing up an unreliable number with false precision."
+          },
+          {
+            "productId": "apple-iphone-15-pro",
+            "productName": "Apple iPhone 15 Pro",
+            "chosenSystem": "titan",
+            "reason": "For a corporate-liable phone, seeing value (47) and software support (60) broken out from performance/camera tells me where the price is and isn't earning its keep for a fleet buy — a single 4.5-star figure hides that tradeoff."
+          },
+          {
+            "productId": "samsung-galaxy-s24-ultra",
+            "productName": "Samsung Galaxy S24 Ultra",
+            "chosenSystem": "titan",
+            "reason": "Software support scoring lowest of any dimension (45) is the line item that actually matters for a device I'll be MDM-enrolling and patching for years. The star exhibit only talks about zoom quality and an AI-feature gripe, nothing about update or security posture."
+          },
+          {
+            "productId": "google-pixel-8",
+            "productName": "Google Pixel 8",
+            "chosenSystem": "online",
+            "reason": "1,147 reviews flagging real mixed battery life is an operational risk I can plan around (spare chargers, usage policy) — more actionable for a device issued across a fleet than a flat 'battery: 51' score, and the camera praise matters too since I'm also the daily user of this thing."
+          },
+          {
+            "productId": "oneplus-12",
+            "productName": "OnePlus 12",
+            "chosenSystem": "titan",
+            "reason": "Only 53 reviews back the star rating, too small to lean on for a purchasing call. The weighted score's 88/100 confidence and genuinely balanced dimensions (nothing weak except value) is the 'no surprises' risk profile I look for, and it flags exactly what to negotiate on."
+          },
+          {
+            "productId": "xiaomi-redmi-note-13-pro-plus",
+            "productName": "Xiaomi Redmi Note 13 Pro+",
+            "chosenSystem": "online",
+            "reason": "Almost 20,000 reviews is about as solid a real-world base as this set gets, and it names the actual compliance problem directly — pre-installed third-party apps, games, and ads out of the box — exactly what I'd flag to security before this could be approved for any business use."
+          }
+        ],
+        "titanCount": 6,
+        "overallPrefersTitan": true
+      },
+      {
+        "personaName": "The Reluctant Replacer",
+        "archetype": "Late-Majority / Laggard Loyalist",
+        "picks": [
+          {
+            "productId": "apple-macbook-air-13-m3-2024",
+            "productName": "Apple MacBook Air 13-inch",
+            "chosenSystem": "online",
+            "reason": "1,192 people just telling it straight in plain English ('fast, fanless, no throttling' but '8GB/256GB feels tight') is exactly the kind of thing a friend who already owns one would warn me about. The 0-100 dimension chart with a 'confidence 88' tag feels like a spec sheet dressed up to look smart, and I don't trust things dressed up to look smart."
+          },
+          {
+            "productId": "dell-xps-13-9340",
+            "productName": "Dell XPS 13 (9340)",
+            "chosenSystem": "online",
+            "reason": "Only 63 reviews, sure, but they're saying something concrete and useful ('no USB-A, need a hub') that I can actually picture living with. A 'features 63, value 46' score doesn't tell me anything I'd notice day to day."
+          },
+          {
+            "productId": "asus-rog-zephyrus-g14-2024-ga403",
+            "productName": "ASUS ROG Zephyrus G14 (2024)",
+            "chosenSystem": "online",
+            "reason": "1,003 gamers all flagging the same heat problem (85-94C, fans screaming) is the kind of real-world warning that matters when I plan to keep a laptop for years, not the season it launched. The scored version just turns that into a 'thermal-complaint penalty' buried under a 'features 54' number I can't picture."
+          },
+          {
+            "productId": "lenovo-thinkpad-x1-carbon-gen-12",
+            "productName": "Lenovo ThinkPad X1 Carbon Gen 12",
+            "chosenSystem": "online",
+            "reason": "ThinkPads are the brand I already trust and stick with, and 2,619 reviews backing up the keyboard and flagging soldered RAM sounds like the same thing my brother-in-law who's used ThinkPads for a decade would tell me. A 57.5 'Weak' score for a machine with that kind of loyal track record just tells me the scoring system doesn't get why people buy these."
+          },
+          {
+            "productId": "hp-pavilion-15-eg3010nr",
+            "productName": "HP Pavilion 15",
+            "chosenSystem": "titan",
+            "reason": "4.7 stars off of THREE reviews doesn't mean anything to me - that's not a track record, that's noise, and 'reliability issues over time' is the one thing I actually care about with a budget machine I plan to keep for years. At least the other one admits it's working off thin evidence instead of pretending three people equal a verdict."
+          },
+          {
+            "productId": "apple-iphone-15-pro",
+            "productName": "Apple iPhone 15 Pro",
+            "chosenSystem": "online",
+            "reason": "112 actual owners saying the camera's great but it runs hot even doing nothing - that's the kind of heads-up my sister would give me before I switch. The performance/camera dimension numbers just restate what I already know about iPhones being fast; doesn't tell me anything new I'd trust."
+          },
+          {
+            "productId": "samsung-galaxy-s24-ultra",
+            "productName": "Samsung Galaxy S24 Ultra",
+            "chosenSystem": "online",
+            "reason": "1,869 reviews calling out that 'Galaxy AI is overhyped and adds lag' is exactly the kind of hype-skepticism I already have myself, so it lines up with what I'd expect to hear from someone who actually bought one instead of a press release. A computed 74.5 doesn't capture that skepticism at all."
+          },
+          {
+            "productId": "google-pixel-8",
+            "productName": "Google Pixel 8",
+            "chosenSystem": "online",
+            "reason": "'Mixed battery reports, barely lasts a day for heavy use' from over a thousand actual users is the practical warning I need before committing money, not a battery dimension score of 51 that I have no reference point for."
+          },
+          {
+            "productId": "oneplus-12",
+            "productName": "OnePlus 12",
+            "chosenSystem": "online",
+            "reason": "Real talk about the camera being great except the ultra-wide/daylight video being weaker sounds like something a friend who owns one would specifically warn me to test before I buy. 'Most balanced phone in this set' sounds like marketing copy for something new I have no reason to switch to anyway."
+          },
+          {
+            "productId": "xiaomi-redmi-note-13-pro-plus",
+            "productName": "Xiaomi Redmi Note 13 Pro+",
+            "chosenSystem": "online",
+            "reason": "Almost 20,000 reviews is about as close to 'ask everyone I know' as you can get without it being one person - that's real weight, not hype. And the bloatware complaint is a normal, believable annoyance, not a mysterious 'software support 35' number I'd have to take on faith."
+          }
+        ],
+        "titanCount": 1,
+        "overallPrefersTitan": false
+      }
+    ],
+    "totalPanelists": 10,
+    "titanPreferring": 3,
+    "perProductTally": {
+      "apple-macbook-air-13-m3-2024": {
+        "name": "Apple MacBook Air 13-inch",
+        "titan": 3,
+        "online": 7
+      },
+      "dell-xps-13-9340": {
+        "name": "Dell XPS 13 (9340)",
+        "titan": 4,
+        "online": 6
+      },
+      "asus-rog-zephyrus-g14-2024-ga403": {
+        "name": "ASUS ROG Zephyrus G14 (2024)",
+        "titan": 2,
+        "online": 8
+      },
+      "lenovo-thinkpad-x1-carbon-gen-12": {
+        "name": "Lenovo ThinkPad X1 Carbon Gen 12",
+        "titan": 2,
+        "online": 8
+      },
+      "hp-pavilion-15-eg3010nr": {
+        "name": "HP Pavilion 15",
+        "titan": 9,
+        "online": 1
+      },
+      "apple-iphone-15-pro": {
+        "name": "Apple iPhone 15 Pro",
+        "titan": 4,
+        "online": 6
+      },
+      "samsung-galaxy-s24-ultra": {
+        "name": "Samsung Galaxy S24 Ultra",
+        "titan": 3,
+        "online": 7
+      },
+      "google-pixel-8": {
+        "name": "Google Pixel 8",
+        "titan": 2,
+        "online": 8
+      },
+      "oneplus-12": {
+        "name": "OnePlus 12",
+        "titan": 5,
+        "online": 5
+      },
+      "xiaomi-redmi-note-13-pro-plus": {
+        "name": "Xiaomi Redmi Note 13 Pro+",
+        "titan": 2,
+        "online": 8
+      }
+    },
+    "critique": "**1) Degenerate patterns:** Partially yes. Three of ten personas are perfectly invariant — Signal-Chaser (10/10), Value Maximizer (10/10), \"Just Needs to Work\" Buyer (0/10) — meaning their vote never depended on the actual product data, only on persona identity. The language wrapping each choice is product-specific (chipset names, review counts), but the outcome was pre-determined, which is a scripted-trait artifact, not judgment. Also, HP Pavilion's 9/10 titan skew (vs. 2-5 elsewhere) is driven almost entirely by one confound (3 reviews → low trust in star rating) baked identically into most personas, not independent reasoning.\n\n**2) Distinct voices?** Mostly yes. You can identify at least three real heuristics: chip/benchmark literalists (\"Tensor G3 has never benchmarked well\"), sample-size skeptics (\"3 reviews is basically nobody\"), and crowd/social-proof trusters (\"2,619 owners agreeing... I'd trust the crowd over that score\"). That's genuine differentiation, not one voice copy-pasted — except for the three invariant personas above, whose \"reasoning\" is post-hoc justification for a fixed answer.\n\n**3) Weight to give this:** Treat it as a qualitative hypothesis generator only — directionally useful for spotting which framings engage which personas, never as a market estimate. Anyone tempted to cite \"3/10 preferred TITAN\" as consumer evidence should be told: this is simulated text generation with baked-in persona priors (some literally content-independent), not sampled humans — it cannot substitute for real user testing."
+  },
+  "workflowProgress": [
+    {
+      "type": "workflow_phase",
+      "index": 1,
+      "title": "Research personas"
+    },
+    {
+      "type": "workflow_phase",
+      "index": 2,
+      "title": "Simulate panel"
+    },
+    {
+      "type": "workflow_phase",
+      "index": 3,
+      "title": "Critique"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 1,
+      "label": "Research real consumer-electronics buyer-segmentation framew",
+      "phaseIndex": 1,
+      "phaseTitle": "Research personas",
+      "agentId": "a8d13860a59001010",
+      "model": "claude-sonnet-5",
+      "state": "done",
+      "startedAt": 1788817630847,
+      "queuedAt": 1788817626800,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "Research real consumer-electronics buyer-segmentation frameworks (how people actually shop for phones/laptops: value/price-driven buyers, spec enthusiasts, brand-loyal upgraders, non-technical pragmatists, gift-buyers, first-time buyers, professional/business buyers, students, etc). Ground your answer in real, known buyer-archetype research rather than inventing categories from nothing - cite what…",
+      "lastProgressAt": 1788817742881,
+      "tokens": 52938,
+      "toolCalls": 9,
+      "durationMs": 112005,
+      "resultPreview": "{\"personas\":[{\"name\":\"The Signal-Chaser\",\"archetype\":\"Spec-Sheet Enthusiast / Tech Innovator\",\"description\":\"Follows leaked benchmarks, chipset roadmaps, and display/battery teardown data months before launch, and will pay a premium to own the newest silicon first. Trusts raw numbers (GeekBench scores, nit brightness, mAh, DxOMark) over marketing copy or brand story, and treats the purchase itself…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 2,
+      "label": "persona: The Signal-Chaser",
+      "phaseIndex": 2,
+      "phaseTitle": "Simulate panel",
+      "agentId": "a4c9204dc9f906975",
+      "model": "claude-sonnet-5",
+      "state": "done",
+      "startedAt": 1788817752193,
+      "queuedAt": 1788817744960,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "The Signal-Chaser (Spec-Sheet Enthusiast / Tech Innovator)",
+      "promptPreview": "You are roleplaying a specific consumer persona for a blind product-rating comparison test. Answer AS this persona would genuinely react - not as an AI assistant being helpful, but as this specific kind of shopper with their specific priorities and blind spots.\n\nPERSONA: The Signal-Chaser - Spec-Sheet Enthusiast / Tech Innovator\nFollows leaked benchmarks, chipset roadmaps, and display/battery tear…",
+      "lastProgressAt": 1788817813867,
+      "tokens": 42448,
+      "toolCalls": 1,
+      "durationMs": 61536,
+      "resultPreview": "{\"personaName\":\"The Signal-Chaser (Spec-Sheet Enthusiast / Tech Innovator)\",\"picks\":[{\"productIndex\":1,\"chosenSlot\":\"B\",\"reason\":\"Give me the M3's actual numbers, not 'no thermal throttling noticed.' Performance 85 tells me what the 8-core CPU is doing, and value 39 nails exactly why 8GB/256GB base config is the real story here, not a vague complaint quote.\"},{\"productIndex\":2,\"chosenSlot\":\"B\",\"re…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 3,
+      "label": "persona: The Opinion-Leader Adopter",
+      "phaseIndex": 2,
+      "phaseTitle": "Simulate panel",
+      "agentId": "ab8e81c488f9fa7d7",
+      "model": "claude-sonnet-5",
+      "state": "done",
+      "startedAt": 1788817747214,
+      "queuedAt": 1788817744961,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "The Opinion-Leader Adopter",
+      "promptPreview": "You are roleplaying a specific consumer persona for a blind product-rating comparison test. Answer AS this persona would genuinely react - not as an AI assistant being helpful, but as this specific kind of shopper with their specific priorities and blind spots.\n\nPERSONA: The Opinion-Leader Adopter - Early Adopter / Social Trendsetter\nWaits just long enough for the first wave of credible reviews, t…",
+      "lastProgressAt": 1788817829119,
+      "tokens": 42435,
+      "toolCalls": 1,
+      "durationMs": 76903,
+      "resultPreview": "{\"personaName\":\"The Opinion-Leader Adopter\",\"picks\":[{\"productIndex\":1,\"chosenSlot\":\"A\",\"reason\":\"1,192 people saying it's fast and fanless with no throttling in real use is exactly the kind of consensus she quotes when someone asks 'is the MacBook Air worth it?' Docking it to a 'Fair' 63.5 over a camera/creator dimension nobody buying an Air even cares about just makes the scoring system look out…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 4,
+      "label": "persona: The Deliberate Upgrader",
+      "phaseIndex": 2,
+      "phaseTitle": "Simulate panel",
+      "agentId": "aba0e5635c1687f31",
+      "model": "claude-sonnet-5",
+      "state": "done",
+      "startedAt": 1788817747148,
+      "queuedAt": 1788817744961,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "The Deliberate Upgrader - Mainstream Pragmatist (Early Majo…",
+      "promptPreview": "You are roleplaying a specific consumer persona for a blind product-rating comparison test. Answer AS this persona would genuinely react - not as an AI assistant being helpful, but as this specific kind of shopper with their specific priorities and blind spots.\n\nPERSONA: The Deliberate Upgrader - Mainstream Pragmatist (Early Majority)\nOnly replaces a phone or laptop when the old one is clearly fal…",
+      "lastProgressAt": 1788817861823,
+      "tokens": 42454,
+      "toolCalls": 1,
+      "durationMs": 109672,
+      "resultPreview": "{\"personaName\":\"The Deliberate Upgrader - Mainstream Pragmatist (Early Majority)\",\"picks\":[{\"productIndex\":1,\"chosenSlot\":\"A\",\"reason\":\"1,192 reviews at 4.7 is a real track record that matches everything I've heard about MacBook Airs from people who own one. That 'Fair 63.5' score dinging it for value and camera/creator stuff doesn't match how anyone actually talks about this laptop - feels like i…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 5,
+      "label": "persona: The Value Maximizer",
+      "phaseIndex": 2,
+      "phaseTitle": "Simulate panel",
+      "agentId": "a2551adb589fbe092",
+      "model": "claude-sonnet-5",
+      "state": "done",
+      "startedAt": 1788817747105,
+      "queuedAt": 1788817744962,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "The Value Maximizer",
+      "promptPreview": "You are roleplaying a specific consumer persona for a blind product-rating comparison test. Answer AS this persona would genuinely react - not as an AI assistant being helpful, but as this specific kind of shopper with their specific priorities and blind spots.\n\nPERSONA: The Value Maximizer - Price/Deal-Driven Buyer\nBuilds a spreadsheet-like mental model of price-per-spec, actively hunts sales, ca…",
+      "lastProgressAt": 1788817816472,
+      "tokens": 42465,
+      "toolCalls": 1,
+      "durationMs": 69366,
+      "resultPreview": "{\"personaName\":\"The Value Maximizer\",\"picks\":[{\"productIndex\":1,\"chosenSlot\":\"B\",\"reason\":\"4.7/5 from 1,192 reviews just tells me people are happy, not whether $1,099 for an 8GB/256GB config is a smart buy. Exhibit B's value=39 next to performance=85 does the price-per-spec math for me and confirms this is overpriced for the tier.\"},{\"productIndex\":2,\"chosenSlot\":\"B\",\"reason\":\"63 reviews is too th…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 6,
+      "label": "persona: The Ecosystem Loyalist",
+      "phaseIndex": 2,
+      "phaseTitle": "Simulate panel",
+      "agentId": "a63e654b629db8fc8",
+      "model": "claude-sonnet-5",
+      "state": "done",
+      "startedAt": 1788817747493,
+      "queuedAt": 1788817744962,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "The Ecosystem Loyalist (Brand-Loyal Upgrader)",
+      "promptPreview": "You are roleplaying a specific consumer persona for a blind product-rating comparison test. Answer AS this persona would genuinely react - not as an AI assistant being helpful, but as this specific kind of shopper with their specific priorities and blind spots.\n\nPERSONA: The Ecosystem Loyalist - Brand-Loyal Upgrader\nHas been in one ecosystem (Apple, Samsung) for years and upgrades on an almost aut…",
+      "lastProgressAt": 1788817852940,
+      "tokens": 42460,
+      "toolCalls": 1,
+      "durationMs": 100610,
+      "resultPreview": "{\"personaName\":\"The Ecosystem Loyalist (Brand-Loyal Upgrader)\",\"picks\":[{\"productIndex\":1,\"chosenSlot\":\"A\",\"reason\":\"1,192 real reviewers giving it 4.7 stars is exactly the kind of crowd confirmation that keeps me buying MacBooks without shopping around. The other exhibit's 'Fair 63.5' with a camera/creator score on a laptop and a value ding feels like a generic template being forced onto an Apple…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 7,
+      "label": "persona: The 'Just Needs to Work' Buyer",
+      "phaseIndex": 2,
+      "phaseTitle": "Simulate panel",
+      "agentId": "a241ac71d00f69dd8",
+      "model": "claude-sonnet-5",
+      "state": "done",
+      "startedAt": 1788817747155,
+      "queuedAt": 1788817744962,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "The 'Just Needs to Work' Buyer (Non-Technical Pragmatist)",
+      "promptPreview": "You are roleplaying a specific consumer persona for a blind product-rating comparison test. Answer AS this persona would genuinely react - not as an AI assistant being helpful, but as this specific kind of shopper with their specific priorities and blind spots.\n\nPERSONA: The 'Just Needs to Work' Buyer - Non-Technical Pragmatist\nDoesn't know or care what a chipset is — they need something to call f…",
+      "lastProgressAt": 1788817791512,
+      "tokens": 42445,
+      "toolCalls": 1,
+      "durationMs": 39341,
+      "resultPreview": "{\"personaName\":\"The 'Just Needs to Work' Buyer (Non-Technical Pragmatist)\",\"picks\":[{\"productIndex\":1,\"chosenSlot\":\"B\",\"reason\":\"4.7 stars from 1,192 regular buyers and a plain sentence about it being fast enough for everyday stuff - that's what I need to hear. The other one throws around 'creator capability' and 'thermals' scores, which just sounds like something my nephew would need to explain t…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 8,
+      "label": "persona: The Gift-Giver",
+      "phaseIndex": 2,
+      "phaseTitle": "Simulate panel",
+      "agentId": "a8b8f0c2abfaa3b32",
+      "model": "claude-sonnet-5",
+      "state": "done",
+      "startedAt": 1788817747434,
+      "queuedAt": 1788817744963,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "The Gift-Giver - Proxy Purchaser (Gift Buyer)",
+      "promptPreview": "You are roleplaying a specific consumer persona for a blind product-rating comparison test. Answer AS this persona would genuinely react - not as an AI assistant being helpful, but as this specific kind of shopper with their specific priorities and blind spots.\n\nPERSONA: The Gift-Giver - Proxy Purchaser (Gift Buyer)\nIsn't buying for themselves, so the calculus shifts from personal fit to safety an…",
+      "lastProgressAt": 1788817878688,
+      "tokens": 42450,
+      "toolCalls": 1,
+      "durationMs": 126358,
+      "resultPreview": "{\"personaName\":\"The Gift-Giver - Proxy Purchaser (Gift Buyer)\",\"picks\":[{\"productIndex\":1,\"chosenSlot\":\"B\",\"reason\":\"1,192 real buyers weighing in feels like a safe bet for a gift, and the plain complaint about the 8GB/256GB config feeling tight is exactly what I'd want to know before wrapping this up for someone. It's Apple either way, so the crowd-sized star rating reassures me way more than a d…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 9,
+      "label": "persona: The Budget Student",
+      "phaseIndex": 2,
+      "phaseTitle": "Simulate panel",
+      "agentId": "a1205bd091ed31b64",
+      "model": "claude-sonnet-5",
+      "state": "done",
+      "startedAt": 1788817747311,
+      "queuedAt": 1788817744963,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "The Budget Student - First-Time Independent / Student Buyer",
+      "promptPreview": "You are roleplaying a specific consumer persona for a blind product-rating comparison test. Answer AS this persona would genuinely react - not as an AI assistant being helpful, but as this specific kind of shopper with their specific priorities and blind spots.\n\nPERSONA: The Budget Student - First-Time Independent / Student Buyer\nTight, often self-financed or installment-plan budget, but highly on…",
+      "lastProgressAt": 1788817830322,
+      "tokens": 42436,
+      "toolCalls": 1,
+      "durationMs": 78009,
+      "resultPreview": "{\"personaName\":\"The Budget Student - First-Time Independent / Student Buyer\",\"picks\":[{\"productIndex\":1,\"chosenSlot\":\"B\",\"reason\":\"1,192 real reviews saying 'fast with no throttling' and warning the 8GB/256GB base config is tight for multitasking is exactly the kind of heads-up my friends and creators give before you drop $1,099 — way more useful than some 'ux display 50' number I don't know how t…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 10,
+      "label": "persona: The Procurement-Minded Professional",
+      "phaseIndex": 2,
+      "phaseTitle": "Simulate panel",
+      "agentId": "acbccefad95fa8a28",
+      "model": "claude-sonnet-5",
+      "state": "done",
+      "startedAt": 1788817747432,
+      "queuedAt": 1788817744964,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "The Procurement-Minded Professional - Business/Enterprise B…",
+      "promptPreview": "You are roleplaying a specific consumer persona for a blind product-rating comparison test. Answer AS this persona would genuinely react - not as an AI assistant being helpful, but as this specific kind of shopper with their specific priorities and blind spots.\n\nPERSONA: The Procurement-Minded Professional - Business/Enterprise Buyer\nOften not spending their own money — the purchase is expensed or…",
+      "lastProgressAt": 1788817894588,
+      "tokens": 42462,
+      "toolCalls": 1,
+      "durationMs": 142259,
+      "resultPreview": "{\"personaName\":\"The Procurement-Minded Professional - Business/Enterprise Buyer\",\"picks\":[{\"productIndex\":1,\"chosenSlot\":\"B\",\"reason\":\"The dimension split (value 39 vs performance 85, build 82) tells me exactly why this is only a Fair buy — strong hardware but a poor price-to-config ratio at 8GB/256GB — which is what I need to justify or reject the spend to finance, not just an aggregate 4.7 stars…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 11,
+      "label": "persona: The Reluctant Replacer",
+      "phaseIndex": 2,
+      "phaseTitle": "Simulate panel",
+      "agentId": "a41fc634dfe90dba6",
+      "model": "claude-sonnet-5",
+      "state": "done",
+      "startedAt": 1788817747512,
+      "queuedAt": 1788817744964,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "The Reluctant Replacer (Late-Majority / Laggard Loyalist)",
+      "promptPreview": "You are roleplaying a specific consumer persona for a blind product-rating comparison test. Answer AS this persona would genuinely react - not as an AI assistant being helpful, but as this specific kind of shopper with their specific priorities and blind spots.\n\nPERSONA: The Reluctant Replacer - Late-Majority / Laggard Loyalist\nKeeps a device until it physically fails, the battery is unusable, or …",
+      "lastProgressAt": 1788817825556,
+      "tokens": 42451,
+      "toolCalls": 1,
+      "durationMs": 73225,
+      "resultPreview": "{\"personaName\":\"The Reluctant Replacer (Late-Majority / Laggard Loyalist)\",\"picks\":[{\"productIndex\":1,\"chosenSlot\":\"B\",\"reason\":\"1,192 people just telling it straight in plain English ('fast, fanless, no throttling' but '8GB/256GB feels tight') is exactly the kind of thing a friend who already owns one would warn me about. The 0-100 dimension chart with a 'confidence 88' tag feels like a spec shee…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 12,
+      "label": "You are auditing an AI-simulated consumer panel for artifact",
+      "phaseIndex": 3,
+      "phaseTitle": "Critique",
+      "agentId": "aa4275f0085e29f2a",
+      "model": "claude-sonnet-5",
+      "state": "done",
+      "startedAt": 1788817899627,
+      "queuedAt": 1788817896678,
+      "attempt": 1,
+      "promptPreview": "You are auditing an AI-simulated consumer panel for artifacts that would make it uninformative. Here is the aggregate: 10 simulated personas, 3 of them overall preferred the TITAN-style evidence score over the plain star rating across 10 products. Per-persona breakdown: [{\"name\":\"The Signal-Chaser\",\"titanCount\":10},{\"name\":\"The Opinion-Leader Adopter\",\"titanCount\":1},{\"name\":\"The Deliberate Upgrad…",
+      "lastProgressAt": 1788817941363,
+      "tokens": 42639,
+      "toolCalls": 0,
+      "durationMs": 41716,
+      "resultPreview": "**1) Degenerate patterns:** Partially yes. Three of ten personas are perfectly invariant — Signal-Chaser (10/10), Value Maximizer (10/10), \"Just Needs to Work\" Buyer (0/10) — meaning their vote never depended on the actual product data, only on persona identity. The language wrapping each choice is product-specific (chipset names, review counts), but the outcome was pre-determined, which is a scri…"
+    }
+  ],
+  "totalTokens": 520083,
+  "totalToolCalls": 19
+}

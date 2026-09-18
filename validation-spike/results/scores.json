@@ -1,0 +1,292 @@
+[
+  {
+    "id": "apple-macbook-air-13-m3-2024",
+    "brand": "Apple",
+    "model": "MacBook Air 13-inch",
+    "variant": "M3 (8-core CPU/10-core GPU), 16GB unified memory, 256GB SSD, Space Gray (2024)",
+    "price_usd": 1099,
+    "online_rating": {
+      "score": 4.7,
+      "scale": 5,
+      "count": 1192,
+      "source_name": "Amazon customer reviews (16GB/512GB config listing, closest available aggregate)",
+      "source_url": "https://www.amazon.com/Apple-2024-MacBook-13-inch-Laptop/dp/B0CX24BNQC"
+    },
+    "dimensions": {
+      "performance": 85.1,
+      "ux_display": 50.0,
+      "battery": 57.6,
+      "build_thermals": 82.0,
+      "features": 72,
+      "camera_or_creator": 40.0,
+      "software_support": 60.0,
+      "value": 38.7
+    },
+    "titan_score": 63.5,
+    "rating_band": "Fair",
+    "confidence": 88,
+    "explanation": "TITAN Score 63.5/100 (Fair): strongest on performance (85) and build thermals (82); weakest on camera or creator (40) and value (39). Confidence 88/100 based on 4 cited sources.",
+    "score_version": "titan-score-spike-v0.1"
+  },
+  {
+    "id": "dell-xps-13-9340",
+    "brand": "Dell",
+    "model": "XPS 13 (9340)",
+    "variant": "Intel Core Ultra 7 155H, 16GB RAM, 512GB SSD, Intel Arc integrated graphics, FHD+ 1920x1200 120Hz, Graphite (XPS9340-7319BLK-PUS)",
+    "price_usd": 999,
+    "online_rating": {
+      "score": 4.5,
+      "scale": 5,
+      "count": 63,
+      "source_name": "Best Buy customer reviews",
+      "source_url": "https://www.bestbuy.com/site/reviews/dell-xps-13-13-4-fhd-laptop-intel-core-ultra-7-evo-edition-16gb-memory-intel-arc-graphics-512gb-ssd-graphite/6575146"
+    },
+    "dimensions": {
+      "performance": 84.9,
+      "ux_display": 70.0,
+      "battery": 60.0,
+      "build_thermals": 82.0,
+      "features": 63,
+      "camera_or_creator": 55.0,
+      "software_support": 60.0,
+      "value": 45.6
+    },
+    "titan_score": 68.1,
+    "rating_band": "Fair",
+    "confidence": 88,
+    "explanation": "TITAN Score 68.1/100 (Fair): strongest on performance (85) and build thermals (82); weakest on camera or creator (55) and value (46). Confidence 88/100 based on 4 cited sources.",
+    "score_version": "titan-score-spike-v0.1"
+  },
+  {
+    "id": "asus-rog-zephyrus-g14-2024-ga403",
+    "brand": "ASUS",
+    "model": "ROG Zephyrus G14 (2024, GA403)",
+    "variant": "AMD Ryzen 9 8945HS, 32GB LPDDR5X, 1TB SSD, NVIDIA GeForce RTX 4070 Laptop GPU, 14\" OLED 2880x1800 120Hz, Platinum White (GA403UI-G14.R94070)",
+    "price_usd": 2199.99,
+    "online_rating": {
+      "score": 4.5,
+      "scale": 5,
+      "count": 1003,
+      "source_name": "Best Buy customer reviews (16GB/RTX 4060 sibling SKU, same generation/chassis)",
+      "source_url": "https://www.bestbuy.com/site/reviews/asus-rog-zephyrus-g14-14-oled-3k-120hz-gaming-laptop-amd-ryzen-9-8945hs-16gb-lpddr5x-nvidia-geforce-rtx-4060-1tb-ssd-platinum-white/6570270"
+    },
+    "dimensions": {
+      "performance": 83.8,
+      "ux_display": 100,
+      "battery": 66,
+      "build_thermals": 64.0,
+      "features": 54,
+      "camera_or_creator": 100,
+      "software_support": 60.0,
+      "value": 23.4
+    },
+    "titan_score": 72.0,
+    "rating_band": "Good",
+    "confidence": 88,
+    "explanation": "TITAN Score 72.0/100 (Good): strongest on ux display (100) and camera or creator (100); weakest on features (54) and value (23). Penalties applied: thermal complaints in review evidence. Confidence 88/100 based on 4 cited sources.",
+    "score_version": "titan-score-spike-v0.1"
+  },
+  {
+    "id": "lenovo-thinkpad-x1-carbon-gen-12",
+    "brand": "Lenovo",
+    "model": "ThinkPad X1 Carbon Gen 12",
+    "variant": "Intel Core Ultra 7 155U vPro, 32GB LPDDR5x, 512GB SSD, 14\" WUXGA touchscreen, Black (21KC00A7US)",
+    "price_usd": 1759.99,
+    "online_rating": {
+      "score": 4.6,
+      "scale": 5,
+      "count": 2619,
+      "source_name": "Best Buy customer reviews",
+      "source_url": "https://www.bestbuy.com/site/lenovo-thinkpad-x1-carbon-g12-14-touchscreen-laptop-core-ultra-7-with-32gb-memory-512gb-ssd-black/6593188.p?skuId=6593188"
+    },
+    "dimensions": {
+      "performance": 71.5,
+      "ux_display": 55.0,
+      "battery": 50.0,
+      "build_thermals": 82.0,
+      "features": 54,
+      "camera_or_creator": 45.0,
+      "software_support": 60.0,
+      "value": 22.3
+    },
+    "titan_score": 57.5,
+    "rating_band": "Weak",
+    "confidence": 88,
+    "explanation": "TITAN Score 57.5/100 (Weak): strongest on build thermals (82) and performance (72); weakest on camera or creator (45) and value (22). Confidence 88/100 based on 4 cited sources.",
+    "score_version": "titan-score-spike-v0.1"
+  },
+  {
+    "id": "hp-pavilion-15-eg3010nr",
+    "brand": "HP",
+    "model": "Pavilion 15",
+    "variant": "Intel Core i5-1335U, 8GB RAM, 512GB SSD, Intel Iris Xe Graphics, 15.6\" FHD touchscreen, Natural Silver (15-eg3010nr)",
+    "price_usd": 499.0,
+    "online_rating": {
+      "score": 4.7,
+      "scale": 5,
+      "count": 3,
+      "source_name": "Best Buy customer reviews (low sample size for this specific SKU)",
+      "source_url": "https://www.bestbuy.com/site/reviews/hp-pavilion-15-6-full-hd-laptop-intel-core-i5-1335u-8gb-memory-512gb-ssd-natural-silver/6542163"
+    },
+    "dimensions": {
+      "performance": 58.4,
+      "ux_display": 55.0,
+      "battery": 55.0,
+      "build_thermals": 62.0,
+      "features": 45,
+      "camera_or_creator": 43.0,
+      "software_support": 60.0,
+      "value": 70.1
+    },
+    "titan_score": 56.3,
+    "rating_band": "Weak",
+    "confidence": 39,
+    "explanation": "Confidence in this score is low (39/100) because its benchmark figure had to be estimated rather than measured and only 3 reviews exist for this configuration \u2014 treat the number with real caution. TITAN Score 56.3/100 (Weak): strongest on value (70) and build thermals (62); weakest on features (45) and camera or creator (43). Penalties applied: reliability/quality-control complaints in review evidence.",
+    "score_version": "titan-score-spike-v0.1"
+  },
+  {
+    "id": "apple-iphone-15-pro",
+    "brand": "Apple",
+    "model": "iPhone 15 Pro",
+    "variant": "128GB, Natural Titanium, unlocked",
+    "price_usd": 474,
+    "online_rating": {
+      "score": 4.5,
+      "scale": 5,
+      "count": 112,
+      "source_name": "Best Buy (Apple Pre-Owned iPhone 15 Pro 128GB, Unlocked)",
+      "source_url": "https://www.bestbuy.com/site/apple-pre-owned-iphone-15-pro-5g-128gb-unlocked-natural-titanium/6586114.p?skuId=6586114"
+    },
+    "dimensions": {
+      "performance": 95.6,
+      "ux_display": 85.0,
+      "battery": 63.3,
+      "build_thermals": 54.0,
+      "features": 81,
+      "camera_or_creator": 90.0,
+      "software_support": 60.0,
+      "value": 46.9
+    },
+    "titan_score": 74.3,
+    "rating_band": "Good",
+    "confidence": 88,
+    "explanation": "TITAN Score 74.3/100 (Good): strongest on performance (96) and camera or creator (90); weakest on build thermals (54) and value (47). Penalties applied: thermal complaints in review evidence. Confidence 88/100 based on 6 cited sources.",
+    "score_version": "titan-score-spike-v0.1"
+  },
+  {
+    "id": "samsung-galaxy-s24-ultra",
+    "brand": "Samsung",
+    "model": "Galaxy S24 Ultra",
+    "variant": "256GB / 12GB RAM, Titanium Gray, unlocked",
+    "price_usd": 649.99,
+    "online_rating": {
+      "score": 4.8,
+      "scale": 5,
+      "count": 1869,
+      "source_name": "Best Buy customer reviews - Galaxy S24 Ultra 256GB Titanium Gray",
+      "source_url": "https://www.bestbuy.com/site/reviews/samsung-galaxy-s24-ultra-256gb-unlocked-titanium-gray/6570299"
+    },
+    "dimensions": {
+      "performance": 93.8,
+      "ux_display": 100,
+      "battery": 68.3,
+      "build_thermals": 54.0,
+      "features": 81,
+      "camera_or_creator": 85.0,
+      "software_support": 45.0,
+      "value": 35.2
+    },
+    "titan_score": 74.5,
+    "rating_band": "Good",
+    "confidence": 88,
+    "explanation": "TITAN Score 74.5/100 (Good): strongest on ux display (100) and performance (94); weakest on software support (45) and value (35). Penalties applied: thermal complaints in review evidence. Confidence 88/100 based on 6 cited sources.",
+    "score_version": "titan-score-spike-v0.1"
+  },
+  {
+    "id": "google-pixel-8",
+    "brand": "Google",
+    "model": "Pixel 8",
+    "variant": "128GB, Obsidian, unlocked",
+    "price_usd": 448.34,
+    "online_rating": {
+      "score": 4.6,
+      "scale": 5,
+      "count": 1147,
+      "source_name": "Best Buy customer reviews - Pixel 8 128GB (Unlocked)",
+      "source_url": "https://www.bestbuy.com/site/reviews/google-pixel-8-128gb-unlocked-rose/6559244"
+    },
+    "dimensions": {
+      "performance": 55.7,
+      "ux_display": 85.0,
+      "battery": 51.3,
+      "build_thermals": 54.0,
+      "features": 81,
+      "camera_or_creator": 75.0,
+      "software_support": 60.0,
+      "value": 42.5
+    },
+    "titan_score": 62.5,
+    "rating_band": "Fair",
+    "confidence": 88,
+    "explanation": "TITAN Score 62.5/100 (Fair): strongest on ux display (85) and features (81); weakest on battery (51) and value (42). Penalties applied: thermal complaints in review evidence. Confidence 88/100 based on 5 cited sources.",
+    "score_version": "titan-score-spike-v0.1"
+  },
+  {
+    "id": "oneplus-12",
+    "brand": "OnePlus",
+    "model": "OnePlus 12",
+    "variant": "256GB / 12GB RAM, Silky Black, unlocked",
+    "price_usd": 649.99,
+    "online_rating": {
+      "score": 4.7,
+      "scale": 5,
+      "count": 53,
+      "source_name": "Best Buy customer reviews - OnePlus 12 256GB Silky Black",
+      "source_url": "https://www.bestbuy.com/site/reviews/oneplus-12-256gb-unlocked-silky-black/6570636"
+    },
+    "dimensions": {
+      "performance": 79.4,
+      "ux_display": 100,
+      "battery": 78.3,
+      "build_thermals": 72.0,
+      "features": 81,
+      "camera_or_creator": 80.0,
+      "software_support": 75.0,
+      "value": 35.8
+    },
+    "titan_score": 76.9,
+    "rating_band": "Good",
+    "confidence": 88,
+    "explanation": "TITAN Score 76.9/100 (Good): strongest on ux display (100) and features (81); weakest on build thermals (72) and value (36). Confidence 88/100 based on 6 cited sources.",
+    "score_version": "titan-score-spike-v0.1"
+  },
+  {
+    "id": "xiaomi-redmi-note-13-pro-plus",
+    "brand": "Xiaomi",
+    "model": "Redmi Note 13 Pro+",
+    "variant": "256GB / 8GB RAM, global version, unlocked (budget tier)",
+    "price_usd": 302.58,
+    "online_rating": {
+      "score": 4.3,
+      "scale": 5,
+      "count": 19713,
+      "source_name": "Flipkart customer ratings & reviews - Redmi Note 13 Pro+ 256GB",
+      "source_url": "https://www.flipkart.com/redmi-note-13-pro-5g-fusion-purple-256-gb/p/itma47dd2ab1b360"
+    },
+    "dimensions": {
+      "performance": 41.0,
+      "ux_display": 100,
+      "battery": 78.3,
+      "build_thermals": 72.0,
+      "features": 72,
+      "camera_or_creator": 80.0,
+      "software_support": 35.0,
+      "value": 69.4
+    },
+    "titan_score": 69.6,
+    "rating_band": "Fair",
+    "confidence": 73,
+    "explanation": "TITAN Score 69.6/100 (Fair): strongest on ux display (100) and camera or creator (80); weakest on performance (41) and software support (35). Confidence 73/100 based on 6 cited sources.",
+    "score_version": "titan-score-spike-v0.1"
+  }
+]

@@ -1,0 +1,251 @@
+[
+  {
+    "id": "apple-iphone-15-pro",
+    "category": "phone",
+    "brand": "Apple",
+    "model": "iPhone 15 Pro",
+    "variant": "128GB, Natural Titanium, unlocked",
+    "price_usd": 474,
+    "specs": {
+      "chipset": "Apple A17 Pro (3nm), 6-core CPU / 6-core GPU / 16-core Neural Engine",
+      "ram_gb": 8,
+      "storage_gb": 128,
+      "display": "6.1-inch LTPO Super Retina XDR OLED, 2556x1179 (460ppi), 120Hz ProMotion, ~2000 nits peak outdoor brightness",
+      "battery": "3274 mAh Li-Ion; Apple-rated ~23h video playback",
+      "camera": "48MP wide (f/1.8, sensor-shift OIS) + 12MP telephoto (3x optical) + 12MP ultrawide (120°); 4K60 Dolby Vision video",
+      "weight_g": 187,
+      "connectivity": "5G (sub-6GHz + mmWave in US), Wi-Fi 6E, Bluetooth 5.3, NFC, USB-C"
+    },
+    "benchmark": {
+      "name": "Geekbench 6 (single-core / multi-core)",
+      "value": "2505 / 6825",
+      "source_url": "https://browser.geekbench.com/ios_devices/iphone-15-pro"
+    },
+    "online_rating": {
+      "score": 4.5,
+      "scale": 5,
+      "count": 112,
+      "source_name": "Best Buy (Apple Pre-Owned iPhone 15 Pro 128GB, Unlocked)",
+      "source_url": "https://www.bestbuy.com/site/apple-pre-owned-iphone-15-pro-5g-128gb-unlocked-natural-titanium/6586114.p?skuId=6586114"
+    },
+    "review_themes": {
+      "praise": [
+        "48MP main camera and improved night mode/portrait quality widely called one of the best on any phone",
+        "Titanium frame makes it noticeably lighter and more comfortable to hold than prior Pro models",
+        "A17 Pro delivers strong, console-adjacent gaming performance plus the new customizable Action button"
+      ],
+      "complaints": [
+        "Frequent reports of the phone running noticeably hot even during light, non-intensive use, not just gaming/camera use",
+        "Reviewers trace the heat issue to a smaller heat-dissipation area and titanium's lower thermal conductivity vs. prior steel frames",
+        "Titanium finish shows fingerprints/smudges more readily than previous finishes"
+      ]
+    },
+    "sources": [
+      {"type": "spec", "name": "GSMArena - Apple iPhone 15 Pro full specs", "url": "https://www.gsmarena.com/apple_iphone_15_pro-12557.php", "observed_at": "2026-09-06"},
+      {"type": "price", "name": "Swappa - Apple iPhone 15 Pro price tracker", "url": "https://swappa.com/prices/apple-iphone-15-pro", "observed_at": "2026-09-06"},
+      {"type": "benchmark", "name": "Geekbench Browser - iPhone 15 Pro", "url": "https://browser.geekbench.com/ios_devices/iphone-15-pro", "observed_at": "2026-09-06"},
+      {"type": "review", "name": "Best Buy customer reviews - iPhone 15 Pro 128GB Pre-Owned", "url": "https://www.bestbuy.com/site/apple-pre-owned-iphone-15-pro-5g-128gb-unlocked-natural-titanium/6586114.p?skuId=6586114", "observed_at": "2026-09-06"},
+      {"type": "review", "name": "PhoneArena - iPhone 15 Pro overheating coverage", "url": "https://www.phonearena.com/news/iphone-15-pros-overheating-issues-cant-be-resolved-without-dialing-down-performance-apparently_id151001", "observed_at": "2026-09-06"},
+      {"type": "review", "name": "Cashify - Apple iPhone 15 Pro Long Term Review", "url": "https://www.cashify.in/review/apple-iphone-15-pro-long-term-review-brilliant-cameras-frustrating-heating-issues", "observed_at": "2026-09-06"}
+    ]
+  },
+  {
+    "id": "samsung-galaxy-s24-ultra",
+    "category": "phone",
+    "brand": "Samsung",
+    "model": "Galaxy S24 Ultra",
+    "variant": "256GB / 12GB RAM, Titanium Gray, unlocked",
+    "price_usd": 649.99,
+    "specs": {
+      "chipset": "Qualcomm Snapdragon 8 Gen 3 for Galaxy (SM8650-AC), Adreno 750 GPU",
+      "ram_gb": 12,
+      "storage_gb": 256,
+      "display": "6.8-inch QHD+ (3120x1440, 505ppi) Dynamic AMOLED 2X, adaptive 1-120Hz, HDR10+, Gorilla Glass Victus Armor",
+      "battery": "5000 mAh, 45W wired / 15W wireless / 4.5W reverse wireless charging",
+      "camera": "200MP wide + 50MP periscope telephoto (5x optical) + 10MP telephoto (3x optical) + 12MP ultrawide; built-in S Pen",
+      "weight_g": 232,
+      "connectivity": "5G, Wi-Fi, Bluetooth 5.3, NFC, UWB, S Pen"
+    },
+    "benchmark": {
+      "name": "Geekbench 6 (single-core / multi-core); AnTuTu v10 overall",
+      "value": "2208 / 6752 (Geekbench 6); ~1,770,105 (AnTuTu)",
+      "source_url": "https://browser.geekbench.com/android_devices/samsung-galaxy-s24-ultra"
+    },
+    "online_rating": {
+      "score": 4.8,
+      "scale": 5,
+      "count": 1869,
+      "source_name": "Best Buy customer reviews - Galaxy S24 Ultra 256GB Titanium Gray",
+      "source_url": "https://www.bestbuy.com/site/reviews/samsung-galaxy-s24-ultra-256gb-unlocked-titanium-gray/6570299"
+    },
+    "review_themes": {
+      "praise": [
+        "Telephoto/zoom sharpness and consistency praised, especially the 5x shots and Ultra HDR photo capture",
+        "All-day battery life even under heavy camera/editing use, with strong screen-on time",
+        "Galaxy AI features (note summarization, photo object editing, live call translation) seen as genuinely useful additions"
+      ],
+      "complaints": [
+        "Galaxy AI functionality criticized as overhyped relative to marketing, with some features adding lag rather than real value",
+        "Swap of the 10MP 10x telephoto for a 50MP 5x sensor seen as a reduction in reliable long-zoom reach versus prior generation",
+        "Software described as bloated/cluttered, and the phone is large and heavy in hand"
+      ]
+    },
+    "sources": [
+      {"type": "spec", "name": "GSMArena - Samsung Galaxy S24 Ultra review/specs", "url": "https://www.gsmarena.com/samsung_galaxy_s24_ultra-review-2670.php", "observed_at": "2026-09-06"},
+      {"type": "price", "name": "Best Buy - Galaxy S24 Ultra 256GB unlocked", "url": "https://www.bestbuy.com/product/samsung-galaxy-s24-ultra-256gb-unlocked-titanium-gray/J3ZYG2QYWS", "observed_at": "2026-09-06"},
+      {"type": "benchmark", "name": "Geekbench Browser - Galaxy S24 Ultra", "url": "https://browser.geekbench.com/android_devices/samsung-galaxy-s24-ultra", "observed_at": "2026-09-06"},
+      {"type": "benchmark", "name": "MySmartPrice - Galaxy S24 Ultra AnTuTu score", "url": "https://www.mysmartprice.com/mobile/samsung-galaxy-s24-ultra-msp21952/benchmark-scores", "observed_at": "2026-09-06"},
+      {"type": "review", "name": "Best Buy customer reviews - Galaxy S24 Ultra 256GB", "url": "https://www.bestbuy.com/site/reviews/samsung-galaxy-s24-ultra-256gb-unlocked-titanium-gray/6570299", "observed_at": "2026-09-06"},
+      {"type": "review", "name": "TechRadar - Samsung Galaxy S24 Ultra review", "url": "https://www.techradar.com/phones/samsung-galaxy-phones/samsung-galaxy-s24-ultra-review", "observed_at": "2026-09-06"}
+    ]
+  },
+  {
+    "id": "google-pixel-8",
+    "category": "phone",
+    "brand": "Google",
+    "model": "Pixel 8",
+    "variant": "128GB, Obsidian, unlocked",
+    "price_usd": 448.34,
+    "specs": {
+      "chipset": "Google Tensor G3 (4nm), Immortalis-G715s MC10 GPU",
+      "ram_gb": 8,
+      "storage_gb": 128,
+      "display": "6.2-inch Actua OLED, 120Hz refresh, up to ~2000 nits peak brightness",
+      "battery": "4575 mAh, 27W wired / 18W wireless, reverse wireless charging",
+      "camera": "50MP wide f/1.9 OIS + 12MP ultrawide (126°, autofocus); 10.5MP ultrawide front camera",
+      "weight_g": 187,
+      "connectivity": "5G, Wi-Fi 6E, Bluetooth 5.3, NFC, IP68"
+    },
+    "benchmark": {
+      "name": "Geekbench 6 (single-core / multi-core)",
+      "value": "~1722 / ~4458",
+      "source_url": "https://nanoreview.net/en/phone/google-pixel-8"
+    },
+    "online_rating": {
+      "score": 4.6,
+      "scale": 5,
+      "count": 1147,
+      "source_name": "Best Buy customer reviews - Pixel 8 128GB (Unlocked)",
+      "source_url": "https://www.bestbuy.com/site/reviews/google-pixel-8-128gb-unlocked-rose/6559244"
+    },
+    "review_themes": {
+      "praise": [
+        "Camera quality, especially low-light/Night Sight performance, frequently called among the best in class",
+        "Tensor G3 keeps day-to-day use responsive with fluid multitasking and fast app launches",
+        "6.2-inch 120Hz Actua OLED display called sharp and vibrant for its size"
+      ],
+      "complaints": [
+        "Mixed battery-life reports; some users say it barely lasts a full day under heavier use",
+        "Can still get uncomfortably warm during sustained gaming/video, though less than earlier Tensor generations",
+        "Some users note photos can look processed/washed-out, and occasional software bugs were reported"
+      ]
+    },
+    "sources": [
+      {"type": "spec", "name": "GSMArena - Google Pixel 8 review/specs", "url": "https://www.gsmarena.com/google_pixel_8-review-2628.php", "observed_at": "2026-09-06"},
+      {"type": "price", "name": "Google Pixel Community thread citing Amazon price", "url": "https://support.google.com/pixelphone/thread/309899287/", "observed_at": "2026-09-06"},
+      {"type": "benchmark", "name": "Nanoreview - Google Pixel 8 benchmarks", "url": "https://nanoreview.net/en/phone/google-pixel-8", "observed_at": "2026-09-06"},
+      {"type": "review", "name": "Best Buy customer reviews - Pixel 8 128GB", "url": "https://www.bestbuy.com/site/reviews/google-pixel-8-128gb-unlocked-rose/6559244", "observed_at": "2026-09-06"},
+      {"type": "review", "name": "AndroidPolice - Pixel 8 regrets piece", "url": "https://www.androidpolice.com/reasons-i-regret-buying-google-pixel-8/", "observed_at": "2026-09-06"}
+    ]
+  },
+  {
+    "id": "oneplus-12",
+    "category": "phone",
+    "brand": "OnePlus",
+    "model": "OnePlus 12",
+    "variant": "256GB / 12GB RAM, Silky Black, unlocked",
+    "price_usd": 649.99,
+    "specs": {
+      "chipset": "Qualcomm Snapdragon 8 Gen 3",
+      "ram_gb": 12,
+      "storage_gb": 256,
+      "display": "6.82-inch 2K (3168x1440) AMOLED, 120Hz ProXDR, Dolby Vision",
+      "battery": "5400 mAh, 100W SUPERVOOC wired / 50W wireless charging",
+      "camera": "50MP main + 64MP periscope telephoto + 48MP ultrawide (Hasselblad-tuned); 32MP front",
+      "weight_g": 220,
+      "connectivity": "5G, Wi-Fi, Bluetooth, NFC, dual SIM, IP65"
+    },
+    "benchmark": {
+      "name": "Geekbench 6 (single-core / multi-core)",
+      "value": "2130 / 6175",
+      "source_url": "https://browser.geekbench.com/android_devices/oneplus-12"
+    },
+    "online_rating": {
+      "score": 4.7,
+      "scale": 5,
+      "count": 53,
+      "source_name": "Best Buy customer reviews - OnePlus 12 256GB Silky Black",
+      "source_url": "https://www.bestbuy.com/site/reviews/oneplus-12-256gb-unlocked-silky-black/6570636"
+    },
+    "review_themes": {
+      "praise": [
+        "Stills camera performance (Hasselblad tuning) called universally great, particularly in low light, with strong video stabilization",
+        "100W wired charging gets the phone to ~67% in 15 minutes and full in about half an hour; 50W wireless charging also included",
+        "Bright, high-quality 2K AMOLED display and clean, close-to-stock Android software experience"
+      ],
+      "complaints": [
+        "Ultra-wide camera and daylight video quality seen as noticeably weaker than the main camera",
+        "IP65 water/dust resistance falls short of the IP68 rating common on rival flagships",
+        "Only 4 years of promised major OS upgrades, less than some competitors now offering up to 7 years"
+      ]
+    },
+    "sources": [
+      {"type": "spec", "name": "GSMArena / Ubergizmo - OnePlus 12 specs", "url": "https://www.ubergizmo.com/products/lang/en_us/devices/oneplus-12/", "observed_at": "2026-09-06"},
+      {"type": "price", "name": "PhoneArena - OnePlus 12 store discount coverage", "url": "https://www.phonearena.com/news/oneplus-12-official-store-discount_id170557", "observed_at": "2026-09-06"},
+      {"type": "benchmark", "name": "Geekbench Browser - OnePlus 12", "url": "https://browser.geekbench.com/android_devices/oneplus-12", "observed_at": "2026-09-06"},
+      {"type": "review", "name": "Best Buy customer reviews - OnePlus 12 256GB", "url": "https://www.bestbuy.com/site/reviews/oneplus-12-256gb-unlocked-silky-black/6570636", "observed_at": "2026-09-06"},
+      {"type": "review", "name": "TechAdvisor - OnePlus 12 Review", "url": "https://www.techadvisor.com/article/2213640/oneplus-12-review.html", "observed_at": "2026-09-06"},
+      {"type": "review", "name": "GSMArena - OnePlus 12 review, pros/cons", "url": "https://www.gsmarena.com/oneplus_12-review-2659p6.php", "observed_at": "2026-09-06"}
+    ]
+  },
+  {
+    "id": "xiaomi-redmi-note-13-pro-plus",
+    "category": "phone",
+    "brand": "Xiaomi",
+    "model": "Redmi Note 13 Pro+",
+    "variant": "256GB / 8GB RAM, global version, unlocked (budget tier)",
+    "price_usd": 302.58,
+    "specs": {
+      "chipset": "MediaTek Dimensity 7200-Ultra (4nm)",
+      "ram_gb": 8,
+      "storage_gb": 256,
+      "display": "6.67-inch curved AMOLED, 1220x2712 (~446ppi), 120Hz, 1800 nits peak, Gorilla Glass Victus",
+      "battery": "5000 mAh, 120W wired fast charging (full charge in ~19 min claimed)",
+      "camera": "200MP main (Samsung ISOCELL HP3, OIS, PDAF) + 8MP ultrawide + 2MP macro; 16MP front",
+      "weight_g": 199,
+      "connectivity": "5G, Wi-Fi 6, Bluetooth 5.3, NFC, IP68 dust/water resistance"
+    },
+    "benchmark": {
+      "name": "AnTuTu v10 overall score",
+      "value": "803,381",
+      "source_url": "https://www.kimovil.com/en/xiaomi-redmi-note-13-pro-plus/antutu"
+    },
+    "online_rating": {
+      "score": 4.3,
+      "scale": 5,
+      "count": 19713,
+      "source_name": "Flipkart customer ratings & reviews - Redmi Note 13 Pro+ 256GB",
+      "source_url": "https://www.flipkart.com/redmi-note-13-pro-5g-fusion-purple-256-gb/p/itma47dd2ab1b360"
+    },
+    "review_themes": {
+      "praise": [
+        "Design, build quality and 6.67-inch AMOLED display frequently called flagship-like for the price",
+        "Strong battery life paired with very fast 120W charging",
+        "200MP main camera resolution seen as a standout feature at this price point, including usable lossless zoom crops"
+      ],
+      "complaints": [
+        "Heavy bloatware out of the box, with many pre-installed third-party apps, games and ads users must manually remove",
+        "Supporting ultrawide/macro cameras and color processing seen as weak compared to the strong main sensor",
+        "Ships on an older Android/MIUI version with a short remaining software-support window versus rivals"
+      ]
+    },
+    "sources": [
+      {"type": "spec", "name": "GSMArena - Xiaomi Redmi Note 13 Pro+ full specs", "url": "https://www.gsmarena.com/xiaomi_redmi_note_13_pro+-12572.php", "observed_at": "2026-09-06"},
+      {"type": "price", "name": "Kimovil - Redmi Note 13 Pro+ price tracker", "url": "https://www.kimovil.com/en/where-to-buy-xiaomi-redmi-note-13-pro-plus", "observed_at": "2026-09-06"},
+      {"type": "benchmark", "name": "Kimovil - Redmi Note 13 Pro+ AnTuTu benchmark", "url": "https://www.kimovil.com/en/xiaomi-redmi-note-13-pro-plus/antutu", "observed_at": "2026-09-06"},
+      {"type": "review", "name": "Flipkart customer reviews - Redmi Note 13 Pro+ 256GB", "url": "https://www.flipkart.com/redmi-note-13-pro-5g-fusion-purple-256-gb/p/itma47dd2ab1b360", "observed_at": "2026-09-06"},
+      {"type": "review", "name": "Android Central - Redmi Note 13 Pro+ review", "url": "https://www.androidcentral.com/phones/redmi-note-13-pro-plus-review", "observed_at": "2026-09-06"},
+      {"type": "review", "name": "PocketNow - Redmi Note 13 Pro+ review", "url": "https://pocketnow.com/redmi-note-13-pro-plus-review/", "observed_at": "2026-09-06"}
+    ]
+  }
+]

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TITAN Labs — Autonomous Swarm Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Header Bar -->
+    <header class="navbar">
+      <div class="brand-group">
+        <div class="logo-mark">T</div>
+        <div class="brand-titles">
+          <div class="brand-title">TITAN LABS</div>
+          <div class="brand-subtitle">AUTONOMOUS SWARM STUDIO • v1.0.0</div>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <div class="badge-status" id="emulator-badge">
+          <span class="pulse-dot"></span>
+          <span id="emulator-text">Checking Emulator...</span>
+        </div>
+        <button id="btn-run-cycle" class="btn-primary">
+          <span class="icon">⚡</span> Run Autopilot Cycle
+        </button>
+      </div>
+    </header>
+
+    <!-- Metrics Cards Overview -->
+    <section class="metrics-row">
+      <div class="metric-card">
+        <div class="metric-label">Autonomous Agents</div>
+        <div class="metric-val" id="metric-agent-count">9</div>
+        <div class="metric-sub">Control Tower, Dev, Bridge, QA, Arch & Audit</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Architecture Health</div>
+        <div class="metric-val gradient-text">95 / 100</div>
+        <div class="metric-sub">Clean Architecture & 8-Dim Engine Invariant</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Spec Compliance</div>
+        <div class="metric-val gradient-text-orange">98%</div>
+        <div class="metric-sub">Master Specifications 01-05 Verified</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Antigravity Bridge</div>
+        <div class="metric-val status-pass">SYNCHRONIZED</div>
+        <div class="metric-sub">TITAN_CYCLE_REPORT_FOR_ASSISTANT.md</div>
+      </div>
+    </section>
+
+    <!-- Main Navigation Tabs -->
+    <nav class="nav-tabs">
+      <button class="tab-btn active" data-tab="tab-fleet">🤖 Agent Swarm (9)</button>
+      <button class="tab-btn" data-tab="tab-screens">📱 Live Emulator Screens</button>
+      <button class="tab-btn" data-tab="tab-reports">📑 Cycle Reports & Audits</button>
+      <button class="tab-btn" data-tab="tab-console">📡 Live Activity Log</button>
+    </nav>
+
+    <!-- TAB 1: Agent Fleet -->
+    <main class="tab-content active" id="tab-fleet">
+      <div class="section-header">
+        <h2>Autonomous Agent Fleet</h2>
+        <p>Continuous maintenance, self-improving prompt engines, and architecture guardians.</p>
+      </div>
+      <div class="agents-grid" id="agents-container">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </main>
+
+    <!-- TAB 2: Live Emulator Screens -->
+    <main class="tab-content" id="tab-screens">
+      <div class="section-header">
+        <h2>Android Studio Emulator Verification</h2>
+        <p>Verified live on connected emulator (1080×2400) matching official UI design sheets.</p>
+      </div>
+      <div class="screens-grid">
+        <div class="screen-card">
+          <div class="screen-header">
+            <span class="screen-name">1. Home Screen</span>
+            <span class="badge-verified">VERIFIED</span>
+          </div>
+          <div class="screen-preview-box">
+            <img src="/reports/screenshots/screen_1_home.png" onerror="this.src='/reports/screenshots/placeholder.png'" alt="Home Screen">
+          </div>
+          <div class="screen-footer">Header logo, greeting, search, category pills & promo card</div>
+        </div>
+
+        <div class="screen-card">
+          <div class="screen-header">
+            <span class="screen-name">2. Search & Filters</span>
+            <span class="badge-verified">VERIFIED</span>
+          </div>
+          <div class="screen-preview-box">
+            <img src="/reports/screenshots/screen_2_search.png" onerror="this.src='/reports/screenshots/placeholder.png'" alt="Search Screen">
+          </div>
+          <div class="screen-footer">Product cards, TITAN Score badges, prices & bottom filter sheet</div>
+        </div>
+
+        <div class="screen-card">
+          <div class="screen-header">
+            <span class="screen-name">3. Product Details</span>
+            <span class="badge-verified">VERIFIED</span>
+          </div>
+          <div class="screen-preview-box">
+            <img src="/reports/screenshots/screen_3_product_details.png" onerror="this.src='/reports/screenshots/placeholder.png'" alt="Details Screen">
+          </div>
+          <div class="screen-footer">Image gallery, Best Price table, 8-dim radar breakdown & sticky bar</div>
+        </div>
+
+        <div class="screen-card">
+          <div class="screen-header">
+            <span class="screen-name">4. Saved Items</span>
+            <span class="badge-verified">VERIFIED</span>
+          </div>
+          <div class="screen-preview-box">
+            <img src="/reports/screenshots/screen_4_saved.png" onerror="this.src='/reports/screenshots/placeholder.png'" alt="Saved Screen">
+          </div>
+          <div class="screen-footer">Tab switcher (Products | Searches) with filled heart save states</div>
+        </div>
+
+        <div class="screen-card">
+          <div class="screen-header">
+            <span class="screen-name">5. Compare Matrix</span>
+            <span class="badge-verified">VERIFIED</span>
+          </div>
+          <div class="screen-preview-box">
+            <img src="/reports/screenshots/screen_5_compare.png" onerror="this.src='/reports/screenshots/placeholder.png'" alt="Compare Screen">
+          </div>
+          <div class="screen-footer">Side-by-side product cards & comprehensive hardware matrix</div>
+        </div>
+
+        <div class="screen-card">
+          <div class="screen-header">
+            <span class="screen-name">6. Account Screen</span>
+            <span class="badge-verified">VERIFIED</span>
+          </div>
+          <div class="screen-preview-box">
+            <img src="/reports/screenshots/screen_6_account.png" onerror="this.src='/reports/screenshots/placeholder.png'" alt="Account Screen">
+          </div>
+          <div class="screen-footer">Profile card, activity counters & settings navigation</div>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB 3: Cycle Reports & Audits -->
+    <main class="tab-content" id="tab-reports">
+      <div class="section-header">
+        <h2>Autonomous Cycle Reports & Antigravity Handoffs</h2>
+        <p>Detailed verification records, regression checks, and self-tuning prompt proposals.</p>
+      </div>
+      <div class="reports-layout">
+        <div class="reports-sidebar" id="reports-list">
+          <!-- Loaded dynamically -->
+        </div>
+        <div class="report-viewer" id="report-detail">
+          <div class="empty-state">Select a cycle report from the list on the left to inspect details.</div>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB 4: Live Activity Console -->
+    <main class="tab-content" id="tab-console">
+      <div class="section-header">
+        <h2>Live Swarm Telemetry & Log Stream</h2>
+        <p>Real-time execution log from Gradle, ADB, and autonomous agent loops.</p>
+      </div>
+      <div class="terminal-window">
+        <div class="terminal-bar">
+          <span class="term-dot dot-red"></span>
+          <span class="term-dot dot-yellow"></span>
+          <span class="term-dot dot-green"></span>
+          <span class="term-title">titan-swarm-daemon.log</span>
+        </div>
+        <div class="terminal-body" id="log-output">
+          <!-- Logs streamed here -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Prompt Editor Modal -->
+  <div class="modal" id="prompt-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-agent-title">Edit Agent System Prompt</h3>
+        <button class="modal-close" id="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <textarea id="modal-prompt-text" spellcheck="false"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" id="modal-cancel">Cancel</button>
+        <button class="btn-primary" id="modal-save">Save & Tune Prompt</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

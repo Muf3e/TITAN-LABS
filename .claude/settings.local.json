@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.amazon.com)",
+      "WebFetch(domain:www.gsmarena.com)",
+      "WebFetch(domain:www.cpu-monkey.com)",
+      "WebFetch(domain:www.flipkart.com)",
+      "WebFetch(domain:www.bestbuy.com)",
+      "WebFetch(domain:browser.geekbench.com)"
+    ]
+  }
+}

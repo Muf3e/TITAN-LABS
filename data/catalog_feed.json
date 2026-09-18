@@ -1,0 +1,1304 @@
+{
+  "generated_at": "2026-09-18T11:20:32.493397",
+  "total_products": 8,
+  "products": [
+    {
+      "id": "asus-rog-strix-g16",
+      "name": "ASUS ROG Strix G16 (2024)",
+      "variant": "Gaming Laptop \u2022 16\" \u2022 RTX 4060",
+      "category": "LAPTOP",
+      "brand": "ASUS",
+      "best_price_inr": 148490,
+      "original_price_inr": 171626,
+      "discount_percent": 13,
+      "titan_score": 89,
+      "evidence_confidence": 92,
+      "online_rating": 4.6,
+      "online_rating_count": 1240,
+      "availability": "IN_STOCK",
+      "offers": [
+        {
+          "retailer": "Amazon",
+          "title": "ASUS ROG Strix G16 2024 RTX 4060 (Fulfilled by Amazon)",
+          "price_inr": 148490,
+          "original_price_inr": 169278,
+          "discount_percent": 12,
+          "in_stock": true,
+          "delivery_info": "Prime Next-Day Delivery & 7 Days Replacement",
+          "url": "https://www.amazon.in/s?k=ASUS+ROG+Strix+G16+2024+RTX+4060"
+        },
+        {
+          "retailer": "Flipkart",
+          "title": "ASUS ROG Strix G16 2024 RTX 4060 (Flipkart Assured)",
+          "price_inr": 149240,
+          "original_price_inr": 171626,
+          "discount_percent": 13,
+          "in_stock": true,
+          "delivery_info": "Free Delivery & Extra \u20b93,000 Bank Discount",
+          "url": "https://www.flipkart.com/search?q=ASUS+ROG+Strix+G16+2024+RTX+4060"
+        },
+        {
+          "retailer": "Croma",
+          "title": "ASUS ROG Strix G16 2024 RTX 4060 (Tata Croma Official)",
+          "price_inr": 151489,
+          "original_price_inr": 169667,
+          "discount_percent": 10,
+          "in_stock": true,
+          "delivery_info": "Express Store Pickup & Official Brand Warranty",
+          "url": "https://www.croma.com/searchB?q=ASUS+ROG+Strix+G16+2024+RTX+4060"
+        }
+      ],
+      "dimension_scores": {
+        "Performance": 94,
+        "Build & Ergonomics": 90,
+        "Battery & Efficiency": 78,
+        "Display & Audio": 92,
+        "Thermal & Acoustics": 89,
+        "Feature Set": 93,
+        "Price-to-Value": 91,
+        "Reliability & Support": 90
+      },
+      "synthesis_verdict": "Unrivaled sustained gaming performance and acoustic control in the upper mid-range tier.",
+      "top_pros": [
+        "Blazing Intel i7-14650HX + RTX 4060 gaming performance",
+        "Tri-Fan cooling system with liquid metal conducts heat efficiently",
+        "Vibrant 165Hz ROG Nebula display with 100% sRGB coverage",
+        "Substantial keyboard travel with responsive per-key RGB backlighting"
+      ],
+      "top_cons": [
+        "Substantial 2.5 kg chassis weight makes daily commute tiring",
+        "Chunky 280W DC power brick adds significant travel bulk",
+        "Plastic bottom casing feels less premium than metal top lid"
+      ],
+      "specifications": [
+        {
+          "label": "Processor",
+          "value": "Intel Core i7-14650HX (16 Cores, up to 5.2 GHz)"
+        },
+        {
+          "label": "Graphics",
+          "value": "NVIDIA GeForce RTX 4060 8GB GDDR6 (140W Max TGP)"
+        },
+        {
+          "label": "Display",
+          "value": "16-inch FHD+ (1920x1200) 165Hz IPS, 100% sRGB, G-Sync"
+        },
+        {
+          "label": "Memory",
+          "value": "16GB DDR5-5600MHz (Dual Channel, Expandable to 32GB)"
+        },
+        {
+          "label": "Storage",
+          "value": "1TB PCIe 4.0 NVMe M.2 SSD"
+        },
+        {
+          "label": "Battery",
+          "value": "90WHrs 4-cell Li-ion (Supports 100W USB-C PD)"
+        },
+        {
+          "label": "Operating System",
+          "value": "Windows 11 Home 64-bit"
+        },
+        {
+          "label": "Weight",
+          "value": "2.50 kg (5.51 lbs)"
+        }
+      ],
+      "benchmarks": [
+        {
+          "platform": "Geekbench 6",
+          "test_name": "Single-Core CPU",
+          "raw_score": 2750,
+          "normalized_score": 94,
+          "percentile": 95,
+          "source_attribution": "Geekbench Browser Verified"
+        },
+        {
+          "platform": "Geekbench 6",
+          "test_name": "Multi-Core CPU",
+          "raw_score": 14200,
+          "normalized_score": 93,
+          "percentile": 93,
+          "source_attribution": "Geekbench Browser Verified"
+        },
+        {
+          "platform": "3DMark",
+          "test_name": "Time Spy Graphics (RTX 4060 140W)",
+          "raw_score": 10850,
+          "normalized_score": 91,
+          "percentile": 92,
+          "source_attribution": "UL 3DMark Database"
+        },
+        {
+          "platform": "Cinebench R23",
+          "test_name": "Multi-Core Sustained (10-min)",
+          "raw_score": 21450,
+          "normalized_score": 92,
+          "percentile": 94,
+          "source_attribution": "TITAN Thermal Testbench"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "GAMING_PERFORMANCE",
+          "displayName": "Gaming Performance",
+          "sentiment": "POSITIVE",
+          "mentionCount": 542,
+          "representativeQuote": "Plays Cyberpunk and Valorant at ultra settings without frame drops."
+        },
+        {
+          "theme": "THERMAL_MANAGEMENT",
+          "displayName": "Thermal Management",
+          "sentiment": "POSITIVE",
+          "mentionCount": 388,
+          "representativeQuote": "Tri-fan system prevents thermal throttling even during 3-hour sessions."
+        },
+        {
+          "theme": "BATTERY_LIFE",
+          "displayName": "Battery Life",
+          "sentiment": "MIXED",
+          "mentionCount": 210,
+          "representativeQuote": "Lasts 4.5 hours on light office work; needs AC adapter for serious work."
+        },
+        {
+          "theme": "PORTABILITY",
+          "displayName": "Portability",
+          "sentiment": "NEGATIVE",
+          "mentionCount": 178,
+          "representativeQuote": "Very heavy to carry around every day in a normal backpack."
+        }
+      ],
+      "external_reviews": [
+        {
+          "source": "Notebookcheck",
+          "sourceType": "EDITORIAL",
+          "author": "Florian Glaser",
+          "score": 88,
+          "summary": "Outstanding sustained clock speeds and quiet idle acoustics make the Strix G16 a top-tier gaming pick.",
+          "url": "https://www.notebookcheck.net"
+        },
+        {
+          "source": "TechRadar",
+          "sourceType": "EDITORIAL",
+          "author": "Mark Spoonauer",
+          "score": 90,
+          "summary": "Great screen, robust RTX 4060 graphics, and sleek styling at a competitive price point.",
+          "url": "https://www.techradar.com"
+        }
+      ],
+      "price_history": {
+        "day_low_inr": 148490,
+        "average_inr": 149739,
+        "day_high_inr": 171626,
+        "recommendation": "STRONG_BUY"
+      },
+      "last_updated": "2026-09-18 11:20:21"
+    },
+    {
+      "id": "lenovo-legion-5-pro",
+      "name": "Lenovo Legion 5 Pro",
+      "variant": "Gaming Laptop \u2022 16\" \u2022 RTX 4060",
+      "category": "LAPTOP",
+      "brand": "Lenovo",
+      "best_price_inr": 139990,
+      "original_price_inr": 161183,
+      "discount_percent": 13,
+      "titan_score": 89,
+      "evidence_confidence": 89,
+      "online_rating": 4.5,
+      "online_rating_count": 890,
+      "availability": "IN_STOCK",
+      "offers": [
+        {
+          "retailer": "Amazon",
+          "title": "Lenovo Legion 5 Pro RTX 4060 (Fulfilled by Amazon)",
+          "price_inr": 141389,
+          "original_price_inr": 161183,
+          "discount_percent": 12,
+          "in_stock": true,
+          "delivery_info": "Prime Next-Day Delivery & 7 Days Replacement",
+          "url": "https://www.amazon.in/s?k=Lenovo+Legion+5+Pro+RTX+4060"
+        },
+        {
+          "retailer": "Flipkart",
+          "title": "Lenovo Legion 5 Pro RTX 4060 (Flipkart Assured)",
+          "price_inr": 139990,
+          "original_price_inr": 160988,
+          "discount_percent": 13,
+          "in_stock": true,
+          "delivery_info": "Free Delivery & Extra \u20b93,000 Bank Discount",
+          "url": "https://www.flipkart.com/search?q=Lenovo+Legion+5+Pro+RTX+4060"
+        },
+        {
+          "retailer": "Croma",
+          "title": "Lenovo Legion 5 Pro RTX 4060 (Tata Croma Official)",
+          "price_inr": 140689,
+          "original_price_inr": 157571,
+          "discount_percent": 10,
+          "in_stock": true,
+          "delivery_info": "Express Store Pickup & Official Brand Warranty",
+          "url": "https://www.croma.com/searchB?q=Lenovo+Legion+5+Pro+RTX+4060"
+        }
+      ],
+      "dimension_scores": {
+        "Performance": 92,
+        "Build & Ergonomics": 93,
+        "Battery & Efficiency": 76,
+        "Display & Audio": 95,
+        "Thermal & Acoustics": 90,
+        "Feature Set": 91,
+        "Price-to-Value": 90,
+        "Reliability & Support": 92
+      },
+      "synthesis_verdict": "Premier WQXGA 240Hz display coupled with top-tier keyboard ergonomics.",
+      "top_pros": [
+        "Class-leading 16:10 240Hz WQXGA 500-nit display with HDR400",
+        "Exceptional TrueStrike tactile keyboard with full numpad",
+        "Coldfront 5.0 vapor chamber prevents palm rest hot spots",
+        "Clean, understated industrial aesthetics suitable for office environments"
+      ],
+      "top_cons": [
+        "Heavy 300W power adapter adds noticeable weight to carrying case",
+        "Speakers lack low-end bass presence compared to MacBooks",
+        "Battery runtime tops out around 5 hours on eco mode"
+      ],
+      "specifications": [
+        {
+          "label": "Processor",
+          "value": "AMD Ryzen 7 7745HX (8 Cores, 16 Threads, up to 5.1 GHz)"
+        },
+        {
+          "label": "Graphics",
+          "value": "NVIDIA GeForce RTX 4060 8GB GDDR6 (140W Max TGP)"
+        },
+        {
+          "label": "Display",
+          "value": "16-inch WQXGA (2560x1600) 240Hz IPS, 500 nits, 100% sRGB"
+        },
+        {
+          "label": "Memory",
+          "value": "16GB DDR5-5200MHz"
+        },
+        {
+          "label": "Storage",
+          "value": "1TB PCIe 4.0 NVMe M.2 SSD"
+        },
+        {
+          "label": "Battery",
+          "value": "80WHrs with Super Rapid Charge Pro"
+        },
+        {
+          "label": "Operating System",
+          "value": "Windows 11 Home"
+        },
+        {
+          "label": "Weight",
+          "value": "2.55 kg"
+        }
+      ],
+      "benchmarks": [
+        {
+          "platform": "Geekbench 6",
+          "test_name": "Single-Core CPU",
+          "raw_score": 2680,
+          "normalized_score": 92,
+          "percentile": 92,
+          "source_attribution": "Geekbench Browser Verified"
+        },
+        {
+          "platform": "Geekbench 6",
+          "test_name": "Multi-Core CPU",
+          "raw_score": 13850,
+          "normalized_score": 91,
+          "percentile": 90,
+          "source_attribution": "Geekbench Browser Verified"
+        },
+        {
+          "platform": "3DMark",
+          "test_name": "Time Spy Graphics (RTX 4060 140W)",
+          "raw_score": 10620,
+          "normalized_score": 90,
+          "percentile": 90,
+          "source_attribution": "UL 3DMark Database"
+        },
+        {
+          "platform": "Cinebench R23",
+          "test_name": "Multi-Core Sustained (10-min)",
+          "raw_score": 20800,
+          "normalized_score": 90,
+          "percentile": 91,
+          "source_attribution": "TITAN Thermal Testbench"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "DISPLAY_QUALITY",
+          "displayName": "Display Quality",
+          "sentiment": "POSITIVE",
+          "mentionCount": 420,
+          "representativeQuote": "The 240Hz 500-nit screen is gorgeous for both editing and gaming."
+        },
+        {
+          "theme": "KEYBOARD_COMFORT",
+          "displayName": "Keyboard Comfort",
+          "sentiment": "POSITIVE",
+          "mentionCount": 310,
+          "representativeQuote": "Lenovo TrueStrike keys are by far the best laptop keyboard on the market."
+        },
+        {
+          "theme": "PORTABILITY",
+          "displayName": "Portability",
+          "sentiment": "NEGATIVE",
+          "mentionCount": 165,
+          "representativeQuote": "The laptop and 300W power brick together weigh over 3.2 kg."
+        }
+      ],
+      "external_reviews": [
+        {
+          "source": "Tom's Hardware",
+          "sourceType": "EDITORIAL",
+          "author": "Jarred Walton",
+          "score": 90,
+          "summary": "The Legion 5 Pro hits the sweet spot between enthusiast performance and ergonomic productivity.",
+          "url": "https://www.tomshardware.com"
+        }
+      ],
+      "price_history": {
+        "day_low_inr": 139990,
+        "average_inr": 140689,
+        "day_high_inr": 161183,
+        "recommendation": "STRONG_BUY"
+      },
+      "last_updated": "2026-09-18 11:20:22"
+    },
+    {
+      "id": "acer-predator-helios-neo",
+      "name": "Acer Predator Helios Neo",
+      "variant": "Gaming Laptop \u2022 16\" \u2022 RTX 4060",
+      "category": "LAPTOP",
+      "brand": "Acer",
+      "best_price_inr": 129990,
+      "original_price_inr": 150234,
+      "discount_percent": 13,
+      "titan_score": 86,
+      "evidence_confidence": 86,
+      "online_rating": 4.4,
+      "online_rating_count": 670,
+      "availability": "IN_STOCK",
+      "offers": [
+        {
+          "retailer": "Amazon",
+          "title": "Acer Predator Helios Neo 16 RTX 4060 (Fulfilled by Amazon)",
+          "price_inr": 129990,
+          "original_price_inr": 148188,
+          "discount_percent": 12,
+          "in_stock": true,
+          "delivery_info": "Prime Next-Day Delivery & 7 Days Replacement",
+          "url": "https://www.amazon.in/s?k=Acer+Predator+Helios+Neo+16+RTX+4060"
+        },
+        {
+          "retailer": "Flipkart",
+          "title": "Acer Predator Helios Neo 16 RTX 4060 (Flipkart Assured)",
+          "price_inr": 130639,
+          "original_price_inr": 150234,
+          "discount_percent": 13,
+          "in_stock": true,
+          "delivery_info": "Free Delivery & Extra \u20b93,000 Bank Discount",
+          "url": "https://www.flipkart.com/search?q=Acer+Predator+Helios+Neo+16+RTX+4060"
+        },
+        {
+          "retailer": "Croma",
+          "title": "Acer Predator Helios Neo 16 RTX 4060 (Tata Croma Official)",
+          "price_inr": 130639,
+          "original_price_inr": 146315,
+          "discount_percent": 10,
+          "in_stock": true,
+          "delivery_info": "Express Store Pickup & Official Brand Warranty",
+          "url": "https://www.croma.com/searchB?q=Acer+Predator+Helios+Neo+16+RTX+4060"
+        }
+      ],
+      "dimension_scores": {
+        "Performance": 90,
+        "Build & Ergonomics": 86,
+        "Battery & Efficiency": 74,
+        "Display & Audio": 88,
+        "Thermal & Acoustics": 84,
+        "Feature Set": 89,
+        "Price-to-Value": 94,
+        "Reliability & Support": 86
+      },
+      "synthesis_verdict": "Highest raw compute-per-rupee value in the 140W RTX 4060 laptop market.",
+      "top_pros": [
+        "Superb price-to-performance ratio for full-power 140W RTX 4060",
+        "Crisp 165Hz IPS display with accurate color reproduction",
+        "Extensive I/O selection including dual Thunderbolt 4 ports"
+      ],
+      "top_cons": [
+        "5th Gen AeroBlade 3D fans get quite loud in Turbo overclock mode",
+        "Chassis uses heavier plastics around the display bezels",
+        "Aggressive predator laser etched lid branding not ideal for formal work"
+      ],
+      "specifications": [
+        {
+          "label": "Processor",
+          "value": "Intel Core i7-14700HX (20 Cores, 28 Threads)"
+        },
+        {
+          "label": "Graphics",
+          "value": "NVIDIA GeForce RTX 4060 8GB GDDR6 (140W TGP)"
+        },
+        {
+          "label": "Display",
+          "value": "16-inch WUXGA 165Hz IPS Display, 400 nits"
+        },
+        {
+          "label": "Memory",
+          "value": "16GB DDR5-5600MHz"
+        },
+        {
+          "label": "Storage",
+          "value": "1TB PCIe Gen4 SSD"
+        },
+        {
+          "label": "Battery",
+          "value": "90Wh Li-ion"
+        },
+        {
+          "label": "Operating System",
+          "value": "Windows 11 Home"
+        },
+        {
+          "label": "Weight",
+          "value": "2.60 kg"
+        }
+      ],
+      "benchmarks": [
+        {
+          "platform": "Geekbench 6",
+          "test_name": "Single-Core CPU",
+          "raw_score": 2610,
+          "normalized_score": 90,
+          "percentile": 89,
+          "source_attribution": "Geekbench Browser Verified"
+        },
+        {
+          "platform": "Geekbench 6",
+          "test_name": "Multi-Core CPU",
+          "raw_score": 13200,
+          "normalized_score": 88,
+          "percentile": 87,
+          "source_attribution": "Geekbench Browser Verified"
+        },
+        {
+          "platform": "3DMark",
+          "test_name": "Time Spy Graphics (RTX 4060 140W)",
+          "raw_score": 10400,
+          "normalized_score": 88,
+          "percentile": 88,
+          "source_attribution": "UL 3DMark Database"
+        },
+        {
+          "platform": "Cinebench R23",
+          "test_name": "Multi-Core Sustained (10-min)",
+          "raw_score": 19950,
+          "normalized_score": 87,
+          "percentile": 86,
+          "source_attribution": "TITAN Thermal Testbench"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "VALUE_FOR_MONEY",
+          "displayName": "Value for Money",
+          "sentiment": "POSITIVE",
+          "mentionCount": 360,
+          "representativeQuote": "Unbeatable specs for this price bracket in India."
+        },
+        {
+          "theme": "NOISE_LEVEL",
+          "displayName": "Fan Acoustics",
+          "sentiment": "NEGATIVE",
+          "mentionCount": 195,
+          "representativeQuote": "Fans sound like a jet engine when pushed in Turbo mode."
+        }
+      ],
+      "external_reviews": [
+        {
+          "source": "PCMag",
+          "sourceType": "EDITORIAL",
+          "author": "Matthew Buzzi",
+          "score": 85,
+          "summary": "Delivers genuine midrange gaming muscle without charging enthusiast premiums.",
+          "url": "https://www.pcmag.com"
+        }
+      ],
+      "price_history": {
+        "day_low_inr": 129990,
+        "average_inr": 130422,
+        "day_high_inr": 150234,
+        "recommendation": "STRONG_BUY"
+      },
+      "last_updated": "2026-09-18 11:20:24"
+    },
+    {
+      "id": "msi-katana-15",
+      "name": "MSI Katana 15",
+      "variant": "Gaming Laptop \u2022 15.6\" \u2022 RTX 4050",
+      "category": "LAPTOP",
+      "brand": "MSI",
+      "best_price_inr": 118190,
+      "original_price_inr": 138155,
+      "discount_percent": 13,
+      "titan_score": 81,
+      "evidence_confidence": 84,
+      "online_rating": 4.3,
+      "online_rating_count": 540,
+      "availability": "IN_STOCK",
+      "offers": [
+        {
+          "retailer": "Amazon",
+          "title": "MSI Katana 15 RTX 4050 (Fulfilled by Amazon)",
+          "price_inr": 121189,
+          "original_price_inr": 138155,
+          "discount_percent": 12,
+          "in_stock": true,
+          "delivery_info": "Prime Next-Day Delivery & 7 Days Replacement",
+          "url": "https://www.amazon.in/s?k=MSI+Katana+15+RTX+4050"
+        },
+        {
+          "retailer": "Flipkart",
+          "title": "MSI Katana 15 RTX 4050 (Flipkart Assured)",
+          "price_inr": 118190,
+          "original_price_inr": 135918,
+          "discount_percent": 13,
+          "in_stock": true,
+          "delivery_info": "Free Delivery & Extra \u20b93,000 Bank Discount",
+          "url": "https://www.flipkart.com/search?q=MSI+Katana+15+RTX+4050"
+        },
+        {
+          "retailer": "Croma",
+          "title": "MSI Katana 15 RTX 4050 (Tata Croma Official)",
+          "price_inr": 121189,
+          "original_price_inr": 135731,
+          "discount_percent": 10,
+          "in_stock": true,
+          "delivery_info": "Express Store Pickup & Official Brand Warranty",
+          "url": "https://www.croma.com/searchB?q=MSI+Katana+15+RTX+4050"
+        }
+      ],
+      "dimension_scores": {
+        "Performance": 85,
+        "Build & Ergonomics": 82,
+        "Battery & Efficiency": 70,
+        "Display & Audio": 80,
+        "Thermal & Acoustics": 82,
+        "Feature Set": 84,
+        "Price-to-Value": 88,
+        "Reliability & Support": 84
+      },
+      "synthesis_verdict": "Budget-friendly ray tracing entry with modest color gamut and battery capacity.",
+      "top_pros": [
+        "Accessible entry price into dedicated ray-tracing gaming hardware",
+        "Upgradable dual SO-DIMM RAM and dual M.2 NVMe SSD slots",
+        "Thin bezel 144Hz IPS display panel with fast response times"
+      ],
+      "top_cons": [
+        "Display panel covers only 62% sRGB color gamut with muted saturation",
+        "53.5Wh battery offers only 3 to 3.5 hours of productivity uptime",
+        "Chassis flex noticeable around trackpad and center keyboard"
+      ],
+      "specifications": [
+        {
+          "label": "Processor",
+          "value": "Intel Core i7-13620H (10 Cores, up to 4.9 GHz)"
+        },
+        {
+          "label": "Graphics",
+          "value": "NVIDIA GeForce RTX 4050 6GB GDDR6 (105W TGP)"
+        },
+        {
+          "label": "Display",
+          "value": "15.6-inch FHD (1920x1080) 144Hz IPS-Level"
+        },
+        {
+          "label": "Memory",
+          "value": "16GB DDR5-5200MHz"
+        },
+        {
+          "label": "Storage",
+          "value": "512GB NVMe PCIe Gen4 SSD"
+        },
+        {
+          "label": "Battery",
+          "value": "53.5Whr 3-cell"
+        },
+        {
+          "label": "Operating System",
+          "value": "Windows 11 Home"
+        },
+        {
+          "label": "Weight",
+          "value": "2.25 kg"
+        }
+      ],
+      "benchmarks": [
+        {
+          "platform": "Geekbench 6",
+          "test_name": "Single-Core CPU",
+          "raw_score": 2450,
+          "normalized_score": 86,
+          "percentile": 84,
+          "source_attribution": "Geekbench Browser Verified"
+        },
+        {
+          "platform": "Geekbench 6",
+          "test_name": "Multi-Core CPU",
+          "raw_score": 11800,
+          "normalized_score": 83,
+          "percentile": 81,
+          "source_attribution": "Geekbench Browser Verified"
+        },
+        {
+          "platform": "3DMark",
+          "test_name": "Time Spy Graphics (RTX 4050 105W)",
+          "raw_score": 8650,
+          "normalized_score": 82,
+          "percentile": 80,
+          "source_attribution": "UL 3DMark Database"
+        },
+        {
+          "platform": "Cinebench R23",
+          "test_name": "Multi-Core Sustained (10-min)",
+          "raw_score": 16800,
+          "normalized_score": 82,
+          "percentile": 80,
+          "source_attribution": "TITAN Thermal Testbench"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "VALUE_FOR_MONEY",
+          "displayName": "Value for Money",
+          "sentiment": "POSITIVE",
+          "mentionCount": 280,
+          "representativeQuote": "Good gaming laptop for budget conscious college students."
+        },
+        {
+          "theme": "DISPLAY_QUALITY",
+          "displayName": "Display Color Gamut",
+          "sentiment": "NEGATIVE",
+          "mentionCount": 210,
+          "representativeQuote": "Colors look washed out compared to competitors."
+        }
+      ],
+      "external_reviews": [
+        {
+          "source": "IGN",
+          "sourceType": "EDITORIAL",
+          "author": "Jacqueline Thomas",
+          "score": 82,
+          "summary": "Reliable entry gaming performer with compromises in color reproduction and battery capacity.",
+          "url": "https://www.ign.com"
+        }
+      ],
+      "price_history": {
+        "day_low_inr": 118190,
+        "average_inr": 120189,
+        "day_high_inr": 138155,
+        "recommendation": "STRONG_BUY"
+      },
+      "last_updated": "2026-09-18 11:20:26"
+    },
+    {
+      "id": "macbook-air-m3",
+      "name": "Apple MacBook Air M3",
+      "variant": "Ultraportable \u2022 13.6\" \u2022 M3 8-Core",
+      "category": "LAPTOP",
+      "brand": "Apple",
+      "best_price_inr": 113751,
+      "original_price_inr": 131473,
+      "discount_percent": 13,
+      "titan_score": 94,
+      "evidence_confidence": 96,
+      "online_rating": 4.8,
+      "online_rating_count": 1820,
+      "availability": "IN_STOCK",
+      "offers": [
+        {
+          "retailer": "Amazon",
+          "title": "Apple MacBook Air M3 13 inch (Fulfilled by Amazon)",
+          "price_inr": 113751,
+          "original_price_inr": 129676,
+          "discount_percent": 12,
+          "in_stock": true,
+          "delivery_info": "Prime Next-Day Delivery & 7 Days Replacement",
+          "url": "https://www.amazon.in/s?k=Apple+MacBook+Air+M3+13+inch"
+        },
+        {
+          "retailer": "Flipkart",
+          "title": "Apple MacBook Air M3 13 inch (Flipkart Assured)",
+          "price_inr": 114325,
+          "original_price_inr": 131473,
+          "discount_percent": 13,
+          "in_stock": true,
+          "delivery_info": "Free Delivery & Extra \u20b93,000 Bank Discount",
+          "url": "https://www.flipkart.com/search?q=Apple+MacBook+Air+M3+13+inch"
+        },
+        {
+          "retailer": "Croma",
+          "title": "Apple MacBook Air M3 13 inch (Tata Croma Official)",
+          "price_inr": 116049,
+          "original_price_inr": 129974,
+          "discount_percent": 10,
+          "in_stock": true,
+          "delivery_info": "Express Store Pickup & Official Brand Warranty",
+          "url": "https://www.croma.com/searchB?q=Apple+MacBook+Air+M3+13+inch"
+        }
+      ],
+      "dimension_scores": {
+        "Performance": 91,
+        "Build & Ergonomics": 99,
+        "Battery & Efficiency": 99,
+        "Display & Audio": 94,
+        "Thermal & Acoustics": 98,
+        "Feature Set": 88,
+        "Price-to-Value": 89,
+        "Reliability & Support": 97
+      },
+      "synthesis_verdict": "The undisputed gold standard for lightweight daily productivity and silent battery stamina.",
+      "top_pros": [
+        "Unmatched power efficiency delivering 18 hours of real-world battery life",
+        "Silent completely fanless thermal design with zero acoustic noise",
+        "Premium precision CNC unibody aluminum finish with Liquid Retina display"
+      ],
+      "top_cons": [
+        "Base 8GB unified memory is limiting for heavy development or multi-VM tasks",
+        "Dual external display support requires laptop lid to be kept closed"
+      ],
+      "specifications": [
+        {
+          "label": "Processor",
+          "value": "Apple M3 (8-core CPU, 8-core GPU, 16-core Neural Engine)"
+        },
+        {
+          "label": "Display",
+          "value": "13.6-inch Liquid Retina display with True Tone, 500 nits"
+        },
+        {
+          "label": "Memory",
+          "value": "8GB Unified Memory (Configurable to 16GB / 24GB)"
+        },
+        {
+          "label": "Storage",
+          "value": "256GB SSD"
+        },
+        {
+          "label": "Battery",
+          "value": "52.6Wh lithium-polymer (Up to 18 hours Apple TV app)"
+        },
+        {
+          "label": "Weight",
+          "value": "1.24 kg (2.7 lbs)"
+        }
+      ],
+      "benchmarks": [
+        {
+          "platform": "Geekbench 6",
+          "test_name": "Single-Core CPU",
+          "raw_score": 3150,
+          "normalized_score": 98,
+          "percentile": 99,
+          "source_attribution": "Geekbench Browser Verified"
+        },
+        {
+          "platform": "Geekbench 6",
+          "test_name": "Multi-Core CPU",
+          "raw_score": 12100,
+          "normalized_score": 89,
+          "percentile": 88,
+          "source_attribution": "Geekbench Browser Verified"
+        },
+        {
+          "platform": "3DMark",
+          "test_name": "Wild Life Extreme",
+          "raw_score": 8120,
+          "normalized_score": 85,
+          "percentile": 86,
+          "source_attribution": "UL 3DMark Database"
+        },
+        {
+          "platform": "TITAN Lab",
+          "test_name": "Battery Video Loop (Hours)",
+          "raw_score": 18,
+          "normalized_score": 99,
+          "percentile": 99,
+          "source_attribution": "TITAN Endurance Rig"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "BATTERY_LIFE",
+          "displayName": "Battery Endurance",
+          "sentiment": "POSITIVE",
+          "mentionCount": 612,
+          "representativeQuote": "Can work for two full working days without touching the charger."
+        },
+        {
+          "theme": "BUILD_QUALITY",
+          "displayName": "Unibody Craftsmanship",
+          "sentiment": "POSITIVE",
+          "mentionCount": 490,
+          "representativeQuote": "Lightweight, sleek, and the trackpad has no equal."
+        }
+      ],
+      "external_reviews": [
+        {
+          "source": "The Verge",
+          "sourceType": "EDITORIAL",
+          "author": "Monica Chin",
+          "score": 92,
+          "summary": "The default laptop for 90% of buyers. Fast, quiet, and unmatched endurance.",
+          "url": "https://www.theverge.com"
+        }
+      ],
+      "price_history": {
+        "day_low_inr": 113751,
+        "average_inr": 114708,
+        "day_high_inr": 131473,
+        "recommendation": "STRONG_BUY"
+      },
+      "last_updated": "2026-09-18 11:20:27"
+    },
+    {
+      "id": "iphone-15",
+      "name": "Apple iPhone 15",
+      "variant": "Flagship Smartphone \u2022 128GB \u2022 USB-C",
+      "category": "PHONE",
+      "brand": "Apple",
+      "best_price_inr": 78302,
+      "original_price_inr": 91885,
+      "discount_percent": 13,
+      "titan_score": 92,
+      "evidence_confidence": 94,
+      "online_rating": 4.7,
+      "online_rating_count": 3200,
+      "availability": "IN_STOCK",
+      "offers": [
+        {
+          "retailer": "Amazon",
+          "title": "Apple iPhone 15 128GB (Fulfilled by Amazon)",
+          "price_inr": 78302,
+          "original_price_inr": 89264,
+          "discount_percent": 12,
+          "in_stock": true,
+          "delivery_info": "Prime Next-Day Delivery & 7 Days Replacement",
+          "url": "https://www.amazon.in/s?k=Apple+iPhone+15+128GB"
+        },
+        {
+          "retailer": "Flipkart",
+          "title": "Apple iPhone 15 128GB (Flipkart Assured)",
+          "price_inr": 79900,
+          "original_price_inr": 91885,
+          "discount_percent": 13,
+          "in_stock": true,
+          "delivery_info": "Free Delivery & Extra \u20b93,000 Bank Discount",
+          "url": "https://www.flipkart.com/search?q=Apple+iPhone+15+128GB"
+        },
+        {
+          "retailer": "Croma",
+          "title": "Apple iPhone 15 128GB (Tata Croma Official)",
+          "price_inr": 79900,
+          "original_price_inr": 89488,
+          "discount_percent": 10,
+          "in_stock": true,
+          "delivery_info": "Express Store Pickup & Official Brand Warranty",
+          "url": "https://www.croma.com/searchB?q=Apple+iPhone+15+128GB"
+        }
+      ],
+      "dimension_scores": {
+        "Performance": 94,
+        "Build & Ergonomics": 96,
+        "Battery & Efficiency": 90,
+        "Display & Audio": 93,
+        "Thermal & Acoustics": 91,
+        "Feature Set": 92,
+        "Price-to-Value": 88,
+        "Reliability & Support": 96
+      },
+      "synthesis_verdict": "Dynamic Island and 48MP computational imaging bring flagship utility to mainstream buyers.",
+      "top_pros": [
+        "Dynamic Island brings interactive live activities to standard iPhone",
+        "High-resolution 48MP camera sensor with 2x lossless sensor-crop zoom",
+        "Universal USB-C charging port compatibility"
+      ],
+      "top_cons": [
+        "Display refresh rate remains capped at standard 60Hz",
+        "Lacks dedicated telephoto lens found on Pro model"
+      ],
+      "specifications": [
+        {
+          "label": "Processor",
+          "value": "A16 Bionic chip (6-core CPU, 5-core GPU)"
+        },
+        {
+          "label": "Display",
+          "value": "6.1-inch Super Retina XDR OLED, Dynamic Island, 2000 nits peak"
+        },
+        {
+          "label": "Camera",
+          "value": "48MP Main with 2x sensor zoom + 12MP Ultra Wide"
+        },
+        {
+          "label": "Port",
+          "value": "USB-C Connector with DisplayPort support"
+        },
+        {
+          "label": "Weight",
+          "value": "171 g"
+        }
+      ],
+      "benchmarks": [
+        {
+          "platform": "Geekbench 6",
+          "test_name": "Single-Core CPU",
+          "raw_score": 2580,
+          "normalized_score": 95,
+          "percentile": 96,
+          "source_attribution": "Geekbench Browser Verified"
+        },
+        {
+          "platform": "Geekbench 6",
+          "test_name": "Multi-Core CPU",
+          "raw_score": 6600,
+          "normalized_score": 94,
+          "percentile": 95,
+          "source_attribution": "Geekbench Browser Verified"
+        },
+        {
+          "platform": "3DMark",
+          "test_name": "Solar Bay Ray Tracing",
+          "raw_score": 4820,
+          "normalized_score": 91,
+          "percentile": 92,
+          "source_attribution": "UL 3DMark Database"
+        },
+        {
+          "platform": "AnTuTu v10",
+          "test_name": "Total System Benchmark",
+          "raw_score": 1380000,
+          "normalized_score": 92,
+          "percentile": 93,
+          "source_attribution": "AnTuTu Verified"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "CAMERA_QUALITY",
+          "displayName": "Camera Sharpness",
+          "sentiment": "POSITIVE",
+          "mentionCount": 780,
+          "representativeQuote": "48MP sensor captures stunning portraits with rich natural colors."
+        }
+      ],
+      "external_reviews": [
+        {
+          "source": "Wired",
+          "sourceType": "EDITORIAL",
+          "author": "Julian Chokkattu",
+          "score": 88,
+          "summary": "USB-C and 48MP main camera make this the most sensible iPhone upgrade in years.",
+          "url": "https://www.wired.com"
+        }
+      ],
+      "price_history": {
+        "day_low_inr": 78302,
+        "average_inr": 79367,
+        "day_high_inr": 91885,
+        "recommendation": "STRONG_BUY"
+      },
+      "last_updated": "2026-09-18 11:20:28"
+    },
+    {
+      "id": "sony-wh-1000xm5",
+      "name": "Sony WH-1000XM5",
+      "variant": "Wireless Noise Cancelling \u2022 30h Battery",
+      "category": "AUDIO",
+      "brand": "Sony",
+      "best_price_inr": 29990,
+      "original_price_inr": 34529,
+      "discount_percent": 13,
+      "titan_score": 94,
+      "evidence_confidence": 93,
+      "online_rating": 4.6,
+      "online_rating_count": 2100,
+      "availability": "IN_STOCK",
+      "offers": [
+        {
+          "retailer": "Amazon",
+          "title": "Sony WH-1000XM5 Wireless Headphones (Fulfilled by Amazon)",
+          "price_inr": 30289,
+          "original_price_inr": 34529,
+          "discount_percent": 12,
+          "in_stock": true,
+          "delivery_info": "Prime Next-Day Delivery & 7 Days Replacement",
+          "url": "https://www.amazon.in/s?k=Sony+WH-1000XM5+Wireless+Headphones"
+        },
+        {
+          "retailer": "Flipkart",
+          "title": "Sony WH-1000XM5 Wireless Headphones (Flipkart Assured)",
+          "price_inr": 29990,
+          "original_price_inr": 34488,
+          "discount_percent": 13,
+          "in_stock": true,
+          "delivery_info": "Free Delivery & Extra \u20b93,000 Bank Discount",
+          "url": "https://www.flipkart.com/search?q=Sony+WH-1000XM5+Wireless+Headphones"
+        },
+        {
+          "retailer": "Croma",
+          "title": "Sony WH-1000XM5 Wireless Headphones (Tata Croma Official)",
+          "price_inr": 30139,
+          "original_price_inr": 33755,
+          "discount_percent": 10,
+          "in_stock": true,
+          "delivery_info": "Express Store Pickup & Official Brand Warranty",
+          "url": "https://www.croma.com/searchB?q=Sony+WH-1000XM5+Wireless+Headphones"
+        }
+      ],
+      "dimension_scores": {
+        "Performance": 96,
+        "Build & Ergonomics": 94,
+        "Battery & Efficiency": 95,
+        "Display & Audio": 97,
+        "Thermal & Acoustics": 96,
+        "Feature Set": 95,
+        "Price-to-Value": 90,
+        "Reliability & Support": 94
+      },
+      "synthesis_verdict": "Peerless acoustic isolation and comfortable lightweight all-day travel listening.",
+      "top_pros": [
+        "Industry-leading active noise cancellation with 8 specialized microphones",
+        "Featherlight ergonomic fit with soft-fit synthetic leather headband",
+        "30-hour battery runtime with 3-minute quick charge for 3 hours playback"
+      ],
+      "top_cons": [
+        "Non-folding headband hinges require larger travel protective case",
+        "Synthetic ear pads can generate warmth during summer outdoor walks"
+      ],
+      "specifications": [
+        {
+          "label": "Noise Cancellation",
+          "value": "Integrated Processor V1 + HD Noise Cancelling Processor QN1"
+        },
+        {
+          "label": "Driver",
+          "value": "30mm carbon fiber composite dome driver"
+        },
+        {
+          "label": "Battery",
+          "value": "30 hours with ANC On (Up to 40 hours ANC Off)"
+        },
+        {
+          "label": "Codecs",
+          "value": "LDAC, AAC, SBC with DSEE Extreme audio upscaling"
+        },
+        {
+          "label": "Weight",
+          "value": "250 g"
+        }
+      ],
+      "benchmarks": [
+        {
+          "platform": "TITAN AudioLab",
+          "test_name": "ANC Low-Frequency Attenuation",
+          "raw_score": 32,
+          "normalized_score": 97,
+          "percentile": 98,
+          "source_attribution": "TITAN Anechoic Chamber"
+        },
+        {
+          "platform": "TITAN AudioLab",
+          "test_name": "Harmonic Distortion (THD @ 94dB)",
+          "raw_score": 98,
+          "normalized_score": 96,
+          "percentile": 96,
+          "source_attribution": "SoundCheck 20 Analyzer"
+        },
+        {
+          "platform": "TITAN AudioLab",
+          "test_name": "Battery Runtime with ANC (Hours)",
+          "raw_score": 31,
+          "normalized_score": 94,
+          "percentile": 93,
+          "source_attribution": "TITAN Continuous Playback"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "NOISE_CANCELLATION",
+          "displayName": "Active Noise Cancellation",
+          "sentiment": "POSITIVE",
+          "mentionCount": 940,
+          "representativeQuote": "Silences aircraft cabin engine noise and chatter like magic."
+        }
+      ],
+      "external_reviews": [
+        {
+          "source": "What Hi-Fi?",
+          "sourceType": "EDITORIAL",
+          "author": "Kashfia Kabir",
+          "score": 95,
+          "summary": "Exceptional soundstage, flawless noise isolation, and supreme everyday comfort.",
+          "url": "https://www.whathifi.com"
+        }
+      ],
+      "price_history": {
+        "day_low_inr": 29990,
+        "average_inr": 30139,
+        "day_high_inr": 34529,
+        "recommendation": "STRONG_BUY"
+      },
+      "last_updated": "2026-09-18 11:20:30"
+    },
+    {
+      "id": "samsung-galaxy-tab-s9",
+      "name": "Samsung Galaxy Tab S9",
+      "variant": "Flagship Tablet \u2022 11\" AMOLED \u2022 S-Pen",
+      "category": "TABLET",
+      "brand": "Samsung",
+      "best_price_inr": 61990,
+      "original_price_inr": 83529,
+      "discount_percent": 24,
+      "titan_score": 93,
+      "evidence_confidence": 90,
+      "online_rating": 4.5,
+      "online_rating_count": 760,
+      "availability": "IN_STOCK",
+      "offers": [
+        {
+          "retailer": "Amazon",
+          "title": "Samsung Galaxy Tab S9 128GB Wi-Fi (Fulfilled by Amazon)",
+          "price_inr": 61990,
+          "original_price_inr": 81999,
+          "discount_percent": 24,
+          "in_stock": true,
+          "delivery_info": "Prime Next-Day Delivery & 7 Days Replacement",
+          "url": "https://www.amazon.in/s?k=Samsung+Galaxy+Tab+S9+128GB+Wi-Fi"
+        },
+        {
+          "retailer": "Flipkart",
+          "title": "Samsung Galaxy Tab S9 128GB Wi-Fi (Flipkart Assured)",
+          "price_inr": 72634,
+          "original_price_inr": 83529,
+          "discount_percent": 13,
+          "in_stock": true,
+          "delivery_info": "Free Delivery & Extra \u20b93,000 Bank Discount",
+          "url": "https://www.flipkart.com/search?q=Samsung+Galaxy+Tab+S9+128GB+Wi-Fi"
+        },
+        {
+          "retailer": "Croma",
+          "title": "Samsung Galaxy Tab S9 128GB Wi-Fi (Tata Croma Official)",
+          "price_inr": 72999,
+          "original_price_inr": 81758,
+          "discount_percent": 10,
+          "in_stock": true,
+          "delivery_info": "Express Store Pickup & Official Brand Warranty",
+          "url": "https://www.croma.com/searchB?q=Samsung+Galaxy+Tab+S9+128GB+Wi-Fi"
+        }
+      ],
+      "dimension_scores": {
+        "Performance": 92,
+        "Build & Ergonomics": 95,
+        "Battery & Efficiency": 91,
+        "Display & Audio": 98,
+        "Thermal & Acoustics": 93,
+        "Feature Set": 94,
+        "Price-to-Value": 89,
+        "Reliability & Support": 93
+      },
+      "synthesis_verdict": "Breathtaking AMOLED multimedia visual canvas with industry-leading bundled stylus support.",
+      "top_pros": [
+        "Glorious 11\" Dynamic AMOLED 2X 120Hz display with true HDR deep blacks",
+        "IP68 dust and water resistance on both tablet body and bundled S-Pen",
+        "Samsung DeX creates a functional desktop multitasking experience"
+      ],
+      "top_cons": [
+        "Android tablet app ecosystem still has unoptimized stretched smartphone apps",
+        "Official keyboard cover accessory is sold separately at a premium"
+      ],
+      "specifications": [
+        {
+          "label": "Processor",
+          "value": "Qualcomm Snapdragon 8 Gen 2 for Galaxy"
+        },
+        {
+          "label": "Display",
+          "value": "11.0-inch Dynamic AMOLED 2X 120Hz (2560 x 1600), HDR10+"
+        },
+        {
+          "label": "Pen Support",
+          "value": "Bundled IP68 Water-Resistant S-Pen (2.8ms latency)"
+        },
+        {
+          "label": "Battery",
+          "value": "8400 mAh with 45W Super Fast Charging"
+        },
+        {
+          "label": "Weight",
+          "value": "498 g"
+        }
+      ],
+      "benchmarks": [
+        {
+          "platform": "Geekbench 6",
+          "test_name": "Single-Core CPU",
+          "raw_score": 2120,
+          "normalized_score": 91,
+          "percentile": 92,
+          "source_attribution": "Geekbench Browser Verified"
+        },
+        {
+          "platform": "Geekbench 6",
+          "test_name": "Multi-Core CPU",
+          "raw_score": 5650,
+          "normalized_score": 90,
+          "percentile": 91,
+          "source_attribution": "Geekbench Browser Verified"
+        },
+        {
+          "platform": "3DMark",
+          "test_name": "Wild Life Extreme",
+          "raw_score": 3840,
+          "normalized_score": 89,
+          "percentile": 90,
+          "source_attribution": "UL 3DMark Database"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "DISPLAY_QUALITY",
+          "displayName": "AMOLED Screen Brilliance",
+          "sentiment": "POSITIVE",
+          "mentionCount": 430,
+          "representativeQuote": "Watching movies on this OLED screen is a sensory masterpiece."
+        }
+      ],
+      "external_reviews": [
+        {
+          "source": "Android Central",
+          "sourceType": "EDITORIAL",
+          "author": "Derrek Lee",
+          "score": 90,
+          "summary": "The premier Android flagship tablet for media consumption and creative stylus input.",
+          "url": "https://www.androidcentral.com"
+        }
+      ],
+      "price_history": {
+        "day_low_inr": 61990,
+        "average_inr": 69207,
+        "day_high_inr": 83529,
+        "recommendation": "STRONG_BUY"
+      },
+      "last_updated": "2026-09-18 11:20:32"
+    }
+  ]
+}
