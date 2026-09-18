@@ -101,14 +101,6 @@ export const SplashScreen: React.FC = () => {
 
             {/* Secondary Counter-Rotating Ring */}
             <div className="absolute w-[290px] h-[290px] sm:w-[350px] sm:h-[350px] rounded-full border border-sky-400/40 border-dashed anim-prismatic-orbit-reverse pointer-events-none" style={{ transform: 'rotateX(65deg)' }} />
-
-            {/* Central Master Assembled Transparent Logo Image }
-            <img
-              src="/logo-light.png"
-              alt="TITAN Labs Colorful Crest"
-              data-testid="splash-logo"
-              className="relative z-20 w-56 h-56 sm:w-72 sm:h-72 object-contain drop-shadow-[0_12px_35px_rgba(0,102,255,0.25)] transition-all duration-700"
-            />*/
           </div>
         </div>
       ) : (
@@ -160,14 +152,6 @@ export const SplashScreen: React.FC = () => {
 
             {/* High-Tech Vertical Cyan Laser Scan Line */}
             <div className="absolute left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#00F0FF] to-transparent shadow-[0_0_20px_#00F0FF] pointer-events-none anim-laser-sweep z-30" />
-
-            {/* Central Master Assembled Transparent Dark Shield Logo }
-            <img
-              src="/logo-dark.png"
-              alt="TITAN Labs Cybernetic Shield"
-              data-testid="splash-logo"
-              className="relative z-20 w-56 h-56 sm:w-72 sm:h-72 object-contain drop-shadow-[0_0_40px_rgba(0,240,255,0.45)] transition-all duration-700"
-            />*/
           </div>
         </div>
       )}
