@@ -1,9 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "vite",
-  "buildCommand": "cd web && npm install && npm run build",
-  "outputDirectory": "web/dist",
-  "installCommand": "cd web && npm install",
+  "installCommand": "if [ -d \"web\" ]; then cd web && npm install; else npm install; fi",
+  "buildCommand": "if [ -d \"web\" ]; then (cd web && npm run build) && rm -rf dist && cp -r web/dist dist; else npm run build; fi",
+  "outputDirectory": "dist",
   "rewrites": [
     {
       "source": "/(.*)",

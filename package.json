@@ -1,0 +1,10 @@
+{
+  "name": "titan-labs-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "if [ -d \"web\" ]; then (cd web && npm run build) && rm -rf dist && cp -r web/dist dist; else npm run build; fi",
+    "install": "if [ -d \"web\" ]; then cd web && npm install; else npm install; fi"
+  }
+}
+
