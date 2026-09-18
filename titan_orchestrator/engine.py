@@ -212,6 +212,16 @@ class AutonomousEngine:
             json_path, md_path = self.reporter.save_cycle_report(report)
             self.emit_log(f"🎉 Cycle complete! Saved reports to {json_path.name} and {md_path.name}")
             self.emit_log("📑 Antigravity handoff written to TITAN_CYCLE_REPORT_FOR_ASSISTANT.md")
+
+            # --- PHASE 7: Auto-Sync to GitHub Repository & Mirrors ---
+            self.emit_log("🌐 Phase 7: Synchronizing TITAN Labs monorepo to GitHub...")
+            try:
+                from sync_github import sync_all
+                sync_all(commit_msg=f"Autonomous Cycle {cycle_id}: Telemetry, Screens & Codebase Sync")
+                self.emit_log("✅ GitHub repository & local mirrors successfully synced!")
+            except Exception as sync_err:
+                self.emit_log(f"⚠️ Auto-sync warning: {sync_err}")
+
             return report
 
         except Exception as e:
