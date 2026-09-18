@@ -3,9 +3,9 @@ import {
   runRecommendationEngine,
   evaluateLocalLLMFit,
   extractVramGb,
-  RecommendationRequest
+  RecommendationRequest,
 } from './titanRecommendationEngine';
-import { SAMPLE_PRODUCTS, SampleProduct, Availability } from '../data/mockProducts';
+import { SAMPLE_PRODUCTS, SampleProduct } from '../data/mockProducts';
 
 describe('TITAN Recommendation Engine (TITAN-REC-008)', () => {
   it('extracts VRAM correctly from GPU specification strings', () => {
@@ -71,15 +71,17 @@ describe('TITAN Recommendation Engine (TITAN-REC-008)', () => {
     const { performanceFit, valueScore, compatibility, budgetFit, qualityReliability, evidenceConfidence, preferenceFit, availabilityScore } = top.breakdown;
 
     const expectedScore = Math.round(
-      0.30 * (performanceFit / 100) +
-      0.20 * (valueScore / 100) +
-      0.15 * (compatibility / 100) +
-      0.10 * (budgetFit / 100) +
-      0.10 * (qualityReliability / 100) +
-      0.05 * (evidenceConfidence / 100) +
-      0.05 * (preferenceFit / 100) +
-      0.05 * (availabilityScore / 100)
-    ) * 100;
+      (
+        0.30 * (performanceFit / 100) +
+        0.20 * (valueScore / 100) +
+        0.15 * (compatibility / 100) +
+        0.10 * (budgetFit / 100) +
+        0.10 * (qualityReliability / 100) +
+        0.05 * (evidenceConfidence / 100) +
+        0.05 * (preferenceFit / 100) +
+        0.05 * (availabilityScore / 100)
+      ) * 100
+    );
 
     // Tolerance of +/- 1 due to rounding
     expect(Math.abs(top.finalScore - expectedScore)).toBeLessThanOrEqual(2);

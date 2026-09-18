@@ -15,6 +15,8 @@ import {
   Clock,
   ArrowRight,
   ShieldCheck,
+  Cpu,
+  Layers,
 } from 'lucide-react';
 
 export const HomeScreen: React.FC = () => {
@@ -247,6 +249,75 @@ export const HomeScreen: React.FC = () => {
           <span>Explore Catalog</span>
           <ArrowRight className="w-4 h-4" />
         </button>
+      </div>
+
+      {/* TITAN Intelligence Hub Shortcuts */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Card 1: AI Hardware & Local LLM Advisor (TITAN-REC-008) */}
+        <div
+          data-testid="home-advisor-card"
+          className="relative overflow-hidden p-6 rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-cyan-950/20 via-slate-900/40 to-slate-950/60 dark:from-cyan-950/30 dark:to-slate-900/50 light:bg-white light:border-cyan-200 shadow-lg flex flex-col justify-between group hover:border-cyan-400/60 transition-all"
+        >
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                Algorithm TITAN-REC-008
+              </span>
+              <div className="w-9 h-9 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Cpu className="w-5 h-5" />
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xl font-black brand-font tracking-tight text-slate-900 dark:text-white">
+                Local LLM & Hardware Fit Advisor
+              </h3>
+              <p className="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+                Objective scoring <span className="font-mono text-cyan-400">S = 0.30P + 0.20V + 0.15C...</span> with VRAM estimation & quantization tiering for Llama-3, DeepSeek R1, and Qwen 2.5 Coder.
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={() => setActiveView('recommendation')}
+            data-testid="home-launch-advisor-btn"
+            className="mt-5 w-full py-2.5 px-4 rounded-xl titan-rainbow-btn text-xs font-bold flex items-center justify-center gap-2 cursor-pointer shadow-md"
+          >
+            <span>Launch AI Hardware Advisor</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+
+        {/* Card 2: TITAN Engineering Pack & Architecture Bible */}
+        <div
+          data-testid="home-architecture-card"
+          className="relative overflow-hidden p-6 rounded-3xl border border-purple-500/30 bg-gradient-to-br from-purple-950/20 via-slate-900/40 to-slate-950/60 dark:from-purple-950/30 dark:to-slate-900/50 light:bg-white light:border-purple-200 shadow-lg flex flex-col justify-between group hover:border-purple-400/60 transition-all"
+        >
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                Deliverables 01–23
+              </span>
+              <div className="w-9 h-9 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Layers className="w-5 h-5" />
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xl font-black brand-font tracking-tight text-slate-900 dark:text-white">
+                100+ Table Database & System Architecture
+              </h3>
+              <p className="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+                Explore the complete production engineering pack: Kafka event mesh, pgvector semantic search, microservice contracts, and Autonomous Control Tower agent fleet.
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={() => setActiveView('architecture')}
+            data-testid="home-explore-architecture-btn"
+            className="mt-5 w-full py-2.5 px-4 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold flex items-center justify-center gap-2 cursor-pointer shadow-md transition-colors"
+          >
+            <span>Inspect System Architecture</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
       </div>
 
       {/* Popular & Recent Searches Section */}

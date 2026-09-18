@@ -14,7 +14,9 @@ export type ActiveView =
   | 'compare'
   | 'saved'
   | 'alerts'
-  | 'account';
+  | 'account'
+  | 'recommendation'
+  | 'architecture';
 
 export type ThemeMode = 'dark' | 'light';
 
@@ -91,6 +93,8 @@ export function useApp(): AppContextType {
   }
   return context;
 }
+
+export const useAppContext = useApp;
 
 export interface AppProviderProps {
   children: React.ReactNode;

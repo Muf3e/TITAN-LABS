@@ -12,6 +12,8 @@ import {
   User,
   Home,
   AlertTriangle,
+  Sparkles,
+  Layers,
 } from 'lucide-react';
 
 export const Header: React.FC = () => {
@@ -122,6 +124,19 @@ export const Header: React.FC = () => {
           </button>
 
           <button
+            onClick={() => setActiveView('recommendation')}
+            data-testid="nav-recommendation"
+            className={`px-3 py-1.5 rounded-xl text-sm font-medium transition-all flex items-center gap-1.5 ${
+              activeView === 'recommendation'
+                ? 'bg-[#00C6FF]/15 text-[#00C6FF] font-semibold'
+                : 'hover:bg-slate-500/10 opacity-80 hover:opacity-100'
+            }`}
+          >
+            <Sparkles className="w-4 h-4 text-[#00C6FF]" />
+            <span>AI Advisor</span>
+          </button>
+
+          <button
             onClick={() => setActiveView('compare')}
             data-testid="nav-compare"
             className={`px-3 py-1.5 rounded-xl text-sm font-medium transition-all flex items-center gap-1.5 relative ${
@@ -176,6 +191,19 @@ export const Header: React.FC = () => {
             >
               ({priceAlerts.length})
             </span>
+          </button>
+
+          <button
+            onClick={() => setActiveView('architecture')}
+            data-testid="nav-architecture"
+            className={`px-3 py-1.5 rounded-xl text-sm font-medium transition-all flex items-center gap-1.5 ${
+              activeView === 'architecture'
+                ? 'bg-[#7B2CBF]/15 text-[#7B2CBF] font-semibold'
+                : 'hover:bg-slate-500/10 opacity-80 hover:opacity-100'
+            }`}
+          >
+            <Layers className="w-4 h-4" />
+            <span>Architecture</span>
           </button>
 
           <button
@@ -271,6 +299,20 @@ export const Header: React.FC = () => {
 
           <button
             onClick={() => {
+              setActiveView('recommendation');
+              setMobileMenuOpen(false);
+            }}
+            data-testid="mobile-nav-recommendation"
+            className="w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium flex items-center justify-between hover:bg-slate-500/10"
+          >
+            <div className="flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-[#00C6FF]" />
+              <span>AI Advisor (TITAN-REC-008)</span>
+            </div>
+          </button>
+
+          <button
+            onClick={() => {
               setActiveView('compare');
               setMobileMenuOpen(false);
             }}
@@ -315,6 +357,20 @@ export const Header: React.FC = () => {
             <span className="text-xs px-2 py-0.5 rounded-full font-bold bg-[#FFA03A]/20 text-[#FFA03A]">
               {priceAlerts.length}
             </span>
+          </button>
+
+          <button
+            onClick={() => {
+              setActiveView('architecture');
+              setMobileMenuOpen(false);
+            }}
+            data-testid="mobile-nav-architecture"
+            className="w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium flex items-center justify-between hover:bg-slate-500/10"
+          >
+            <div className="flex items-center gap-2">
+              <Layers className="w-4 h-4 text-[#7B2CBF]" />
+              <span>Architecture & Engineering Bible</span>
+            </div>
           </button>
 
           <button

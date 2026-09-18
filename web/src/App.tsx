@@ -10,6 +10,8 @@ import { CompareScreen } from './pages/CompareScreen';
 import { SavedScreen } from './pages/SavedScreen';
 import { PriceAlertsScreen } from './pages/PriceAlertsScreen';
 import { AccountScreen } from './pages/AccountScreen';
+import { RecommendationScreen } from './pages/RecommendationScreen';
+import { ArchitectureScreen } from './pages/ArchitectureScreen';
 
 export const App: React.FC = () => {
   const { activeTheme, activeView } = useApp();
@@ -34,6 +36,8 @@ export const App: React.FC = () => {
         {activeView === 'saved' && <SavedScreen />}
         {activeView === 'alerts' && <PriceAlertsScreen />}
         {activeView === 'account' && <AccountScreen />}
+        {activeView === 'recommendation' && <RecommendationScreen />}
+        {activeView === 'architecture' && <ArchitectureScreen />}
       </main>
 
       {activeView !== 'splash' && <Footer />}
