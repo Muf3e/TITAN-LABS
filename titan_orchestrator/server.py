@@ -9,7 +9,7 @@ from datetime import datetime
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
-from urllib.parse import parse_qs, urlparse
+from urllib.parse import parse_qs, urlparse, quote_plus
 
 from titan_orchestrator.config import (
     DEFAULT_SERVER_HOST,
@@ -212,6 +212,52 @@ class TitanHttpHandler(BaseHTTPRequestHandler):
                     self._send_json({"error": str(e)}, status=500)
                     return
             self._send_json({"error": "Buying guides not found"}, status=404)
+            return
+
+        if path.startswith("/go/"):
+            slug = path.replace("/go/", "").strip().lower()
+            slug_catalog = {
+                "legion-5-pro": ("Lenovo Legion 5 Pro Gen 8 RTX 4060", 139990),
+                "macbook-m3": ("Apple MacBook Air 13-inch M3", 114900),
+                "helios-neo-16": ("Acer Predator Helios Neo 16 i7 4060", 124990),
+                "rog-strix-g16": ("ASUS ROG Strix G16 RTX 4070", 169990),
+                "katana-15": ("MSI Katana 15 i7 RTX 4060", 104990),
+            }
+
+            if slug in slug_catalog:
+                product_name, price = slug_catalog[slug]
+            else:
+                product_name = slug.replace("-", " ").title()
+                price = 100000
+
+            # Record click in SQLite
+            try:
+                rate = 0.025
+                est_inr = round(price * rate, 2)
+                est_usd = round(est_inr / 83.5, 2)
+                referrer = self.headers.get("Referer", "Direct Shortlink")
+                now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+                conn = sqlite3.connect(DB_PATH)
+                cur = conn.cursor()
+                cur.execute("""
+                    INSERT INTO affiliate_clicks
+                    (product_id, product_name, product_price, retailer, affiliate_tag, estimated_commission_rate, estimated_commission_inr, estimated_commission_usd, clicked_at, referrer)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """, (slug, product_name, price, "Amazon India", "mufee-21", rate, est_inr, est_usd, now_str, referrer))
+                conn.commit()
+                conn.close()
+            except Exception as e:
+                logger.error(f"Error logging shortlink click: {e}")
+
+            # Redirect to Amazon with tag=mufee-21
+            query_enc = quote_plus(product_name)
+            target_url = f"https://www.amazon.in/s?k={query_enc}&tag=mufee-21"
+
+            self.send_response(302)
+            self.send_header("Location", target_url)
+            self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
+            self.end_headers()
             return
 
         if path.startswith("/reports/"):
