@@ -15,6 +15,7 @@ import {
   Sparkles,
   Layers,
   Flame,
+  DollarSign,
 } from 'lucide-react';
 
 export const Header: React.FC = () => {
@@ -135,6 +136,19 @@ export const Header: React.FC = () => {
           >
             <Flame className="w-4 h-4 text-amber-500" />
             <span>Best Laptops</span>
+          </button>
+
+          <button
+            onClick={() => setActiveView('earnings')}
+            data-testid="nav-earnings"
+            className={`px-3 py-1.5 rounded-xl text-sm font-medium transition-all flex items-center gap-1.5 ${
+              activeView === 'earnings'
+                ? 'bg-emerald-500/15 text-emerald-500 font-semibold'
+                : 'hover:bg-slate-500/10 opacity-80 hover:opacity-100'
+            }`}
+          >
+            <DollarSign className="w-4 h-4 text-emerald-500" />
+            <span>Earnings</span>
           </button>
 
           <button
@@ -322,6 +336,20 @@ export const Header: React.FC = () => {
             <div className="flex items-center gap-2">
               <Flame className="w-4 h-4 text-amber-500" />
               <span>Best Laptops (2026 Guide)</span>
+            </div>
+          </button>
+
+          <button
+            onClick={() => {
+              setActiveView('earnings');
+              setMobileMenuOpen(false);
+            }}
+            data-testid="mobile-nav-earnings"
+            className="w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium flex items-center justify-between hover:bg-slate-500/10 text-emerald-500"
+          >
+            <div className="flex items-center gap-2">
+              <DollarSign className="w-4 h-4 text-emerald-500" />
+              <span>Earnings & Telemetry ($10 Goal)</span>
             </div>
           </button>
 

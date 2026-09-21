@@ -39,3 +39,80 @@ export function attachAffiliateTag(url: string, productName?: string): string {
 
   return url;
 }
+
+export interface AffiliateClickEvent {
+  id: string;
+  productName: string;
+  priceInInr: number;
+  retailer: string;
+  estimatedCommissionInr: number;
+  estimatedCommissionUsd: number;
+  timestamp: string;
+}
+
+export function recordAffiliateClick(productName: string, priceInInr: number, retailer: string = 'Amazon'): AffiliateClickEvent {
+  // Consumer electronics commission ~2.0%
+  const rate = 0.02;
+  const commInr = Math.round(priceInInr * rate);
+  const commUsd = parseFloat((commInr / 83.5).toFixed(2));
+
+  const clickEvent: AffiliateClickEvent = {
+    id: `click_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`,
+    productName,
+    priceInInr,
+    retailer,
+    estimatedCommissionInr: commInr,
+    estimatedCommissionUsd: commUsd,
+    timestamp: new Date().toISOString(),
+  };
+
+  try {
+    const existing = JSON.parse(localStorage.getItem('titan_affiliate_clicks') || '[]');
+    existing.unshift(clickEvent);
+    localStorage.setItem('titan_affiliate_clicks', JSON.stringify(existing.slice(0, 100)));
+  } catch (e) {
+    console.error('Failed to log affiliate click telemetry', e);
+  }
+
+  return clickEvent;
+}
+
+export function getAffiliateClickTelemetry(): AffiliateClickEvent[] {
+  try {
+    const saved = localStorage.getItem('titan_affiliate_clicks');
+    if (saved) return JSON.parse(saved);
+  } catch {
+    // ignore
+  }
+
+  // Initial seed demonstration telemetry if empty
+  return [
+    {
+      id: 'click_demo_1',
+      productName: 'Lenovo Legion 5 Pro Gen 8',
+      priceInInr: 139990,
+      retailer: 'Amazon India',
+      estimatedCommissionInr: 2800,
+      estimatedCommissionUsd: 33.53,
+      timestamp: new Date(Date.now() - 1000 * 60 * 18).toISOString(),
+    },
+    {
+      id: 'click_demo_2',
+      productName: 'Apple MacBook Air 13" (M3)',
+      priceInInr: 114900,
+      retailer: 'Amazon India',
+      estimatedCommissionInr: 2300,
+      estimatedCommissionUsd: 27.54,
+      timestamp: new Date(Date.now() - 1000 * 60 * 45).toISOString(),
+    },
+    {
+      id: 'click_demo_3',
+      productName: 'Sony WH-1000XM5 Wireless Headphones',
+      priceInInr: 29990,
+      retailer: 'Amazon India',
+      estimatedCommissionInr: 1500,
+      estimatedCommissionUsd: 17.96,
+      timestamp: new Date(Date.now() - 1000 * 60 * 110).toISOString(),
+    }
+  ];
+}

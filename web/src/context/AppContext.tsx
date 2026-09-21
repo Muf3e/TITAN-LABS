@@ -17,7 +17,8 @@ export type ActiveView =
   | 'account'
   | 'recommendation'
   | 'architecture'
-  | 'best-laptops';
+  | 'best-laptops'
+  | 'earnings';
 
 export type ThemeMode = 'dark' | 'light';
 
