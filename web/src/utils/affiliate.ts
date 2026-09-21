@@ -74,6 +74,27 @@ export function recordAffiliateClick(productName: string, priceInInr: number, re
     console.error('Failed to log affiliate click telemetry', e);
   }
 
+  // Asynchronously dispatch to orchestrator backend if reachable
+  try {
+    fetch('http://localhost:8080/api/telemetry/click', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        product_id: productName.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+        product_name: productName,
+        product_price: priceInInr,
+        retailer,
+        affiliate_tag: AMAZON_AFFILIATE_TAG,
+        estimated_commission_rate: rate,
+        referrer: typeof window !== 'undefined' ? window.location.href : 'TITAN Web App',
+      }),
+    }).catch(() => {
+      // Gracefully silent if server is not running
+    });
+  } catch {
+    // ignore
+  }
+
   return clickEvent;
 }
 

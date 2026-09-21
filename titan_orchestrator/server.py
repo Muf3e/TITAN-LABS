@@ -2,8 +2,10 @@ import json
 import logging
 import mimetypes
 import os
+import sqlite3
 import sys
 import threading
+from datetime import datetime
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
@@ -18,6 +20,8 @@ from titan_orchestrator.config import (
 )
 from titan_orchestrator.engine import AutonomousEngine
 from titan_orchestrator.fleet import AgentFleetManager
+
+DB_PATH = PROJECT_ROOT / "data" / "titan_intelligence.db"
 
 # Configure UTF-8 output on Windows
 if hasattr(sys.stdout, "reconfigure"):
@@ -137,6 +141,79 @@ class TitanHttpHandler(BaseHTTPRequestHandler):
             self._send_json({"name": agent_name, "content": content})
             return
 
+        if path == "/api/earnings/summary":
+            try:
+                conn = sqlite3.connect(DB_PATH)
+                conn.row_factory = sqlite3.Row
+                cur = conn.cursor()
+
+                cur.execute("SELECT COUNT(*), COALESCE(SUM(estimated_commission_usd), 0), COALESCE(SUM(estimated_commission_inr), 0) FROM affiliate_clicks")
+                click_row = cur.fetchone()
+                total_clicks = click_row[0] if click_row else 0
+                estimated_usd = round(click_row[1] if click_row else 0, 2)
+                estimated_inr = round(click_row[2] if click_row else 0, 2)
+
+                cur.execute("SELECT COUNT(*), COALESCE(SUM(amount_usd), 0), COALESCE(SUM(amount_inr), 0) FROM earnings_ledger WHERE status IN ('settled', 'verified', 'pending')")
+                ledger_row = cur.fetchone()
+                realized_conversions = ledger_row[0] if ledger_row else 0
+                realized_usd = round(ledger_row[1] if ledger_row else 0, 2)
+                realized_inr = round(ledger_row[2] if ledger_row else 0, 2)
+
+                cur.execute("SELECT id, product_name, product_price, estimated_commission_usd, clicked_at, referrer FROM affiliate_clicks ORDER BY id DESC LIMIT 15")
+                recent_clicks = [dict(r) for r in cur.fetchall()]
+
+                cur.execute("SELECT id, source, product_name, amount_inr, amount_usd, status, recorded_at FROM earnings_ledger ORDER BY id DESC LIMIT 20")
+                ledger_entries = [dict(r) for r in cur.fetchall()]
+
+                conn.close()
+
+                target_goal_usd = 10.0
+                goal_progress_pct = round(min(100.0, (realized_usd / target_goal_usd) * 100.0), 1)
+
+                self._send_json({
+                    "total_clicks": total_clicks,
+                    "estimated_commission_usd": estimated_usd,
+                    "estimated_commission_inr": estimated_inr,
+                    "realized_usd": realized_usd,
+                    "realized_inr": realized_inr,
+                    "realized_conversions": realized_conversions,
+                    "target_goal_usd": target_goal_usd,
+                    "target_goal_inr": round(target_goal_usd * 83.5, 2),
+                    "goal_progress_pct": goal_progress_pct,
+                    "recent_clicks": recent_clicks,
+                    "ledger_entries": ledger_entries
+                })
+                return
+            except Exception as e:
+                self._send_json({"error": str(e)}, status=500)
+                return
+
+        if path == "/api/syndication/deals":
+            deals_file = PROJECT_ROOT / "reports" / "active_flash_deals.json"
+            if deals_file.exists():
+                try:
+                    data = json.loads(deals_file.read_text(encoding="utf-8"))
+                    self._send_json(data)
+                    return
+                except Exception as e:
+                    self._send_json({"error": str(e)}, status=500)
+                    return
+            self._send_json({"error": "Deals feed not found"}, status=404)
+            return
+
+        if path == "/api/buying-guides":
+            guides_file = PROJECT_ROOT / "web" / "src" / "data" / "buying_guides.json"
+            if guides_file.exists():
+                try:
+                    data = json.loads(guides_file.read_text(encoding="utf-8"))
+                    self._send_json(data)
+                    return
+                except Exception as e:
+                    self._send_json({"error": str(e)}, status=500)
+                    return
+            self._send_json({"error": "Buying guides not found"}, status=404)
+            return
+
         if path.startswith("/reports/"):
             file_path = PROJECT_ROOT / path.lstrip("/")
             if file_path.exists() and file_path.is_file():
@@ -214,6 +291,65 @@ class TitanHttpHandler(BaseHTTPRequestHandler):
             threading.Thread(target=global_engine.scraper.run_ingestion, daemon=True).start()
             self._send_json({"status": "triggered", "message": "Live intelligence harvest initiated."})
             return
+
+        if path == "/api/telemetry/click":
+            try:
+                product_id = payload.get("product_id", "unknown")
+                product_name = payload.get("product_name", "Unknown Product")
+                product_price = float(payload.get("product_price", 0))
+                retailer = payload.get("retailer", "Amazon India")
+                affiliate_tag = payload.get("affiliate_tag", "mufee-21")
+                commission_rate = float(payload.get("estimated_commission_rate", 0.025))
+                referrer = payload.get("referrer", "TITAN Web App")
+
+                est_inr = round(product_price * commission_rate, 2)
+                est_usd = round(est_inr / 83.5, 2)
+                now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+                conn = sqlite3.connect(DB_PATH)
+                cur = conn.cursor()
+                cur.execute("""
+                    INSERT INTO affiliate_clicks
+                    (product_id, product_name, product_price, retailer, affiliate_tag, estimated_commission_rate, estimated_commission_inr, estimated_commission_usd, clicked_at, referrer)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """, (product_id, product_name, product_price, retailer, affiliate_tag, commission_rate, est_inr, est_usd, now_str, referrer))
+                conn.commit()
+                click_id = cur.lastrowid
+                conn.close()
+
+                self._send_json({"status": "recorded", "click_id": click_id, "estimated_usd": est_usd, "estimated_inr": est_inr})
+                return
+            except Exception as e:
+                self._send_json({"error": str(e)}, status=500)
+                return
+
+        if path == "/api/earnings/record":
+            try:
+                source = payload.get("source", "Amazon Associates India")
+                tx_id = payload.get("transaction_id", f"TXN-{int(datetime.now().timestamp())}")
+                product_name = payload.get("product_name", "Affiliate Referral")
+                amount_inr = float(payload.get("amount_inr", 0))
+                amount_usd = float(payload.get("amount_usd", round(amount_inr / 83.5, 2)))
+                status = payload.get("status", "settled")
+                notes = payload.get("notes", "Auto-recorded via TITAN Orchestrator")
+                now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+                conn = sqlite3.connect(DB_PATH)
+                cur = conn.cursor()
+                cur.execute("""
+                    INSERT INTO earnings_ledger
+                    (source, transaction_id, product_name, amount_inr, amount_usd, status, recorded_at, notes)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                """, (source, tx_id, product_name, amount_inr, amount_usd, status, now_str, notes))
+                conn.commit()
+                ledger_id = cur.lastrowid
+                conn.close()
+
+                self._send_json({"status": "recorded", "ledger_id": ledger_id, "amount_usd": amount_usd, "amount_inr": amount_inr})
+                return
+            except Exception as e:
+                self._send_json({"error": str(e)}, status=500)
+                return
 
         self.send_error(404, "Unknown endpoint")
 

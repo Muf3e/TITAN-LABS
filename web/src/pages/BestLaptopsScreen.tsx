@@ -7,8 +7,10 @@ import {
   ExternalLink,
   ShieldCheck,
   CheckCircle2,
+  Rss,
+  Share2,
 } from 'lucide-react';
-import { getAmazonAffiliateUrl } from '../utils/affiliate';
+import { getAmazonAffiliateUrl, recordAffiliateClick } from '../utils/affiliate';
 
 type BudgetFilter = 'all' | 'under130k' | 'under200k' | 'flagship';
 
@@ -114,6 +116,45 @@ export const BestLaptopsScreen: React.FC = () => {
               <Zap className="w-4 h-4" /> Live Amazon Price & Stock Verification
             </span>
           </div>
+        </div>
+      </div>
+
+      {/* 1.5. Live Deal Syndication & Distribution Radar */}
+      <div className="flex flex-wrap items-center justify-between gap-3 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-900 dark:text-amber-200 text-xs">
+        <div className="flex items-center gap-2">
+          <Rss className="w-4 h-4 text-amber-500 shrink-0" />
+          <span className="font-bold">Automated Deal Syndication Feeds:</span>
+          <span className="text-slate-600 dark:text-slate-400">Subscribe or syndicate TITAN verified price drops to your channel/bot</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <a
+            href="./deals.rss"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 border border-amber-500/30 font-bold hover:bg-amber-100 dark:hover:bg-slate-700 transition-colors flex items-center gap-1"
+          >
+            <span>RSS 2.0</span>
+            <ExternalLink className="w-3 h-3" />
+          </a>
+          <a
+            href="./deals.json"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 border border-amber-500/30 font-bold hover:bg-amber-100 dark:hover:bg-slate-700 transition-colors flex items-center gap-1"
+          >
+            <span>JSON Feed</span>
+            <ExternalLink className="w-3 h-3" />
+          </a>
+          <button
+            onClick={() => {
+              navigator.clipboard?.writeText(window.location.href);
+              alert('Copied buying guide link to clipboard!');
+            }}
+            className="px-2.5 py-1 rounded-lg bg-amber-500 text-white font-bold hover:bg-amber-600 transition-colors flex items-center gap-1 cursor-pointer"
+          >
+            <Share2 className="w-3 h-3" />
+            <span>Share Guide</span>
+          </button>
         </div>
       </div>
 
@@ -269,6 +310,7 @@ export const BestLaptopsScreen: React.FC = () => {
                     href={affiliateUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => recordAffiliateClick(laptop.name, laptop.priceInInr, 'Amazon India')}
                     className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-[#FFA03A] via-[#FF2A85] to-[#0077FF] hover:opacity-95 text-white font-black text-xs sm:text-sm text-center shadow-md flex items-center justify-center gap-2 cursor-pointer transition-opacity"
                   >
                     <span>Buy on Amazon</span>

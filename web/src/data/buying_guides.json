@@ -1,0 +1,156 @@
+{
+  "guides": [
+    {
+      "id": "best-gaming-laptops-under-1-5-lakh",
+      "slug": "best-gaming-laptops-under-150k",
+      "title": "Best Gaming Laptops Under \u20b91.5 Lakh (2026 Edition)",
+      "subtitle": "Algorithmic ranking by 140W TGP, Thermal Headroom, and QHD 240Hz Display Quality",
+      "updated_at": "2026-09-21",
+      "read_time": "4 min read",
+      "category": "Gaming Laptops",
+      "verdict_summary": "If you have a strict \u20b91.5L budget, prioritize full 140W TGP over incremental CPU clocks. The Lenovo Legion 5 Pro and Acer Predator Helios Neo 16 dominate this bracket.",
+      "products": [
+        {
+          "rank": 1,
+          "badge": "TITAN Editor's Choice",
+          "name": "Lenovo Legion 5 Pro Gen 8",
+          "price": 139990,
+          "mrp": 159990,
+          "discount_pct": 12,
+          "specs": "AMD Ryzen 7 7745HX | RTX 4060 8GB (140W TGP) | 16GB DDR5 | 1TB SSD | 16\" WQXGA 240Hz 500 nits",
+          "why_buy": "Flawless cooling vapor chamber, best-in-class true 140W GPU sustained clock, and studio-grade 500 nits display. Zero thermal throttling in synthetic stress loops.",
+          "pros": [
+            "140W Full Power TGP",
+            "500 nits HDR400 screen",
+            "Superior Legion TrueStrike keyboard"
+          ],
+          "cons": [
+            "Bulky 300W power brick"
+          ],
+          "affiliate_url": "https://www.amazon.in/s?k=Lenovo+Legion+5+Pro+Gen+8+RTX+4060&tag=mufee-21"
+        },
+        {
+          "rank": 2,
+          "badge": "Best Performance Value",
+          "name": "Acer Predator Helios Neo 16",
+          "price": 124990,
+          "mrp": 144990,
+          "discount_pct": 14,
+          "specs": "Intel Core i7-13700HX | RTX 4060 8GB (140W) | 16GB DDR5 | 1TB SSD | 16\" 165Hz 100% sRGB",
+          "why_buy": "Delivers 95% of the Legion's gaming frames while saving an extra \u20b915,000. Features liquid metal cooling applied from factory.",
+          "pros": [
+            "Liquid metal thermal interface",
+            "Aggressive pricing under \u20b91.25L",
+            "Thunderbolt 4 support"
+          ],
+          "cons": [
+            "Louder fan profile in Turbo mode"
+          ],
+          "affiliate_url": "https://www.amazon.in/s?k=Acer+Predator+Helios+Neo+16+i7+4060&tag=mufee-21"
+        },
+        {
+          "rank": 3,
+          "badge": "High Frame-Rate Esports",
+          "name": "ASUS ROG Strix G16 (2024)",
+          "price": 169990,
+          "mrp": 199990,
+          "discount_pct": 15,
+          "specs": "Intel Core i9-14900HX | RTX 4070 8GB (140W) | 16GB DDR5 | 1TB SSD | 16\" QHD+ 240Hz",
+          "why_buy": "For competitive Apex Legends, Valorant, and CS2 players who demand 240Hz refresh and the extra CUDA cores of the RTX 4070.",
+          "pros": [
+            "RTX 4070 tier power",
+            "240Hz Nebula Display",
+            "Tri-Fan thermal design"
+          ],
+          "cons": [
+            "Priced slightly above \u20b91.5L baseline"
+          ],
+          "affiliate_url": "https://www.amazon.in/s?k=ASUS+ROG+Strix+G16+RTX+4070&tag=mufee-21"
+        }
+      ]
+    },
+    {
+      "id": "best-coding-engineering-laptops",
+      "slug": "best-coding-engineering-laptops-2026",
+      "title": "Top Laptops for Software Engineers, AI Builders & CS Students",
+      "subtitle": "Evaluated on Linux/Docker compatibility, RAM expansion, compile times, and 12+ hr battery life",
+      "updated_at": "2026-09-21",
+      "read_time": "5 min read",
+      "category": "Engineering & Productivity",
+      "verdict_summary": "For pure development, Docker container workflows, and local LLM execution, memory bandwidth and battery efficiency outweigh RGB and discrete GPUs.",
+      "products": [
+        {
+          "rank": 1,
+          "badge": "Ultimate Developer Ultrabook",
+          "name": "Apple MacBook Air 13-inch (M3)",
+          "price": 114900,
+          "mrp": 134900,
+          "discount_pct": 15,
+          "specs": "Apple M3 (8-Core CPU / 10-Core GPU) | 16GB Unified Memory | 512GB SSD | 13.6\" Liquid Retina",
+          "why_buy": "18-hour real-world battery life, completely silent fanless design, and Unix-based terminal environment makes it the undisputed standard for modern web and mobile developers.",
+          "pros": [
+            "18 hours true battery life",
+            "Silent passive cooling",
+            "Unified memory bandwidth"
+          ],
+          "cons": [
+            "Cannot upgrade RAM post-purchase"
+          ],
+          "affiliate_url": "https://www.amazon.in/s?k=Apple+MacBook+Air+M3+16GB&tag=mufee-21"
+        },
+        {
+          "rank": 2,
+          "badge": "Local AI & Deep Learning Workstation",
+          "name": "Lenovo Legion 5 Pro Gen 8 (Dual SSD)",
+          "price": 139990,
+          "mrp": 159990,
+          "discount_pct": 12,
+          "specs": "AMD Ryzen 7 7745HX | RTX 4060 8GB | Dual M.2 NVMe Slots | Expandable to 64GB DDR5",
+          "why_buy": "Ideal for machine learning engineers needing CUDA support for PyTorch/Ollama, expandable dual NVMe drives, and up to 64GB RAM.",
+          "pros": [
+            "Full NVIDIA CUDA support",
+            "Upgradable up to 64GB RAM",
+            "Dual NVMe gen 4 slots"
+          ],
+          "cons": [
+            "Heavy for daily coffee-shop commute"
+          ],
+          "affiliate_url": "https://www.amazon.in/s?k=Lenovo+Legion+5+Pro+Gen+8+RTX+4060&tag=mufee-21"
+        }
+      ]
+    },
+    {
+      "id": "best-budget-gaming-under-1-lakh",
+      "slug": "best-gaming-laptops-under-100k",
+      "title": "Best Gaming Laptops Under \u20b91 Lakh (Maximum FPS Per Rupee)",
+      "subtitle": "Strictly filtered for RTX 40-Series GPUs with DLSS 3.5 Frame Generation",
+      "updated_at": "2026-09-21",
+      "read_time": "3 min read",
+      "category": "Budget Enthusiast",
+      "verdict_summary": "Do not buy older RTX 3050/3060 laptops in 2026. The RTX 4050 and 4060 bring DLSS 3.5 Frame Generation which doubles frame rates in AAA titles.",
+      "products": [
+        {
+          "rank": 1,
+          "badge": "Best Bang For Buck",
+          "name": "MSI Katana 15",
+          "price": 104990,
+          "mrp": 129990,
+          "discount_pct": 19,
+          "specs": "Intel Core i7-13620H | RTX 4060 (105W) | 16GB DDR5 | 1TB NVMe | 15.6\" 144Hz",
+          "why_buy": "Packs a genuine RTX 4060 under \u20b91.05 Lakhs. Offers stellar 1080p Ultra gaming with Ray Tracing enabled.",
+          "pros": [
+            "Massive \u20b925,000 price drop",
+            "1TB fast NVMe included",
+            "Cooler Boost 5 heatpipes"
+          ],
+          "cons": [
+            "Plastic chassis build"
+          ],
+          "affiliate_url": "https://www.amazon.in/s?k=MSI+Katana+15+i7+RTX+4060&tag=mufee-21"
+        }
+      ]
+    }
+  ],
+  "generated_at": "2026-09-21",
+  "affiliate_tag": "mufee-21"
+}
