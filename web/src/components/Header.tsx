@@ -14,6 +14,7 @@ import {
   AlertTriangle,
   Sparkles,
   Layers,
+  Flame,
 } from 'lucide-react';
 
 export const Header: React.FC = () => {
@@ -121,6 +122,19 @@ export const Header: React.FC = () => {
           >
             <Search className="w-4 h-4" />
             <span>Browse</span>
+          </button>
+
+          <button
+            onClick={() => setActiveView('best-laptops')}
+            data-testid="nav-best-laptops"
+            className={`px-3 py-1.5 rounded-xl text-sm font-medium transition-all flex items-center gap-1.5 ${
+              activeView === 'best-laptops'
+                ? 'bg-amber-500/15 text-amber-500 font-semibold'
+                : 'hover:bg-slate-500/10 opacity-80 hover:opacity-100'
+            }`}
+          >
+            <Flame className="w-4 h-4 text-amber-500" />
+            <span>Best Laptops</span>
           </button>
 
           <button
@@ -294,6 +308,20 @@ export const Header: React.FC = () => {
             <div className="flex items-center gap-2">
               <Search className="w-4 h-4" />
               <span>Browse Catalog</span>
+            </div>
+          </button>
+
+          <button
+            onClick={() => {
+              setActiveView('best-laptops');
+              setMobileMenuOpen(false);
+            }}
+            data-testid="mobile-nav-best-laptops"
+            className="w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium flex items-center justify-between hover:bg-slate-500/10 text-amber-500"
+          >
+            <div className="flex items-center gap-2">
+              <Flame className="w-4 h-4 text-amber-500" />
+              <span>Best Laptops (2026 Guide)</span>
             </div>
           </button>
 

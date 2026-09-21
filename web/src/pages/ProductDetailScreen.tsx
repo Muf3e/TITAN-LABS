@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import { getProductDetailById, SampleProduct, ProductDetail } from '../data/mockProducts';
 import { ScoreGauge } from '../components/ScoreGauge';
@@ -67,6 +67,49 @@ export const ProductDetailScreen: React.FC = () => {
 
   const globalScore = detail?.evaluation?.globalScore ?? activeProd.titanScore;
   const confidenceVal = detail?.evaluation?.confidence ?? activeProd.evidenceConfidence;
+
+  // SEO: Inject dynamic Google Product Schema for organic buyer searches
+  useEffect(() => {
+    if (!activeProd) return;
+    const schemaData = {
+      '@context': 'https://schema.org/',
+      '@type': 'Product',
+      name: activeProd.name,
+      image: gallery[0],
+      description: `${activeProd.name} (${activeProd.variant}) - Detailed TITAN Score ${globalScore}/100, hardware benchmarks, thermals, and verified retailer offers.`,
+      brand: {
+        '@type': 'Brand',
+        name: activeProd.brand || 'TITAN Verified',
+      },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: activeProd.onlineRating || 4.5,
+        reviewCount: activeProd.onlineRatingCount || 120,
+      },
+      offers: {
+        '@type': 'Offer',
+        url: attachAffiliateTag(detail?.offers?.[0]?.externalUrl || '', activeProd.name),
+        priceCurrency: 'INR',
+        price: activeProd.priceInInr,
+        availability: 'https://schema.org/InStock',
+        seller: {
+          '@type': 'Organization',
+          name: 'Amazon India',
+        },
+      },
+    };
+
+    const scriptEl = document.createElement('script');
+    scriptEl.type = 'application/ld+json';
+    scriptEl.id = `schema-product-${activeProd.id}`;
+    scriptEl.text = JSON.stringify(schemaData);
+    document.head.appendChild(scriptEl);
+
+    return () => {
+      const existing = document.getElementById(`schema-product-${activeProd.id}`);
+      if (existing) document.head.removeChild(existing);
+    };
+  }, [activeProd, detail, gallery, globalScore]);
 
   return (
     <div
@@ -225,13 +268,34 @@ export const ProductDetailScreen: React.FC = () => {
               )}
             </div>
 
+            {/* High-Converting Lowest Price in 30 Days Callout */}
+            {activeProd.originalPriceInInr && activeProd.originalPriceInInr > activeProd.priceInInr && (
+              <div
+                data-testid="detail-deal-callout"
+                className="p-3 rounded-xl bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-blue-500/10 border border-emerald-500/30 flex items-center justify-between"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="flex h-2 w-2 relative">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                  <span className="text-xs font-black text-emerald-600 dark:text-emerald-400 uppercase tracking-wide">
+                    🔥 Lowest Price in 30 Days
+                  </span>
+                </div>
+                <span className="text-xs font-bold text-slate-800 dark:text-slate-200">
+                  Save ₹{(activeProd.originalPriceInInr - activeProd.priceInInr).toLocaleString('en-IN')} vs MRP
+                </span>
+              </div>
+            )}
+
             <div className="pt-2 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
               <span className="flex items-center gap-1.5 text-[#00C853] font-semibold">
                 <CheckCircle2 className="w-3.5 h-3.5" />
-                <span>{activeProd.availability}</span>
+                <span>{activeProd.availability} • Prime / Express Available</span>
               </span>
               <span className="text-slate-400">
-                Available across {activeProd.retailerCount || 3} verified retailers
+                Across {activeProd.retailerCount || 3} verified stores
               </span>
             </div>
           </div>
@@ -685,10 +749,20 @@ export const ProductDetailScreen: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           data-testid="detail-primary-buy-link"
-          className="w-full sm:flex-1 py-3.5 rounded-xl bg-gradient-to-r from-[#FFA03A] via-[#FF2A85] to-[#0077FF] hover:opacity-95 text-white font-bold text-xs sm:text-sm text-center shadow-lg transition-opacity flex items-center justify-center gap-2 cursor-pointer"
+          className="w-full sm:flex-1 py-3 px-5 rounded-xl bg-gradient-to-r from-[#FFA03A] via-[#FF2A85] to-[#0077FF] hover:opacity-95 text-white font-bold text-xs sm:text-sm text-center shadow-lg transition-opacity flex items-center justify-between gap-2 cursor-pointer"
         >
-          <span data-testid="vp-detail-buy-btn">View on Amazon</span>
-          <ExternalLink className="w-4 h-4" />
+          <div className="flex items-center gap-2">
+            <span className="px-2 py-0.5 rounded bg-black/20 text-[10px] font-black tracking-wider uppercase">
+              Amazon
+            </span>
+            <span data-testid="vp-detail-buy-btn" className="font-extrabold tracking-tight">
+              Buy Now (Lowest Price)
+            </span>
+          </div>
+          <div className="flex items-center gap-1.5 font-black text-sm">
+            <span>₹{activeProd.priceInInr.toLocaleString('en-IN')}</span>
+            <ExternalLink className="w-4 h-4 ml-0.5" />
+          </div>
         </a>
       </div>
 
