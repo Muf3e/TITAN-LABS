@@ -1,5 +1,5 @@
 # 🔥 TITAN Labs — Live High-Ticket Flash Deal Radar
-**Last Scanned:** 2026-09-21 18:45:15  
+**Last Scanned:** 2026-09-21 18:53:06  
 **Active Flash Deals:** 5 laptops with ≥10% price drops  
 **Affiliate Routing:** Amazon India (`tag=mufee-21`)  
 

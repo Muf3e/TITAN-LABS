@@ -76,7 +76,7 @@ export function recordAffiliateClick(productName: string, priceInInr: number, re
 
   // Asynchronously dispatch to orchestrator backend if reachable
   try {
-    fetch('http://localhost:8080/api/telemetry/click', {
+    fetch('http://127.0.0.1:8800/api/telemetry/click', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
